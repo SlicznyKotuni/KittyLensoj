@@ -1,0 +1,14 @@
+{
+  "name": "obiektywy-site",
+  "version": "1.0.0",
+  "description": "Strona kolekcji obiektywów fotograficznych",
+  "main": ".eleventy.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "dev": "eleventy --serve --watch"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

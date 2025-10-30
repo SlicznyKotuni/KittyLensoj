@@ -1,0 +1,38 @@
+---
+layout: layout.njk
+title: Galeria Zdjęć
+permalink: /galeria/
+---
+
+<header class="page-header">
+    <h1>Galeria Zdjęć</h1>
+    <p class="subtitle">Przeglądaj zdjęcia według obiektywów</p>
+</header>
+
+<main class="main-content">
+    <div class="gallery-controls">
+        <label for="folder-select">Wybierz obiektyw:</label>
+        <select id="folder-select" class="folder-select">
+            <option value="all">Wszystkie obiektywy</option>
+            {% for folder in collections.imageFolders %}
+            <option value="{{ folder }}">{{ folder }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="gallery-grid" id="gallery-grid">
+        {% set groupedImages = collections.allImages | groupByLens %}
+        
+        <!-- Domyślnie pokazuj wszystkie zdjęcia -->
+        {% for lensName, images in groupedImages %}
+            {% for image in images %}
+            <div class="gallery-item" data-lens="{{ lensName }}">
+                <img src="{{ image.path }}" alt="{{ lensName }} - {{ image.filename }}" loading="lazy">
+                <div class="image-info">
+                    <span class="lens-name">{{ lensName }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

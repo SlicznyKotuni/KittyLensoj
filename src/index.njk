@@ -1,0 +1,33 @@
+---
+layout: layout.njk
+title: Kolekcja Obiektywów
+---
+
+<header class="page-header">
+    <h1>Kolekcja Obiektywów</h1>
+    <p class="subtitle">Neonowy przewodnik po mojej kolekcji</p>
+</header>
+
+<main class="main-content">
+    <div class="grid" id="lens-grid">
+        {% for lens in collections.lenses %}
+        <div class="tile" onclick="location.href='{{ lens.url }}'">
+            <div class="tile-content">
+                <div class="tile-title">{{ lens | displayName }}</div>
+                {% if lens.data.tags %}
+                <div class="tile-tags">
+                    {% for tag in lens.data.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+<footer class="page-footer">
+    <p>&copy; 2023 Kolekcja Obiektywów Fotograficznych</p>
+    <p class="stats">Obiektywy: {{ collections.lenses.length }}</p>
+</footer>

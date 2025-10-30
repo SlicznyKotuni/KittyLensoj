@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Kolekcja Obiektywów</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="/" class="nav-link">Obiektywy</a>
+        <a href="/galeria/" class="nav-link">Galeria</a>
+    </nav>
+    
+    {{ content | safe }}
+    
+    <script src="/js/gallery.js"></script>
+</body>
+</html>
