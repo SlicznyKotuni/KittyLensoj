@@ -1,19 +1,19 @@
 ---
 layout: layout.njk
-title: Galeria Zdjęć
+title: Galerio
 permalink: /galeria/
 ---
 
 <header class="page-header">
-    <h1>Galeria Zdjęć</h1>
-    <p class="subtitle">Przeglądaj zdjęcia według obiektywów</p>
+    <h1>Galerio</h1>
+    <p class="subtitle">Foliumi fotojn per lenso</p>
 </header>
 
 <main class="main-content">
     <div class="gallery-controls">
-        <label for="folder-select">Wybierz obiektyw:</label>
+        <label for="folder-select">Elektu lenson:</label>
         <select id="folder-select" class="folder-select">
-            <option value="all">Wszystkie obiektywy</option>
+            <option value="all">Ĉiuj lensoj</option>
             {% for folder in collections.imageFolders %}
             <option value="{{ folder }}">{{ folder }}</option>
             {% endfor %}
