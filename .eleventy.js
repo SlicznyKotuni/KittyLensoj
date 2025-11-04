@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"src/css": "css"});
   eleventyConfig.addPassthroughCopy({"src/js": "js"});
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy({"src/favicon.ico": "favicon.ico"});
   
   // 3. Kolekcja lenses - POPRAWIONE
   eleventyConfig.addCollection("lenses", function(collectionApi) {
