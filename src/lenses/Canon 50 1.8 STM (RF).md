@@ -54,7 +54,8 @@ kluczowe-słowa: [portret, wszechstronny, niska-przysłona]
 ## Uwagi do pracy z Canon EOS R7
 Na Twoim R7 ten obiektyw zachowa się jak **klasyczny portrecista (80mm)**. Jest świetny do zdjęć ludzi i detali, ale traci swój "wszechstronny" charakter z pełnej klatki. W ciasnych pomieszczeniach może być za "wąski".
 
+
 ## Zdjęcia
-![[Canon 50 1.8 STM (RF) [1].jpeg]]
-![[Canon 50 1.8 STM (RF) [2].jpeg]]
-![[Canon 50 1.8 STM (RF) [3].jpeg]]
+![[Canon 50 1.8 STM (RF) [1].webp]]
+![[Canon 50 1.8 STM (RF) [2].webp]]
+![[Canon 50 1.8 STM (RF) [3].webp]]

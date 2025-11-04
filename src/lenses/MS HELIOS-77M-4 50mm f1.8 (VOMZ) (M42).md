@@ -1,8 +1,21 @@
 ---
-alias: "Eksperymentalny Bratek"
-tags: [obiektyw, helios-77, vomz, m42, pełna-klatka, standard, vintage, manualny]
-rodzina: "Helios"
-kluczowe-słowa: [helios-77, eksperymentalny, ostry, vomz, unikalny]
+alias: Eksperymentalny Bratek
+tags:
+  - obiektyw
+  - helios-77
+  - vomz
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+rodzina: Helios
+kluczowe-słowa:
+  - helios-77
+  - eksperymentalny
+  - ostry
+  - vomz
+  - unikalny
 ---
 
 # MS HELIOS-77M-4 50mm f/1.8 (VOMZ)

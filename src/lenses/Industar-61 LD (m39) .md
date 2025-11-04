@@ -53,11 +53,12 @@ kluczowe-słowa: [ostry, makro, lekki]
 ## Uwagi do pracy z Canon EOS R7
 Na R7 ten obiektyw **błyszczy w makro!** Dzięki kadrowaniu matrycy APS-C i możliwości zbliżania się, staje się idealnym, tanim narzędziem do fotografii detali, owadów, biżuterii. Jego efektywne 88mm to świetna ogniskowa do makro. Wymaga adaptera M39-RF (często przez M42-M39).
 
+
 ## Zdjęcia
-![[Industar-61 LD (m39)  [1].JPG]]
-![[Industar-61 LD (m39)  [2].JPG]]
-![[Industar-61 LD (m39)  [3].JPG]]
-![[Industar-61 LD (m39)  [4].JPG]]
-![[Industar-61 LD (m39)  [5].JPG]]
-![[Industar-61 LD (m39)  [6].JPG]]
-![[Industar-61 LD (m39)  [7].JPG]]
+![[Industar-61 LD (m39)  [1].webp]]
+![[Industar-61 LD (m39)  [2].webp]]
+![[Industar-61 LD (m39)  [3].webp]]
+![[Industar-61 LD (m39)  [4].webp]]
+![[Industar-61 LD (m39)  [5].webp]]
+![[Industar-61 LD (m39)  [6].webp]]
+![[Industar-61 LD (m39)  [7].webp]]

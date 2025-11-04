@@ -53,11 +53,12 @@ kluczowe-słowa: [charakterystyczny-bokeh, portret, swirly-bokeh]
 ## Uwagi do pracy z Canon EOS R7
 Na R7 staje się **długim portrecistą (~93mm)**. "Wirujący" bokeh jest nadal obecny, ale może być nieco mniej intensywny niż na pełnej klatce ze względu na kadrowanie. Idealny do studyjnych portretów i celowego, artystycznego rozmycia. Wymaga adaptera M42-RF.
 
+
 ## Zdjęcia
-![[Zenith Helios 44m-4 (m42) [1].JPG]]
-![[Zenith Helios 44m-4 (m42) [2].JPG]]
-![[Zenith Helios 44m-4 (m42) [3].JPG]]
-![[Zenith Helios 44m-4 (m42) [4].JPG]]
-![[Zenith Helios 44m-4 (m42) [5].JPG]]
-![[Zenith Helios 44m-4 (m42) [6].JPG]]
-![[Zenith Helios 44m-4 (m42) [7].JPG]]
+![[Zenith Helios 44m-4 (m42) [1].webp]]
+![[Zenith Helios 44m-4 (m42) [2].webp]]
+![[Zenith Helios 44m-4 (m42) [3].webp]]
+![[Zenith Helios 44m-4 (m42) [4].webp]]
+![[Zenith Helios 44m-4 (m42) [5].webp]]
+![[Zenith Helios 44m-4 (m42) [6].webp]]
+![[Zenith Helios 44m-4 (m42) [7].webp]]

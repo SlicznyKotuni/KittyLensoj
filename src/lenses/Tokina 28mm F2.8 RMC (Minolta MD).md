@@ -67,10 +67,11 @@ kluczowe-słowa:
 ## Uwagi do pracy z Canon EOS R7
 Na Twoim R7 ten obiektyw staje się **niezwykle wszechstronnym "normalnym" obiektywem**. 45mm to bardzo naturalna perspektywa, świetna do dokumentowania codzienności. Jest mały, lekki i nie rzuca się w oczy – idealny do aparatu w ręku.
 
+
 ## Zdjęcia
-![[Tokina 28mm F2.8 RMC (Minolta MD) [1].JPG]]
-![[Tokina 28mm F2.8 RMC (Minolta MD) [2].JPG]]
-![[Tokina 28mm F2.8 RMC (Minolta MD) [3].JPG]]
-![[Tokina 28mm F2.8 RMC (Minolta MD) [4].JPG]]
-![[Tokina 28mm F2.8 RMC (Minolta MD) [5].JPG]]
-![[Tokina 28mm F2.8 RMC (Minolta MD) [6].JPG]]
+![[Tokina 28mm F2.8 RMC (Minolta MD) [1].webp]]
+![[Tokina 28mm F2.8 RMC (Minolta MD) [2].webp]]
+![[Tokina 28mm F2.8 RMC (Minolta MD) [3].webp]]
+![[Tokina 28mm F2.8 RMC (Minolta MD) [4].webp]]
+![[Tokina 28mm F2.8 RMC (Minolta MD) [5].webp]]
+![[Tokina 28mm F2.8 RMC (Minolta MD) [6].webp]]

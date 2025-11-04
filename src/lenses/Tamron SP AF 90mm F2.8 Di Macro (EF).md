@@ -54,9 +54,10 @@ kluczowe-słowa: [makro, portret, ostry, di, af]
 ## Uwagi do pracy z Canon EOS R7
 Na Twoim R7 zyskuje **bardziej komfortowy dystans pracy w makro** (nie musisz tak bardzo zbliżać się do płochliwych owadów). Jako portrecista staje się bardzo długi (~144mm), idealnie izolując twarz od tła. Do zdjęć makro bez statywu używaj bardzo krótkich czasów naświetlania lub podeprzyj aparat.
 
+
 ## Zdjęcia
-![[Tamron SP AF 90mm F2.8 Di Macro (EF) [1].JPG]]
-![[Tamron SP AF 90mm F2.8 Di Macro (EF) [2].JPG]]
-![[Tamron SP AF 90mm F2.8 Di Macro (EF) [3].JPG]]
-![[Tamron SP AF 90mm F2.8 Di Macro (EF) [4].JPG]]
-![[Tamron SP AF 90mm F2.8 Di Macro (EF) [5].JPG]]
+![[Tamron SP AF 90mm F2.8 Di Macro (EF) [1].webp]]
+![[Tamron SP AF 90mm F2.8 Di Macro (EF) [2].webp]]
+![[Tamron SP AF 90mm F2.8 Di Macro (EF) [3].webp]]
+![[Tamron SP AF 90mm F2.8 Di Macro (EF) [4].webp]]
+![[Tamron SP AF 90mm F2.8 Di Macro (EF) [5].webp]]

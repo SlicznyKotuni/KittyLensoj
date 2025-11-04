@@ -54,10 +54,11 @@ kluczowe-słowa: [standard, jasny, portret, manualny, m42]
 ## Uwagi do pracy z Canon EOS R7
 Na Twoim R7 ten obiektyw staje się **klasycznym, jasnym portrecistą**. Jego jasność f/1.7 pozwala na pracę w słabym świetle i ładne rozmywanie tła. Do ostrych portretów ustaw przysłonę na f/2.8 lub f/4. To świetny, niedrogi sposób na wejście w świat jasnych stałek.
 
+
 ## Zdjęcia
-![[Pallas MC 50mm F1.7 (m42) [1].JPG]]
-![[Pallas MC 50mm F1.7 (m42) [2].JPG]]
-![[Pallas MC 50mm F1.7 (m42) [3].JPG]]
-![[Pallas MC 50mm F1.7 (m42) [4].JPG]]
-![[Pallas MC 50mm F1.7 (m42) [5].JPG]]
-![[Pallas MC 50mm F1.7 (m42) [6].JPG]]
+![[Pallas MC 50mm F1.7 (m42) [1].webp]]
+![[Pallas MC 50mm F1.7 (m42) [2].webp]]
+![[Pallas MC 50mm F1.7 (m42) [3].webp]]
+![[Pallas MC 50mm F1.7 (m42) [4].webp]]
+![[Pallas MC 50mm F1.7 (m42) [5].webp]]
+![[Pallas MC 50mm F1.7 (m42) [6].webp]]

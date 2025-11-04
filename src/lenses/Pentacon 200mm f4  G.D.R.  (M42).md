@@ -64,9 +64,10 @@ Na Twoim R7 ten obiektyw staje się **super-teleobiektywem (~320mm)**, podobnie 
 | **Cel** | **Ostra przyroda, krajobraz** | **Artystyczne portrety, nastrój** |
 
 
+
 ## Zdjęcia
-![[Pentacon 200mm f4  G.D.R.  (M42) [1].JPG]]
-![[Pentacon 200mm f4  G.D.R.  (M42) [2].JPG]]
-![[Pentacon 200mm f4  G.D.R.  (M42) [3].JPG]]
-![[Pentacon 200mm f4  G.D.R.  (M42) [4].JPG]]
-![[Pentacon 200mm f4  G.D.R.  (M42) [5].JPG]]
+![[Pentacon 200mm f4  G.D.R.  (M42) [1].webp]]
+![[Pentacon 200mm f4  G.D.R.  (M42) [2].webp]]
+![[Pentacon 200mm f4  G.D.R.  (M42) [3].webp]]
+![[Pentacon 200mm f4  G.D.R.  (M42) [4].webp]]
+![[Pentacon 200mm f4  G.D.R.  (M42) [5].webp]]

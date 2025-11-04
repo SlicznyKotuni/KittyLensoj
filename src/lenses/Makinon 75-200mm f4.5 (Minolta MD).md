@@ -63,11 +63,12 @@ kluczowe-słowa:
 ## Uwagi do pracy z Canon EOS R7
 Zakres 120-320mm jest bardzo użyteczny. Stała przysłona f/4.5 to atut. Pamiętaj, że to obiektyw do celowych kadrów, a nie do szybkiego fotografowania. Jakość będzie gorsza od stałek, ale wygoda zoomu jest duża.
 
+
 ## Zdjęcia
-![[Makinon 75-200mm f4.5 (Minolta MD) [1].JPG]]
-![[Makinon 75-200mm f4.5 (Minolta MD) [2].JPG]]
-![[Makinon 75-200mm f4.5 (Minolta MD) [3].JPG]]
-![[Makinon 75-200mm f4.5 (Minolta MD) [4].JPG]]
-![[Makinon 75-200mm f4.5 (Minolta MD) [5].JPG]]
-![[Makinon 75-200mm f4.5 (Minolta MD) [6].JPG]]
-![[Makinon 75-200mm f4.5 (Minolta MD) [7].JPG]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [1].webp]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [2].webp]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [3].webp]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [4].webp]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [5].webp]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [6].webp]]
+![[Makinon 75-200mm f4.5 (Minolta MD) [7].webp]]

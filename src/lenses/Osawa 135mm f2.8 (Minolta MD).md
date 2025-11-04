@@ -51,10 +51,11 @@ kluczowe-słowa: [tele, portret, jasny, manualny]
 ## Uwagi do pracy z Canon EOS R7
 Na R7 ten obiektyw staje się długim teleobiektywem. Jasność f/2.8 jest bardzo pomocna dla utrzymania rozsądnych czasów naświetlania. Używaj focus peaking do precyzyjnego ostrzenia.
 
+
 ## Zdjęcia
-![[Osawa 135mm f2.8 (Minolta MD) [1].jpeg]]
-![[Osawa 135mm f2.8 (Minolta MD) [2].jpeg]]
-![[Osawa 135mm f2.8 (Minolta MD) [3].jpeg]]
-![[Osawa 135mm f2.8 (Minolta MD) [4].jpeg]]
-![[Osawa 135mm f2.8 (Minolta MD) [5].jpeg]]
-![[Osawa 135mm f2.8 (Minolta MD) [6].jpeg]]
+![[Osawa 135mm f2.8 (Minolta MD) [1].webp]]
+![[Osawa 135mm f2.8 (Minolta MD) [2].webp]]
+![[Osawa 135mm f2.8 (Minolta MD) [3].webp]]
+![[Osawa 135mm f2.8 (Minolta MD) [4].webp]]
+![[Osawa 135mm f2.8 (Minolta MD) [5].webp]]
+![[Osawa 135mm f2.8 (Minolta MD) [6].webp]]

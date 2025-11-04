@@ -12,7 +12,9 @@
         <a href="/galeria/" class="nav-link">Galeria</a>
     </nav>
     
-    {{ content | safe }}
+    <div class="content-wrapper">
+        {{ content | safe }}
+    </div>
     
     <script src="/js/gallery.js"></script>
 </body>

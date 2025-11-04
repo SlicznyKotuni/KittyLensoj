@@ -53,10 +53,11 @@ kluczowe-słowa: [super-zoom, uniwersalny, podróżny, ciemny]
 ## Uwagi do pracy z Canon EOS R7
 To jest Twój **"obiektyw wygodny"**. Zakres 45-480mm jest po prostu absurdalny. Pamiętaj, że przy 480mm masz tylko f/6.3, więc wymaga to idealnego światła dziennego lub wysokiego ISO. Jakość nie będzie oszałamiająca, ale **niczego nie przegapisz**. Idealny na wakacje, gdy priorytetem jest lekkość bagażu.
 
+
 ## Zdjęcia
-![[Tamron 28-300mm F3.5-6.3 (EF) [1].JPG]]
-![[Tamron 28-300mm F3.5-6.3 (EF) [2].JPG]]
-![[Tamron 28-300mm F3.5-6.3 (EF) [3].JPG]]
-![[Tamron 28-300mm F3.5-6.3 (EF) [4].JPG]]
-![[Tamron 28-300mm F3.5-6.3 (EF) [5].JPG]]
-![[Tamron 28-300mm F3.5-6.3 (EF) [6].JPG]]
+![[Tamron 28-300mm F3.5-6.3 (EF) [1].webp]]
+![[Tamron 28-300mm F3.5-6.3 (EF) [2].webp]]
+![[Tamron 28-300mm F3.5-6.3 (EF) [3].webp]]
+![[Tamron 28-300mm F3.5-6.3 (EF) [4].webp]]
+![[Tamron 28-300mm F3.5-6.3 (EF) [5].webp]]
+![[Tamron 28-300mm F3.5-6.3 (EF) [6].webp]]

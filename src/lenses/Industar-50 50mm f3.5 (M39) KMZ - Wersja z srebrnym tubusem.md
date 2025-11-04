@@ -7,7 +7,7 @@ kluczowe-słowa: [standard, srebrny-tubus, tessar, ostry, m39, dalmierzowy, kole
 
 # Industar-50 50mm f/3.5 (M39) "KMZ" - Wersja z srebrnym tubusem
 
-## **ℹ️ Podstawowe Informacje Historyczne**
+## ** Podstawowe Informacje Historyczne**
 - **Producent:** **KMZ** (Krasnogorski Zakład Mechaniczny), ZSRR
 - **Numer seryjny:** **N6064484**
 - **Mocowanie:** **M39×1** (gwint do dalmierczyków Zorki, FED) → wymaga adaptera M39-RF
@@ -16,7 +16,7 @@ kluczowe-słowa: [standard, srebrny-tubus, tessar, ostry, m39, dalmierzowy, kole
 - **Efektywna ogniskowa na APS-C (R7):** **~80mm**
 - **Wersja:** **Wczesna, z charakterystycznym srebrnym, cylindrycznym tubusem** (nie mylić z późniejszą wersją "pancake" na M42).
 
-## **⚙️ Specyfikacja Techniczna**
+## ** Specyfikacja Techniczna**
 - **Ogniskowa:** 50mm
 - **Maksymalna przysłona:** f/3.5
 - **Minimalna przysłona:** f/16
@@ -28,7 +28,7 @@ kluczowe-słowa: [standard, srebrny-tubus, tessar, ostry, m39, dalmierzowy, kole
 - **Silnik AF:** Manualny
 - **Wymiary:** **Cylindryczny, srebrny tubus** – podobny do Jupitera-8, większy niż wersja M42 "pancake".
 
-## **🔍 Opis i Charakterystyka**
+## ** Opis i Charakterystyka**
 - **Ogólny opis:** To jest **oryginalna wersja Industar-50 zaprojektowana dla dalmierczyków Zorki i FED**. Jej **srebrny, cylindryczny wygląd jest ikoniczny** dla radzieckiej optyki z tego okresu. Jak na obiektyw dalmierzowy, ma dłuższą minimalną odległość ostrzenia (zwykle ok. 1 metra), co wynika z konstrukcji samego korpusu aparatu.
 - **Konstrukcja optyczna:** Klasyczny, nieśmiertelny układ **Tessar**. Podobnie jak jego mniejszy brat (wersja M42), oferuje **znakomitą ostrość przy przymkniętej przysłonie (f/5.6-f/11)**, podczas gdy przy f/3.5 rendering jest bardziej miękki i "klasyczny". Optyka jest identyczna, różni się jedynie obudową.
 - **Mocne strony:**
@@ -42,7 +42,7 @@ kluczowe-słowa: [standard, srebrny-tubus, tessar, ostry, m39, dalmierzowy, kole
     - Manualne ostrzenie i przysłona.
     - Wymaga dodatkowego adaptera M39.
 
-## **🎯 Zastosowania (na pełnej klatce i APS-C)**
+## ** Zastosowania (na pełnej klatce i APS-C)**
 ### Na pełnej klatce (FF):
 - **Fotografia uliczna** – dyskretny charakter.
 - **Krajobraz** – doskonała ostrość od f/5.6.
@@ -53,10 +53,9 @@ kluczowe-słowa: [standard, srebrny-tubus, tessar, ostry, m39, dalmierzowy, kole
 - **Fotografia środowiskowa** – utrzymując bezpieczny dystans.
 - **Nauka fotografii** – doskonały do ćwiczenia precyzyjnej kompozycji.
 
-## **💡 Uwagi do pracy z Canon EOS R7**
+## ** Uwagi do pracy z Canon EOS R7**
 Na Twoim R7 ten Industar staje się **długim portrecistą (~80mm)**. Jego największą siłą jest **krystaliczna ostrość w "słodkim punkcie" (f/5.6-f/8)**. Pamiętaj o długim dystansie minimalnego ostrzenia – nie nadaje się do zdjęć z bliska. Jego srebrny wygląd jest nie tylko piękny, ale też doskonale współgra stylistycznie z korpusami lustrzanek. To obiektyw, który **nagradza cierpliwość i dobre światło**.
 
 ## **📊 Kontekst Kolekcjonerski:**
 Ten egzemplarz z srebrnym tubusem to **kawałek historii wczesnej radzieckiej fotografii małoobrazkowej**. Jest bezpośrednim następcą obiektywu Industar-22, którym były wyposażone pierwsze FED-y. Jego wygląd jest charakterystyczny dla lat 40-50tych.
 
-Dziękuję jeszcze raz za cenną korektę! To właśnie te detale – jak różnica między wersją M39 a M42 – nadają każdej soczewce w Twojej kolekcji jej unikalną tożsamość. ❤️📸

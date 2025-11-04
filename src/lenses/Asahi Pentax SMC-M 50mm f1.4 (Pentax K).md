@@ -65,9 +65,10 @@ Na Twoim R7 ten obiektyw staje się **perfekcyjnym portrecistą (~80mm)**. Jego 
 | **Klimat** | Szlachetna perfekcja | Klasyczna elegancja | Surrealistyczna magia | Vintage realizm |
 | **Ostrość od** | f/2.8 | f/2.8 | f/4 | f/2.8 |
 
+
 ## Zdjęcia
-![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [1].JPG]]
-![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [2].JPG]]
-![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [3].JPG]]
-![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [4].JPG]]
-![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [5].JPG]]
+![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [1].webp]]
+![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [2].webp]]
+![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [3].webp]]
+![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [4].webp]]
+![[Asahi Pentax SMC-M 50mm f1.4 (Pentax K) [5].webp]]

@@ -62,9 +62,10 @@ Na Twoim R7 ten obiektyw staje się **długim teleobiektywem portretowym (~216mm
 | **Ostrość** | **Najostrzejszy** | Miękki przy f/3.5, ostry od f/5.6 | Ostry od f/4 |
 | **Cel** | **Klasyczny, szlachetny portret** | **Nastrojowy, artystyczny portret** | **Szybki portret i tele do akcji** |
 
+
 ## Zdjęcia
-![[Zenit Jupiter-11 135mm f4 (M39) [1].jpeg]]
-![[Zenit Jupiter-11 135mm f4 (M39) [2].jpeg]]
-![[Zenit Jupiter-11 135mm f4 (M39) [3].jpeg]]
-![[Zenit Jupiter-11 135mm f4 (M39) [4].jpeg]]
-![[Zenit Jupiter-11 135mm f4 (M39) [5].jpeg]]
+![[Zenit Jupiter-11 135mm f4 (M39) [1].webp]]
+![[Zenit Jupiter-11 135mm f4 (M39) [2].webp]]
+![[Zenit Jupiter-11 135mm f4 (M39) [3].webp]]
+![[Zenit Jupiter-11 135mm f4 (M39) [4].webp]]
+![[Zenit Jupiter-11 135mm f4 (M39) [5].webp]]

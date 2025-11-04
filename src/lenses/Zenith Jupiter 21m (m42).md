@@ -53,11 +53,13 @@ kluczowe-słowa: [super-tele, dzika-przyroda, manualny, ciężki]
 ## Uwagi do pracy z Canon EOS R7
 Na Twoim R7 to jest **potężny super-teleobiektyw (~320mm)!** Jego użycie bez statywu jest bardzo trudne. To specjalistyczne narzędzie do fotografii przyrodniczej i wszędzie tam, gdzie potrzebujesz ogromnego zasięgu. Cierpliwość w manualnym ostrzeniu jest kluczowa.
 
+
+
 ## Zdjęcia
-![[Zenith Jupiter 21m (m42) [1].jpeg]]
-![[Zenith Jupiter 21m (m42) [2].jpeg]]
-![[Zenith Jupiter 21m (m42) [3].jpeg]]
-![[Zenith Jupiter 21m (m42) [4].jpeg]]
-![[Zenith Jupiter 21m (m42) [5].jpeg]]
-![[Zenith Jupiter 21m (m42) [6].jpeg]]
-![[Zenith Jupiter 21m (m42) [7].jpeg]]
+![[Zenith Jupiter 21m (m42) [1].webp]]
+![[Zenith Jupiter 21m (m42) [2].webp]]
+![[Zenith Jupiter 21m (m42) [3].webp]]
+![[Zenith Jupiter 21m (m42) [4].webp]]
+![[Zenith Jupiter 21m (m42) [5].webp]]
+![[Zenith Jupiter 21m (m42) [6].webp]]
+![[Zenith Jupiter 21m (m42) [7].webp]]

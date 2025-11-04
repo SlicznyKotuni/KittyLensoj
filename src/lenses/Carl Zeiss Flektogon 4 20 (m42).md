@@ -55,9 +55,10 @@ kluczowe-słowa: [szeroki-kąt, zebra, kultowy, architektura, manualny]
 ## Uwagi do pracy z Canon EOS R7
 Na Twoim R7 traci swój "super-szeroki" charakter, ale zyskuje jako **niezwykle wszechstronny obiektyw (~32mm)**. Jego największą zabawą jest możliwość podchodzenia niemal do samego obiektu – wykorzystaj to do dramatycznych, przerysowanych ujęć z bliska.
 
+
 ## Zdjęcia
-![[Carl Zeiss Flektogon 4 20 (m42) [1].jpeg]]
-![[Carl Zeiss Flektogon 4 20 (m42) [2].jpeg]]
-![[Carl Zeiss Flektogon 4 20 (m42) [3].jpeg]]
-![[Carl Zeiss Flektogon 4 20 (m42) [4].jpeg]]
-![[Carl Zeiss Flektogon 4 20 (m42) [5].jpeg]]
+![[Carl Zeiss Flektogon 4 20 (m42) [1].webp]]
+![[Carl Zeiss Flektogon 4 20 (m42) [2].webp]]
+![[Carl Zeiss Flektogon 4 20 (m42) [3].webp]]
+![[Carl Zeiss Flektogon 4 20 (m42) [4].webp]]
+![[Carl Zeiss Flektogon 4 20 (m42) [5].webp]]

@@ -55,9 +55,9 @@ Na Twoim R7 staje się **długim teleobiektywem (~216mm)**. To wymaga stabilnej 
 
 
 ## Zdjęcia
-![[Zenith Jupiter 37a (m42) [1].png]]
-![[Zenith Jupiter 37a (m42) [2].png]]
-![[Zenith Jupiter 37a (m42) [3].png]]
-![[Zenith Jupiter 37a (m42) [4].png]]
-![[Zenith Jupiter 37a (m42) [5].png]]
-![[Zenith Jupiter 37a (m42) [6].png]]
+![[Zenith Jupiter 37a (m42) [1].webp]]
+![[Zenith Jupiter 37a (m42) [2].webp]]
+![[Zenith Jupiter 37a (m42) [3].webp]]
+![[Zenith Jupiter 37a (m42) [4].webp]]
+![[Zenith Jupiter 37a (m42) [5].webp]]
+![[Zenith Jupiter 37a (m42) [6].webp]]

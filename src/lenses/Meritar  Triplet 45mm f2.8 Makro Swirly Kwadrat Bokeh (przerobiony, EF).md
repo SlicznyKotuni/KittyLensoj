@@ -66,9 +66,10 @@ Na Twoim R7 ten obiektyw stanie się **dedykowanym narzędziem do kreatywnego ma
 | **Główna Funkcja** | **Makro** | Uniwersalny (z efektem) | Uniwersalny (z efektem) |
 | **Klimat** | **Surrealistyczna geometria** | **Ostra geometria** | **Organiczne wirowanie** |
 
+
 ## Zdjęcia
-![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [1].JPG]]
-![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [2].JPG]]
-![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [3].JPG]]
-![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [4].JPG]]
-![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [5].JPG]]
+![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [1].webp]]
+![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [2].webp]]
+![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [3].webp]]
+![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [4].webp]]
+![[Meritar  Triplet 45mm f2.8 Makro Swirly Kwadrat Bokeh (przerobiony, EF) [5].webp]]

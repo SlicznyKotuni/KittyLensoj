@@ -14,6 +14,7 @@ title: Kolekcja Obiektywów
         <div class="tile" onclick="location.href='{{ lens.url }}'">
             <div class="tile-content">
                 <div class="tile-title">{{ lens | displayName }}</div>
+                <span class="file-title">{{ lens.fileSlug }}</span>
                 {% if lens.data.tags %}
                 <div class="tile-tags">
                     {% for tag in lens.data.tags %}

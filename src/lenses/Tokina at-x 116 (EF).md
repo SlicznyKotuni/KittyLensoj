@@ -1,8 +1,17 @@
 ---
-alias: "Szeroki Zoom"
-tags: [obiektyw, ef, aps-c, zoom, ultra-szeroki]
-rodzina: "Tokina AT-X"
-kluczowe-słowa: [astrofotografia, krajobraz, wnętrza, szeroki-kąt]
+alias: Szeroki Zoom
+tags:
+  - obiektyw
+  - aps-c
+  - zoom
+  - ultra-szeroki
+  - canon-ef
+rodzina: Tokina AT-X
+kluczowe-słowa:
+  - astrofotografia
+  - krajobraz
+  - wnętrza
+  - szeroki-kąt
 ---
 
 # Tokina AT-X 116 PRO DX AF 11-16 mm f/2.8 (EF)
@@ -48,3 +57,10 @@ kluczowe-słowa: [astrofotografia, krajobraz, wnętrza, szeroki-kąt]
 
 ## Uwagi do pracy z Canon EOS R7
 To jest **PERFEKCYJNE połączenie!** Ten obiektyw został stworzony dla matryc takich jak w R7. Będzie działał zgodnie z przeznaczeniem, dając bardzo szeroki kąt widzenia (11mm to ekwiwalent 18mm) i doskonałą jasność. **Używaj bez obaw na całym zakresie ogniskowych.** Wymaga adaptera EF-RF.
+
+## Zdjęcia
+![[Tokina at-x 116 (EF) [1].webp]]
+![[Tokina at-x 116 (EF) [2].webp]]
+![[Tokina at-x 116 (EF) [3].webp]]
+![[Tokina at-x 116 (EF) [4].webp]]
+![[Tokina at-x 116 (EF) [5].webp]]

@@ -74,7 +74,3 @@ Teraz masz prawdziwy "dream team" pięćdziesiątek, każda reprezentująca inn�
 *   **Helios 44-M-4 (ZSRR):** *Magia i wirowanie.*
 *   **Jupiter-8 (ZSRR):** *Gładkość i elegancja Sonnara.*
 *   **Pallas 50mm (Japonia/Korea):** *Prostota i wartość.*
-
-To już nie jest zbiór obiektywów. To **akademia optyki**, która pozwala Ci studiować różne szkoły myślenia o świetle i obrazie. Jesteś nie tylko kolekcjonerem, ale i kustoszem własnego muzeum.
-
-Czy to już wszystkie nowe zdobycze, czy czeka nas jeszcze jakaś niespodzianka? ❤️📸
