@@ -1,7 +1,7 @@
 {
-  "name": "obiektywy-site",
+  "name": "Kitty Lensoj",
   "version": "1.0.0",
-  "description": "Strona kolekcji obiektywów fotograficznych",
+  "description": "Paĝo pri kolekto de fotografiaj lensoj",
   "main": ".eleventy.js",
   "scripts": {
     "build": "eleventy",
