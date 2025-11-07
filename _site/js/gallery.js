@@ -22,6 +22,72 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentImageIndex = 0;
     let visibleImages = [];
     let currentLightbox = null;
+    let isFullscreenActive = false;
+
+    const fullscreenEvents = [
+        'fullscreenchange',
+        'webkitfullscreenchange',
+        'mozfullscreenchange',
+        'MSFullscreenChange'
+    ];
+
+    function getFullscreenElement() {
+        return document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement ||
+            null;
+    }
+
+    function requestFullscreen(element) {
+        if (!element) return Promise.resolve();
+        if (element.requestFullscreen) {
+            return element.requestFullscreen();
+        }
+        if (element.webkitRequestFullscreen) {
+            return element.webkitRequestFullscreen();
+        }
+        if (element.mozRequestFullScreen) {
+            return element.mozRequestFullScreen();
+        }
+        if (element.msRequestFullscreen) {
+            return element.msRequestFullscreen();
+        }
+        return Promise.resolve();
+    }
+
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            return document.exitFullscreen();
+        }
+        if (document.webkitExitFullscreen) {
+            return document.webkitExitFullscreen();
+        }
+        if (document.mozCancelFullScreen) {
+            return document.mozCancelFullScreen();
+        }
+        if (document.msExitFullscreen) {
+            return document.msExitFullscreen();
+        }
+        return Promise.resolve();
+    }
+
+    function toggleFullscreen(element) {
+        if (!element) return;
+        if (getFullscreenElement()) {
+            exitFullscreen();
+        } else {
+            requestFullscreen(element);
+        }
+    }
+
+    const handleFullscreenChange = () => {
+        isFullscreenActive = !!getFullscreenElement();
+    };
+
+    fullscreenEvents.forEach(eventName => {
+        document.addEventListener(eventName, handleFullscreenChange);
+    });
     
     function getVisibleImages() {
         const images = galleryGrid.querySelectorAll('.gallery-item img');
@@ -42,17 +108,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         currentImageIndex = imageIndex;
         const image = visibleImages[currentImageIndex];
-        
-        // Remove existing lightbox if any
-        const existingLightbox = document.querySelector('.lightbox');
-        if (existingLightbox) {
-            document.body.removeChild(existingLightbox);
+
+        let lightbox = currentLightbox;
+        const isNewLightbox = !lightbox;
+
+        if (!lightbox) {
+            lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            currentLightbox = lightbox;
         }
-        
-        const lightbox = document.createElement('div');
-        lightbox.className = 'lightbox';
-        currentLightbox = lightbox;
-        
+
         const prevButton = currentImageIndex > 0 
             ? '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>'
             : '<button class="lightbox-nav lightbox-prev disabled" aria-label="Previous image" disabled>‹</button>';
@@ -73,27 +138,43 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="image-caption">${image.alt}</div>
             </div>
         `;
-        
-        document.body.appendChild(lightbox);
-        
+
+        if (isNewLightbox) {
+            document.body.appendChild(lightbox);
+            document.addEventListener('keydown', handleLightboxKeydown);
+            document.body.style.overflow = 'hidden';
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        }
+
         // Close button
-        lightbox.querySelector('.close').addEventListener('click', closeLightbox);
-        
-        // Click outside to close (but not on image or buttons)
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) {
+        const closeButton = lightbox.querySelector('.close');
+        if (closeButton) {
+            closeButton.addEventListener('click', function(e) {
+                e.stopPropagation();
                 closeLightbox();
-            }
-        });
-        
-        // Prevent image clicks from closing
+            });
+        }
+
+        // Prevent image clicks from closing and allow fullscreen toggle
         const img = lightbox.querySelector('img');
         if (img) {
             img.addEventListener('click', function(e) {
                 e.stopPropagation();
+                toggleFullscreen(currentLightbox);
             });
         }
-        
+
+        const imageWrapper = lightbox.querySelector('.lightbox-image-wrapper');
+        if (imageWrapper) {
+            imageWrapper.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
         // Previous button
         const prevBtn = lightbox.querySelector('.lightbox-prev');
         if (prevBtn && !prevBtn.disabled) {
@@ -115,22 +196,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', handleLightboxKeydown);
-        
-        // Prevent body scroll
-        document.body.style.overflow = 'hidden';
+
+        // Restore fullscreen if active after rebuilding content
+        if (isFullscreenActive && currentLightbox && getFullscreenElement() !== currentLightbox) {
+            requestFullscreen(currentLightbox);
+        }
     }
     
     function closeLightbox() {
-        const lightbox = document.querySelector('.lightbox');
-        if (lightbox) {
-            document.body.removeChild(lightbox);
+        const lightbox = currentLightbox;
+        if (!lightbox) return;
+
+        const cleanup = () => {
+            if (lightbox.parentNode) {
+                lightbox.parentNode.removeChild(lightbox);
+            }
             document.removeEventListener('keydown', handleLightboxKeydown);
             document.body.style.overflow = '';
             currentLightbox = null;
+        };
+
+        if (isFullscreenActive) {
+            const exitPromise = exitFullscreen();
+            if (exitPromise && typeof exitPromise.then === 'function') {
+                exitPromise.catch(() => {}).finally(() => {
+                    handleFullscreenChange();
+                    cleanup();
+                });
+                return;
+            }
         }
+
+        cleanup();
     }
     
     function handleLightboxKeydown(e) {

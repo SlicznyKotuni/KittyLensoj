@@ -21,19 +21,14 @@ permalink: /galeria/
     </div>
 
     <div class="gallery-grid" id="gallery-grid">
-        {% set groupedImages = collections.allImages | groupByLens %}
-        
-        <!-- Domyślnie pokazuj wszystkie zdjęcia -->
-        {% for lensName, images in groupedImages %}
-            {% for image in images %}
-            <div class="gallery-item" data-lens="{{ lensName }}">
-                <img src="{{ image.path }}" alt="{{ lensName }} - {{ image.filename }}" loading="lazy">
-                <div class="image-info">
-                    <span class="lens-name">{{ lensName }}</span>
-                    <span class="file-title">{{ image.filename }}</span>
-                </div>
+        {% for image in collections.allImages %}
+        <div class="gallery-item" data-lens="{{ image.lens }}">
+            <img src="{{ image.path }}" alt="{{ image.lens }} - {{ image.filename }}" loading="lazy">
+            <div class="image-info">
+                <span class="lens-name">{{ image.lens }}</span>
+                <span class="file-title">{{ image.filename }}</span>
             </div>
-            {% endfor %}
+        </div>
         {% endfor %}
     </div>
 </div>

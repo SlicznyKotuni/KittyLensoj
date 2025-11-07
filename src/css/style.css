@@ -342,8 +342,27 @@ h1 {
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-color);
+    transform: scale(1.03);
+}
+
+.gallery-item::after,
+.image-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(0, 255, 170, 0.45);
+    box-shadow: 0 0 18px rgba(0, 255, 170, 0.45), 0 0 32px rgba(0, 255, 170, 0.25);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.gallery-item:hover::after,
+.gallery-item:focus-visible::after,
+.image-item:hover::after,
+.image-item:focus-visible::after {
+    opacity: 1;
 }
 
 .gallery-item img {
@@ -448,11 +467,11 @@ h1 {
     overflow: hidden;
     aspect-ratio: 1;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .image-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--neon-color);
+    transform: scale(1.03);
 }
 
 .image-item img {
