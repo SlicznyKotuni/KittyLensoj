@@ -156,11 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Attach click handlers to all images
+    // Attach click handlers to gallery items (works better on mobile)
     galleryGrid.addEventListener('click', function(e) {
-        const img = e.target.closest('.gallery-item img');
+        const item = e.target.closest('.gallery-item');
+        if (!item || !galleryGrid.contains(item)) return;
+
+        const img = item.querySelector('img');
         if (!img) return;
-        
+
         e.preventDefault();
         visibleImages = getVisibleImages();
         const clickedImage = visibleImages.findIndex(imgData => imgData.element === img);

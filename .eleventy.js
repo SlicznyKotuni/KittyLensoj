@@ -33,18 +33,31 @@ module.exports = function(eleventyConfig) {
         if (fs.existsSync(lensPath)) {
           const imageFiles = fs.readdirSync(lensPath)
             .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
-            .map(file => ({
-              lens: lensDir,
-              filename: file,
-              path: `/images/${lensDir}/${file}`
-            }));
+            .map(file => {
+              const fullPath = path.join(lensPath, file);
+              let mtime = 0;
+              try {
+                const stats = fs.statSync(fullPath);
+                mtime = stats.mtimeMs || stats.mtime?.getTime?.() || 0;
+              } catch (e) {
+                mtime = 0;
+              }
+              return {
+                lens: lensDir,
+                filename: file,
+                path: `/images/${lensDir}/${file}`,
+                mtime
+              };
+            });
           
           images.push(...imageFiles);
         }
       });
     }
     
-    console.log(`Znaleziono ${images.length} zdjęć`);
+    // Sort newest first based on file modification time
+    images.sort((a, b) => b.mtime - a.mtime);
+    console.log(`Znaleziono ${images.length} zdjęć (posortowano według daty)`);
     return images;
   });
   
