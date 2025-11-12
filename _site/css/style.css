@@ -870,3 +870,57 @@ main article td {
 main article tr:hover {
     background-color: rgba(0, 255, 170, 0.05);
 }
+/* Tryb zoom dla lightboxa - zdjęcie na pełnym ekranie */
+.lightbox.zoomed .lightbox-content {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox.zoomed .lightbox-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.zoomed .lightbox-content img {
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    cursor: zoom-out;
+}
+
+.lightbox.zoomed .image-caption,
+.lightbox.zoomed .image-counter {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Pokazujemy napisy gdy najedziemy na zdjęcie w trybie zoom */
+.lightbox.zoomed:hover .image-caption,
+.lightbox.zoomed:hover .image-counter {
+    opacity: 1;
+}
+
+/* Na mobile - lepsze wsparcie dotykowe */
+@media (max-width: 768px) {
+    .lightbox.zoomed .lightbox-content img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    .lightbox.zoomed .image-caption,
+    .lightbox.zoomed .image-counter {
+        opacity: 0;
+    }
+    
+    /* Na mobile pokazujemy napisy po dotknięciu */
+    .lightbox.zoomed.show-ui .image-caption,
+    .lightbox.zoomed.show-ui .image-counter {
+        opacity: 1;
+    }
+}
