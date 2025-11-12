@@ -66,4 +66,13 @@ Na Twoim R7 ten obiektyw staje się **niezwykle praktycznym "normalnym" obiektyw
 
 ---
 
-**Dziękuję jeszcze raz za czujność!** Teraz Twoja baza znów jest precyzyjna. Pallas 28mm to solidny, praktyczny obiektyw, który idealnie uzupełnia Twoją kolekcję o wszechstronną ogniskową. Czy teraz wszystko się zgadza? ❤️📸
+
+
+
+## Zdjęcia
+![[Pallas Auto 28mm f2.8 (M42) [1].webp]]
+![[Pallas Auto 28mm f2.8 (M42) [2].webp]]
+![[Pallas Auto 28mm f2.8 (M42) [3].webp]]
+![[Pallas Auto 28mm f2.8 (M42) [4].webp]]
+![[Pallas Auto 28mm f2.8 (M42) [5].webp]]
+![[Pallas Auto 28mm f2.8 (M42) [6].webp]]

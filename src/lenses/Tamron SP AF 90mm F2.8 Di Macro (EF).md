@@ -1,8 +1,21 @@
 ---
-alias: "Król Makro"
-tags: [obiektyw, tamron, canon-ef, pełna-klatka, macro, tele, autofokus]
-rodzina: "Tamron SP"
-kluczowe-słowa: [makro, portret, ostry, di, af]
+alias: Król Makro
+tags:
+  - obiektyw
+  - tamron
+  - canon-ef
+  - pełna-klatka
+  - macro
+  - tele
+  - autofokus
+  - makro
+rodzina: Tamron SP
+kluczowe-słowa:
+  - makro
+  - portret
+  - ostry
+  - di
+  - af
 ---
 
 # Tamron SP AF 90mm F/2.8 Di Macro 1:1 (EF)

@@ -1,8 +1,23 @@
 ---
-alias: "Solidny Japończyk"
-tags: [obiektyw, ricoh, rikenon, pentax-k, pełna-klatka, standard, vintage, manualny, japoński]
-rodzina: "Rikenon"
-kluczowe-słowa: [standard, jasny, pentax-k, hidden-gem, ostry, manualny, metalowy]
+alias: Solidny Japończyk
+tags:
+  - obiektyw
+  - ricoh
+  - rikenon
+  - pentax-k
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+rodzina: Rikenon
+kluczowe-słowa:
+  - standard
+  - jasny
+  - pentax-k
+  - hidden-gem
+  - ostry
+  - manualny
+  - metalowy
 ---
 
 # Ricoh Rikenon 50mm f/1.4 (Pentax K)

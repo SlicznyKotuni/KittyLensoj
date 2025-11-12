@@ -1,8 +1,25 @@
 ---
-alias: "Klasyk z charakterem"
-tags: [obiektyw, minolta, rokkor, minolta-mc, pełna-klatka, standard, vintage, manualny, japoński]
-rodzina: "Rokkor"
-kluczowe-słowa: [standard, jasny, rokkor, minolta-mc, ostry, manualny, nr-seryjny]
+alias: Klasyk z charakterem
+tags:
+  - obiektyw
+  - minolta
+  - rokkor
+  - minolta-mc
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - japoński
+  - minolta-md
+rodzina: Rokkor
+kluczowe-słowa:
+  - standard
+  - jasny
+  - rokkor
+  - minolta-mc
+  - ostry
+  - manualny
+  - nr-seryjny
 ---
 
 # Minolta MC Rokkor-PF 55mm f/1.7

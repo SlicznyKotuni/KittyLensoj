@@ -1,8 +1,21 @@
 ---
-alias: "Uniwersalny Tele"
-tags: [obiektyw, makinon, minolta-md, pełna-klatka, tele-zoom, vintage, manualny]
-rodzina: "Makinon"
-kluczowe-słowa: [zoom, tele, uniwersalny, manualny, minolta-md]
+alias: Uniwersalny Tele
+tags:
+  - obiektyw
+  - makinon
+  - minolta-md
+  - pełna-klatka
+  - tele-zoom
+  - vintage
+  - manualny
+  - mi
+rodzina: Makinon
+kluczowe-słowa:
+  - zoom
+  - tele
+  - uniwersalny
+  - manualny
+  - minolta-md
 ---
 
 # Makinon 75-250mm f/4.5 (Minolta MD)
@@ -75,3 +88,12 @@ Makinon 75-250mm f/4.5 to **znakomity przykład "tego, co tracimy" w pogoni za w
 W Twoim arsenale pełnym charakterystycznych stałek, ten Makinon jest **"dowodowym teleobiektywem"** – może nie zachwycić plastyką bokeh jak Jupiter, ale gdy potrzebujesz zasięgu i przewidywalności, to on przejmuje dowodzenie.
 
 Czy to już wszystkie poprawki do Twojej wspaniałej kolekcji? 😊
+
+## Zdjęcia
+![[Makinon 75-250mm f4.5 (Minolta MD) [1].webp]]
+![[Makinon 75-250mm f4.5 (Minolta MD) [2].webp]]
+![[Makinon 75-250mm f4.5 (Minolta MD) [3].webp]]
+![[Makinon 75-250mm f4.5 (Minolta MD) [4].webp]]
+![[Makinon 75-250mm f4.5 (Minolta MD) [5].webp]]
+![[Makinon 75-250mm f4.5 (Minolta MD) [6].webp]]
+![[Makinon 75-250mm f4.5 (Minolta MD) [7].webp]]
