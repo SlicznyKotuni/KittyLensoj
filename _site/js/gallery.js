@@ -1,287 +1,395 @@
 // Filtrowanie zdjęć w galerii
-document.addEventListener('DOMContentLoaded', function() {
-    const folderSelect = document.getElementById('folder-select');
-    const galleryGrid = document.getElementById('gallery-grid');
-    
-    if (folderSelect && galleryGrid) {
-        folderSelect.addEventListener('change', function() {
-            const selectedLens = this.value;
-            const galleryItems = galleryGrid.querySelectorAll('.gallery-item');
-            
-            galleryItems.forEach(item => {
-                if (selectedLens === 'all' || item.dataset.lens === selectedLens) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    }
-    
-    // Lightbox dla zdjęć z nawigacją
-    let currentImageIndex = 0;
-    let visibleImages = [];
-    let currentLightbox = null;
-    let isFullscreenActive = false;
+document.addEventListener("DOMContentLoaded", function () {
+  const folderSelect = document.getElementById("folder-select");
+  const galleryGrid = document.getElementById("gallery-grid");
 
-    const fullscreenEvents = [
-        'fullscreenchange',
-        'webkitfullscreenchange',
-        'mozfullscreenchange',
-        'MSFullscreenChange'
-    ];
+  if (folderSelect && galleryGrid) {
+    folderSelect.addEventListener("change", function () {
+      const selectedLens = this.value;
+      const galleryItems = galleryGrid.querySelectorAll(".gallery-item");
 
-    function getFullscreenElement() {
-        return document.fullscreenElement ||
-            document.webkitFullscreenElement ||
-            document.mozFullScreenElement ||
-            document.msFullscreenElement ||
-            null;
-    }
-
-    function requestFullscreen(element) {
-        if (!element) return Promise.resolve();
-        if (element.requestFullscreen) {
-            return element.requestFullscreen();
-        }
-        if (element.webkitRequestFullscreen) {
-            return element.webkitRequestFullscreen();
-        }
-        if (element.mozRequestFullScreen) {
-            return element.mozRequestFullScreen();
-        }
-        if (element.msRequestFullscreen) {
-            return element.msRequestFullscreen();
-        }
-        return Promise.resolve();
-    }
-
-    function exitFullscreen() {
-        if (document.exitFullscreen) {
-            return document.exitFullscreen();
-        }
-        if (document.webkitExitFullscreen) {
-            return document.webkitExitFullscreen();
-        }
-        if (document.mozCancelFullScreen) {
-            return document.mozCancelFullScreen();
-        }
-        if (document.msExitFullscreen) {
-            return document.msExitFullscreen();
-        }
-        return Promise.resolve();
-    }
-
-    function toggleFullscreen(element) {
-        if (!element) return;
-        if (getFullscreenElement()) {
-            exitFullscreen();
+      galleryItems.forEach((item) => {
+        if (selectedLens === "all" || item.dataset.lens === selectedLens) {
+          item.style.display = "block";
         } else {
-            requestFullscreen(element);
+          item.style.display = "none";
         }
+      });
+    });
+  }
+
+  // Lightbox dla zdjęć z nawigacją
+  let currentImageIndex = 0;
+  let visibleImages = [];
+  let currentLightbox = null;
+  let isFullscreenActive = false;
+
+  const fullscreenEvents = [
+    "fullscreenchange",
+    "webkitfullscreenchange",
+    "mozfullscreenchange",
+    "MSFullscreenChange",
+  ];
+
+  function getFullscreenElement() {
+    return (
+      document.fullscreenElement ||
+      document.webkitFullscreenElement ||
+      document.mozFullScreenElement ||
+      document.msFullscreenElement ||
+      null
+    );
+  }
+
+  function requestFullscreen(element) {
+    if (!element) return Promise.resolve();
+    if (element.requestFullscreen) {
+      return element.requestFullscreen();
+    }
+    if (element.webkitRequestFullscreen) {
+      return element.webkitRequestFullscreen();
+    }
+    if (element.mozRequestFullScreen) {
+      return element.mozRequestFullScreen();
+    }
+    if (element.msRequestFullscreen) {
+      return element.msRequestFullscreen();
+    }
+    return Promise.resolve();
+  }
+
+  function exitFullscreen() {
+    if (document.exitFullscreen) {
+      return document.exitFullscreen();
+    }
+    if (document.webkitExitFullscreen) {
+      return document.webkitExitFullscreen();
+    }
+    if (document.mozCancelFullScreen) {
+      return document.mozCancelFullScreen();
+    }
+    if (document.msExitFullscreen) {
+      return document.msExitFullscreen();
+    }
+    return Promise.resolve();
+  }
+
+  function toggleFullscreen(element) {
+    if (!element) return;
+    if (getFullscreenElement()) {
+      exitFullscreen();
+    } else {
+      requestFullscreen(element);
+    }
+  }
+
+  const handleFullscreenChange = () => {
+    isFullscreenActive = !!getFullscreenElement();
+  };
+
+  fullscreenEvents.forEach((eventName) => {
+    document.addEventListener(eventName, handleFullscreenChange);
+  });
+
+  function getVisibleImages() {
+    const images = galleryGrid.querySelectorAll(".gallery-item img");
+    const visible = Array.from(images).filter((img) => {
+      const item = img.closest(".gallery-item");
+      return item && item.style.display !== "none";
+    });
+    return visible.map((img) => ({
+      src: img.src,
+      alt: img.alt,
+      element: img,
+    }));
+  }
+
+  function openLightbox(imageIndex) {
+    visibleImages = getVisibleImages();
+    if (visibleImages.length === 0) return;
+
+    currentImageIndex = imageIndex;
+    const image = visibleImages[currentImageIndex];
+
+    let lightbox = currentLightbox;
+    const isNewLightbox = !lightbox;
+
+    if (!lightbox) {
+      lightbox = document.createElement("div");
+      lightbox.className = "lightbox";
+      currentLightbox = lightbox;
     }
 
-    const handleFullscreenChange = () => {
-        isFullscreenActive = !!getFullscreenElement();
+    const prevButton =
+      currentImageIndex > 0
+        ? '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>'
+        : '<button class="lightbox-nav lightbox-prev disabled" aria-label="Previous image" disabled>‹</button>';
+
+    const nextButton =
+      currentImageIndex < visibleImages.length - 1
+        ? '<button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>'
+        : '<button class="lightbox-nav lightbox-next disabled" aria-label="Next image" disabled>›</button>';
+
+    lightbox.innerHTML = `
+             <div class="lightbox-content">
+                 <span class="close">&times;</span>
+                 ${prevButton}
+                 <div class="lightbox-image-wrapper">
+                     <img src="${image.src}" alt="${image.alt}" style="opacity: 0;">
+                     <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
+                 </div>
+                 ${nextButton}
+                 <div class="image-caption">${image.alt}</div>
+             </div>
+         `;
+
+    // Load image and scale it properly
+    const lightboxImg = lightbox.querySelector("img");
+    if (lightboxImg) {
+      lightboxImg.onload = function () {
+        // Remove loading opacity once image is loaded
+        this.style.opacity = "1";
+
+        // Auto-scale based on image aspect ratio and screen size
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const imageRatio = this.naturalWidth / this.naturalHeight;
+        const screenRatio = windowWidth / windowHeight;
+
+        if (imageRatio > screenRatio) {
+          // Image is wider than screen - scale by width
+          this.style.maxWidth = "95vw";
+          this.style.maxHeight = "auto";
+        } else {
+          // Image is taller than screen - scale by height
+          this.style.maxHeight = "90vh";
+          this.style.maxWidth = "auto";
+        }
+
+        // Force reflow to apply styles
+        this.offsetHeight;
+      };
+
+      // Handle error loading
+      lightboxImg.onerror = function () {
+        this.style.opacity = "1";
+        this.style.maxWidth = "95vw";
+        this.style.maxHeight = "90vh";
+      };
+    }
+
+    if (isNewLightbox) {
+      document.body.appendChild(lightbox);
+      document.addEventListener("keydown", handleLightboxKeydown);
+      document.body.style.overflow = "hidden";
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
+
+    // Close button
+    const closeButton = lightbox.querySelector(".close");
+    if (closeButton) {
+      closeButton.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeLightbox();
+      });
+    }
+
+    // Prevent image clicks from closing and allow fullscreen toggle
+    const lightboxImg2 = lightbox.querySelector("img");
+    if (lightboxImg2) {
+      lightboxImg2.addEventListener("click", function (e) {
+        e.stopPropagation();
+        toggleFullscreen(currentLightbox);
+      });
+
+      // Double-click for fullscreen on desktop
+      lightboxImg2.addEventListener("dblclick", function (e) {
+        e.stopPropagation();
+        toggleFullscreen(currentLightbox);
+      });
+    }
+
+    const imageWrapper = lightbox.querySelector(".lightbox-image-wrapper");
+    if (imageWrapper) {
+      imageWrapper.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+    }
+
+    // Previous button
+    const prevBtn = lightbox.querySelector(".lightbox-prev");
+    if (prevBtn && !prevBtn.disabled) {
+      prevBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (currentImageIndex > 0) {
+          openLightbox(currentImageIndex - 1);
+        }
+      });
+    }
+
+    // Next button
+    const nextBtn = lightbox.querySelector(".lightbox-next");
+    if (nextBtn && !nextBtn.disabled) {
+      nextBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (currentImageIndex < visibleImages.length - 1) {
+          openLightbox(currentImageIndex + 1);
+        }
+      });
+    }
+
+    // Restore fullscreen if active after rebuilding content
+    if (
+      isFullscreenActive &&
+      currentLightbox &&
+      getFullscreenElement() !== currentLightbox
+    ) {
+      requestFullscreen(currentLightbox);
+    }
+  }
+
+  function closeLightbox() {
+    const lightbox = currentLightbox;
+    if (!lightbox) return;
+
+    const cleanup = () => {
+      if (lightbox.parentNode) {
+        lightbox.parentNode.removeChild(lightbox);
+      }
+      document.removeEventListener("keydown", handleLightboxKeydown);
+      document.body.style.overflow = "";
+      currentLightbox = null;
     };
 
-    fullscreenEvents.forEach(eventName => {
-        document.addEventListener(eventName, handleFullscreenChange);
-    });
-    
-    function getVisibleImages() {
-        const images = galleryGrid.querySelectorAll('.gallery-item img');
-        const visible = Array.from(images).filter(img => {
-            const item = img.closest('.gallery-item');
-            return item && item.style.display !== 'none';
-        });
-        return visible.map(img => ({
-            src: img.src,
-            alt: img.alt,
-            element: img
-        }));
+    if (isFullscreenActive) {
+      const exitPromise = exitFullscreen();
+      if (exitPromise && typeof exitPromise.then === "function") {
+        exitPromise
+          .catch(() => {})
+          .finally(() => {
+            handleFullscreenChange();
+            cleanup();
+          });
+        return;
+      }
     }
-    
-    function openLightbox(imageIndex) {
-        visibleImages = getVisibleImages();
-        if (visibleImages.length === 0) return;
-        
-        currentImageIndex = imageIndex;
-        const image = visibleImages[currentImageIndex];
 
-        let lightbox = currentLightbox;
-        const isNewLightbox = !lightbox;
+    cleanup();
+  }
 
-        if (!lightbox) {
-            lightbox = document.createElement('div');
-            lightbox.className = 'lightbox';
-            currentLightbox = lightbox;
-        }
+  function handleLightboxKeydown(e) {
+    if (!currentLightbox) return;
 
-        const prevButton = currentImageIndex > 0 
-            ? '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>'
-            : '<button class="lightbox-nav lightbox-prev disabled" aria-label="Previous image" disabled>‹</button>';
-        
-        const nextButton = currentImageIndex < visibleImages.length - 1
-            ? '<button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>'
-            : '<button class="lightbox-nav lightbox-next disabled" aria-label="Next image" disabled>›</button>';
-        
-        lightbox.innerHTML = `
-            <div class="lightbox-content">
-                <span class="close">&times;</span>
-                ${prevButton}
-                <div class="lightbox-image-wrapper">
-                    <img src="${image.src}" alt="${image.alt}">
-                    <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
-                </div>
-                ${nextButton}
-                <div class="image-caption">${image.alt}</div>
-            </div>
-        `;
-
-        if (isNewLightbox) {
-            document.body.appendChild(lightbox);
-            document.addEventListener('keydown', handleLightboxKeydown);
-            document.body.style.overflow = 'hidden';
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    closeLightbox();
-                }
-            });
-        }
-
-        // Close button
-        const closeButton = lightbox.querySelector('.close');
-        if (closeButton) {
-            closeButton.addEventListener('click', function(e) {
-                e.stopPropagation();
-                closeLightbox();
-            });
-        }
-
-        // Prevent image clicks from closing and allow fullscreen toggle
-        const img = lightbox.querySelector('img');
-        if (img) {
-            img.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleFullscreen(currentLightbox);
-            });
-        }
-
-        const imageWrapper = lightbox.querySelector('.lightbox-image-wrapper');
-        if (imageWrapper) {
-            imageWrapper.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-        }
-
-        // Previous button
-        const prevBtn = lightbox.querySelector('.lightbox-prev');
-        if (prevBtn && !prevBtn.disabled) {
-            prevBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (currentImageIndex > 0) {
-                    openLightbox(currentImageIndex - 1);
-                }
-            });
-        }
-        
-        // Next button
-        const nextBtn = lightbox.querySelector('.lightbox-next');
-        if (nextBtn && !nextBtn.disabled) {
-            nextBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (currentImageIndex < visibleImages.length - 1) {
-                    openLightbox(currentImageIndex + 1);
-                }
-            });
-        }
-
-        // Restore fullscreen if active after rebuilding content
-        if (isFullscreenActive && currentLightbox && getFullscreenElement() !== currentLightbox) {
-            requestFullscreen(currentLightbox);
-        }
-    }
-    
-    function closeLightbox() {
-        const lightbox = currentLightbox;
-        if (!lightbox) return;
-
-        const cleanup = () => {
-            if (lightbox.parentNode) {
-                lightbox.parentNode.removeChild(lightbox);
-            }
-            document.removeEventListener('keydown', handleLightboxKeydown);
-            document.body.style.overflow = '';
-            currentLightbox = null;
-        };
-
-        if (isFullscreenActive) {
-            const exitPromise = exitFullscreen();
-            if (exitPromise && typeof exitPromise.then === 'function') {
-                exitPromise.catch(() => {}).finally(() => {
-                    handleFullscreenChange();
-                    cleanup();
-                });
-                return;
-            }
-        }
-
-        cleanup();
-    }
-    
-    function handleLightboxKeydown(e) {
-        if (!currentLightbox) return;
-        
-        switch(e.key) {
-            case 'ArrowLeft':
-                e.preventDefault();
-                if (currentImageIndex > 0) {
-                    openLightbox(currentImageIndex - 1);
-                }
-                break;
-            case 'ArrowRight':
-                e.preventDefault();
-                if (currentImageIndex < visibleImages.length - 1) {
-                    openLightbox(currentImageIndex + 1);
-                }
-                break;
-            case 'Escape':
-                e.preventDefault();
-                closeLightbox();
-                break;
-        }
-    }
-    
-    // Attach click handlers to gallery items (works better on mobile)
-    galleryGrid.addEventListener('click', function(e) {
-        const item = e.target.closest('.gallery-item');
-        if (!item || !galleryGrid.contains(item)) return;
-
-        const img = item.querySelector('img');
-        if (!img) return;
-
+    switch (e.key) {
+      case "ArrowLeft":
         e.preventDefault();
-        visibleImages = getVisibleImages();
-        const clickedImage = visibleImages.findIndex(imgData => imgData.element === img);
-        if (clickedImage !== -1) {
-            openLightbox(clickedImage);
+        if (currentImageIndex > 0) {
+          openLightbox(currentImageIndex - 1);
         }
+        break;
+      case "ArrowRight":
+        e.preventDefault();
+        if (currentImageIndex < visibleImages.length - 1) {
+          openLightbox(currentImageIndex + 1);
+        }
+        break;
+      case "Escape":
+        e.preventDefault();
+        closeLightbox();
+        break;
+      case " ": // Spacebar
+        e.preventDefault();
+        toggleFullscreen(currentLightbox);
+        break;
+    }
+  }
+
+  // Attach click handlers to gallery items (works better on mobile)
+  galleryGrid.addEventListener("click", function (e) {
+    const item = e.target.closest(".gallery-item");
+    if (!item || !galleryGrid.contains(item)) return;
+
+    const img = item.querySelector("img");
+    if (!img) return;
+
+    e.preventDefault();
+    visibleImages = getVisibleImages();
+    const clickedImage = visibleImages.findIndex(
+      (imgData) => imgData.element === img,
+    );
+    if (clickedImage !== -1) {
+      openLightbox(clickedImage);
+    }
+  });
+
+  // Add touch gesture support for mobile
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  galleryGrid.addEventListener(
+    "touchstart",
+    function (e) {
+      if (e.target.closest(".gallery-item")) {
+        const touch = e.changedTouches[0];
+        touchStartX = touch.screenX;
+        touchStartY = touch.screenY;
+      }
+    },
+    { passive: true },
+  );
+
+  galleryGrid.addEventListener(
+    "touchend",
+    function (e) {
+      if (e.target.closest(".gallery-item")) {
+        const touch = e.changedTouches[0];
+        touchEndX = touch.screenX;
+        touchEndY = touch.screenY;
+
+        const diffX = touchStartX - touchEndX;
+        const diffY = touchStartY - touchEndY;
+
+        // Only trigger on horizontal swipes (to avoid conflicts with scrolling)
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+          e.preventDefault();
+          const item = e.target.closest(".gallery-item");
+          const img = item.querySelector("img");
+          if (img) {
+            visibleImages = getVisibleImages();
+            const clickedImage = visibleImages.findIndex(
+              (imgData) => imgData.element === img,
+            );
+            if (clickedImage !== -1) {
+              openLightbox(clickedImage);
+            }
+          }
+        }
+      }
+    },
+    { passive: true },
+  );
+
+  // Also handle images on lens detail pages
+  const lensImages = document.querySelectorAll(".image-item img");
+  lensImages.forEach((img, index) => {
+    img.addEventListener("click", function () {
+      // For lens detail pages, just show this image
+      visibleImages = [
+        {
+          src: this.src,
+          alt: this.alt,
+          element: this,
+        },
+      ];
+      openLightbox(0);
     });
-    
-    // Also handle images on lens detail pages
-    const lensImages = document.querySelectorAll('.image-item img');
-    lensImages.forEach((img, index) => {
-        img.addEventListener('click', function() {
-            // For lens detail pages, just show this image
-            visibleImages = [{
-                src: this.src,
-                alt: this.alt,
-                element: this
-            }];
-            openLightbox(0);
-        });
-    });
+  });
 });
 
 // Dodanie styli dla lightboxa
@@ -318,11 +426,17 @@ const lightboxStyles = `
 }
 
 .lightbox-content img {
-    max-width: 100%;
-    max-height: 85vh;
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 0 40px rgba(0, 255, 170, 0.5);
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    object-fit: contain;
+    cursor: zoom-in;
+    /* Better scaling for different aspect ratios */
+    aspect-ratio: auto;
 }
 
 .lightbox .close {
@@ -412,30 +526,37 @@ const lightboxStyles = `
         gap: 10px;
         align-items: center;
     }
-    
+
     .lightbox-nav {
         position: absolute;
         width: 45px;
         height: 45px;
         font-size: 35px;
     }
-    
+
     .lightbox-prev {
         left: 10px;
     }
-    
+
     .lightbox-next {
         right: 10px;
     }
-    
+
     .lightbox-image-wrapper {
         width: 100%;
     }
-    
+
     .lightbox-content img {
-        max-height: 75vh;
+        max-width: 95vw;
+        max-height: 80vh;
+        object-fit: contain;
+        /* Better mobile scaling */
+        max-width: calc(100vw - 40px);
+        max-height: calc(100vh - 120px);
+        /* Smooth scaling animation */
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .lightbox .close {
         top: 10px;
         right: 10px;
@@ -443,7 +564,7 @@ const lightboxStyles = `
         height: 40px;
         font-size: 30px;
     }
-    
+
     .image-counter {
         top: -30px;
         font-size: 0.8rem;
@@ -452,7 +573,59 @@ const lightboxStyles = `
 }
 `;
 
+// Add responsive improvements for better photo scaling
+const responsiveStyles = `
+/* Better responsive scaling for all devices */
+@media (orientation: landscape) {
+    .lightbox-content img {
+        max-height: 95vh;
+        max-width: 90vw;
+    }
+}
+
+@media (orientation: portrait) {
+    .lightbox-content img {
+        max-height: 85vh;
+        max-width: 95vw;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-aspect-ratio: 16/9) and (min-width: 1920px) {
+    .lightbox-content img {
+        max-height: 85vh;
+        max-width: 80vw;
+    }
+}
+
+/* High resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .lightbox-content img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .lightbox-nav {
+        width: 60px;
+        height: 60px;
+        font-size: 45px;
+    }
+
+    .lightbox .close {
+        width: 50px;
+        height: 50px;
+        font-size: 35px;
+    }
+
+    .lightbox-content img {
+        cursor: default;
+    }
+}
+`;
+
 // Wstrzyknięcie styli lightboxa
-const styleSheet = document.createElement('style');
-styleSheet.textContent = lightboxStyles;
+const styleSheet = document.createElement("style");
+styleSheet.textContent = lightboxStyles + responsiveStyles;
 document.head.appendChild(styleSheet);
