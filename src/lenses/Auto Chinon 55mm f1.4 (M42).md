@@ -22,7 +22,7 @@ kluczowe-słowa: [standard, jasny, m42, hidden-gem, portret, unikalny]
 - **Maksymalna przysłona:** f/1.4
 - **Minimalna przysłona:** f/16
 - **Konstrukcja optyczna:** 7 elementów w 6 grupach (prawdopodobnie)
-- **Liczba listków przysłony:** 8 (zaokrąglone)
+- **Liczba listków przysłony:** 6 (diament)
 - **Minimalna odległość ostrzenia:** ~0.5 m
 - **Filtry:** Ø55 mm
 - **Stabilizacja (IS):** Nie
@@ -58,13 +58,13 @@ kluczowe-słowa: [standard, jasny, m42, hidden-gem, portret, unikalny]
 - **Detale i zbliżenia**.
 
 ## **📊 Porównanie z innymi 50/55mm f/1.4 w kolekcji:**
-| Cecha | **Auto Chinon 55mm f/1.4** | **Ricoh Rikenon 50mm f/1.4** | **Canon FD 50mm f/1.4 S.S.C.** |
-| :--- | :--- | :--- | :--- |
-| **Mocowanie** | **M42** | **Pentax K** | **Canon FD** |
-| **Era/Kraj** | **Japonia, lata 70.** | Japonia, lata 70. | Japonia, lata 70. |
-| **Listki Przysłony** | **8** | 6 | **8** |
-| **Charakter** | **Unikalny, "ciemny koń"** | Neutralny, solidny, poprawny | **Szlachetny, "3D", legendarny** |
-| **Bokeh (potencjał)** | **Bardzo gładki (dzięki 8 listkom)** | Gładki, przyjemny | **Gładki, kremowy** |
-| **Ostrość (od)** | **f/2.8 (szac.)** | f/2.8 | **f/2.8** |
-| **Wyzwanie** | **Przysłona Preset, M42** | Brak | **Breech-Lock, FD** |
-| **Status** | **Kolekcjonerski, Niszowy** | **Hidden Gem, Solidny** | **Kultowy, Kolekcjonerski** |
+| Cecha                 | **Auto Chinon 55mm f/1.4**           | **Ricoh Rikenon 50mm f/1.4** | **Canon FD 50mm f/1.4 S.S.C.**   |
+| :-------------------- | :----------------------------------- | :--------------------------- | :------------------------------- |
+| **Mocowanie**         | **M42**                              | **Pentax K**                 | **Canon FD**                     |
+| **Era/Kraj**          | **Japonia, lata 70.**                | Japonia, lata 70.            | Japonia, lata 70.                |
+| **Listki Przysłony**  | **6**                                | 6                            | **8**                            |
+| **Charakter**         | **Unikalny, "ciemny koń"**           | Neutralny, solidny, poprawny | **Szlachetny, "3D", legendarny** |
+| **Bokeh (potencjał)** | **Bardzo gładki (dzięki 8 listkom)** | Gładki, przyjemny            | **Gładki, kremowy**              |
+| **Ostrość (od)**      | **f/2.8 (szac.)**                    | f/2.8                        | **f/2.8**                        |
+| **Wyzwanie**          | **Przysłona Preset, M42**            | Brak                         | **Breech-Lock, FD**              |
+| **Status**            | **Kolekcjonerski, Niszowy**          | **Hidden Gem, Solidny**      | **Kultowy, Kolekcjonerski**      |
