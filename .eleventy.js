@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const Image = require("@11ty/eleventy-img");
 
 module.exports = function(eleventyConfig) {
   // 1. Dodaj katalog lenses jako dodatkowy katalog wejściowy
@@ -18,43 +19,75 @@ module.exports = function(eleventyConfig) {
     return lenses;
   });
 
-  // 4. Kolekcja obrazów (to działało, więc zostawiamy)
-  eleventyConfig.addCollection("allImages", function(collectionApi) {
+  // 4. Kolekcja obrazów — zbieramy zdjęcia i generujemy responsywne miniatury (thumbnails)
+  eleventyConfig.addCollection("allImages", async function(collectionApi) {
     const images = [];
     const imagesDir = './images';
-    
+
     if (fs.existsSync(imagesDir)) {
       const lensDirs = fs.readdirSync(imagesDir, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name);
-      
-      lensDirs.forEach(lensDir => {
+
+      // Iterate serially to avoid overwhelming the system with parallel image processing
+      for (const lensDir of lensDirs) {
         const lensPath = path.join(imagesDir, lensDir);
-        if (fs.existsSync(lensPath)) {
-          const imageFiles = fs.readdirSync(lensPath)
-            .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file))
-            .map(file => {
-              const fullPath = path.join(lensPath, file);
-              let mtime = 0;
-              try {
-                const stats = fs.statSync(fullPath);
-                mtime = stats.mtimeMs || stats.mtime?.getTime?.() || 0;
-              } catch (e) {
-                mtime = 0;
-              }
-              return {
-                lens: lensDir,
-                filename: file,
-                path: `/images/${lensDir}/${file}`,
-                mtime
-              };
+        if (!fs.existsSync(lensPath)) continue;
+
+        const imageFiles = fs.readdirSync(lensPath)
+          .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file));
+
+        for (const file of imageFiles) {
+          const fullPath = path.join(lensPath, file);
+          let mtime = 0;
+          try {
+            const stats = fs.statSync(fullPath);
+            mtime = stats.mtimeMs || stats.mtime?.getTime?.() || 0;
+          } catch (e) {
+            mtime = 0;
+          }
+
+          const urlPath = `/images/${lensDir}/${file}`;
+
+          // Generate small responsive thumbnails (webp) and return metadata
+          let thumb = null;
+          try {
+            const metadata = await Image(fullPath, {
+              widths: [320, 640],
+              formats: ["webp"],
+              outputDir: "./_site/images/thumbnails",
+              urlPath: "/images/thumbnails/",
+              // keep generated files deterministic and small
+              useAbsolutePath: false
             });
-          
-          images.push(...imageFiles);
+
+            const webp = metadata.webp || [];
+            if (webp.length > 0) {
+              thumb = {
+                src: webp[0].url,
+                srcset: webp.map(i => `${i.url} ${i.width}w`).join(", "),
+                sizes: "(max-width: 600px) 100vw, 25vw",
+                width: webp[0].width,
+                height: webp[0].height
+              };
+            }
+          } catch (err) {
+            // If generation fails, fall back to original image path
+            console.warn(`Thumbnail generation failed for ${fullPath}:`, err.message || err);
+            thumb = {
+              src: urlPath,
+              srcset: `${urlPath} 800w`,
+              sizes: "100vw",
+              width: null,
+              height: null
+            };
+          }
+
+          images.push({ lens: lensDir, filename: file, path: urlPath, mtime, thumb });
         }
-      });
+      }
     }
-    
+
     // Sort newest first based on file modification time
     images.sort((a, b) => b.mtime - a.mtime);
     console.log(`Znaleziono ${images.length} zdjęć (posortowano według daty)`);

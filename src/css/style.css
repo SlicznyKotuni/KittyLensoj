@@ -133,6 +133,58 @@ h1 {
     opacity: 0.8;
 }
 
+/* Back to top neon button */
+#back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-color);
+    background: rgba(0,0,0,0.35);
+    color: var(--neon-color);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1002;
+    box-shadow: 0 0 12px rgba(0,255,170,0.12);
+    transition: transform 0.16s ease, opacity 0.2s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Breathing neon glow */
+@keyframes neon-breathe {
+    0% {
+        box-shadow: 0 0 6px rgba(0,255,170,0.25), 0 0 14px rgba(0,255,170,0.08);
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow: 0 0 18px rgba(0,255,170,0.7), 0 0 36px rgba(0,255,170,0.18);
+        transform: translateY(-3px);
+    }
+    100% {
+        box-shadow: 0 0 6px rgba(0,255,170,0.25), 0 0 14px rgba(0,255,170,0.08);
+        transform: translateY(0);
+    }
+}
+
+#back-to-top.visible {
+    animation: neon-breathe 2.8s ease-in-out infinite;
+}
+
+#back-to-top:hover {
+    transform: scale(1.06);
+}
+
 /* Grid i kafelki - max 3 items per row, more spacing, bigger squares */
 .grid {
     display: grid;

@@ -76,10 +76,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleFullscreen(element) {
     if (!element) return;
+    // If already in fullscreen, exit and ensure any zoomed UI class is removed
     if (getFullscreenElement()) {
+      try {
+        // Remove zoomed class immediately so captions re-appear in normal view
+        element.classList.remove("zoomed");
+      } catch (e) {
+        // ignore if element isn't in DOM
+      }
       exitFullscreen();
     } else {
-      requestFullscreen(element);
+      // Add a class that the CSS listens to (.lightbox.zoomed) to hide captions
+      try {
+        element.classList.add("zoomed");
+      } catch (e) {
+        // ignore if element isn't in DOM
+      }
+
+      const req = requestFullscreen(element);
+      // If request fails, remove the zoomed class so UI stays consistent
+      if (req && typeof req.then === "function") {
+        req.catch(() => {
+          try {
+            element.classList.remove("zoomed");
+          } catch (e) {}
+        });
+      }
     }
   }
 
@@ -99,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     return visible.map((img) => ({
       src: img.src,
+      full: img.dataset.full || img.src,
       alt: img.alt,
       element: img,
     }));
@@ -109,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (visibleImages.length === 0) return;
 
     currentImageIndex = imageIndex;
-    const image = visibleImages[currentImageIndex];
+  const image = visibleImages[currentImageIndex];
 
     let lightbox = currentLightbox;
     const isNewLightbox = !lightbox;
@@ -134,10 +157,10 @@ document.addEventListener("DOMContentLoaded", function () {
              <div class="lightbox-content">
                  <span class="close">&times;</span>
                  ${prevButton}
-                 <div class="lightbox-image-wrapper">
-                     <img src="${image.src}" alt="${image.alt}" style="opacity: 0;">
-                     <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
-                 </div>
+           <div class="lightbox-image-wrapper">
+           <img src="${image.full}" alt="${image.alt}" loading="eager" decoding="async" style="opacity: 0;">
+           <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
+         </div>
                  ${nextButton}
                  <div class="image-caption">${image.alt}</div>
              </div>
@@ -390,6 +413,38 @@ document.addEventListener("DOMContentLoaded", function () {
       openLightbox(0);
     });
   });
+
+  // Back-to-top button behavior
+  const backToTop = document.getElementById("back-to-top");
+  if (backToTop) {
+    const toggleBackToTop = () => {
+      if (window.scrollY > 300) {
+        backToTop.classList.add("visible");
+      } else {
+        backToTop.classList.remove("visible");
+      }
+    };
+
+    // Smooth scroll on click
+    backToTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Throttle scroll handler slightly
+    let throttled = false;
+    window.addEventListener("scroll", () => {
+      if (throttled) return;
+      throttled = true;
+      requestAnimationFrame(() => {
+        toggleBackToTop();
+        throttled = false;
+      });
+    }, { passive: true });
+
+    // Initial check
+    toggleBackToTop();
+  }
 });
 
 // Dodanie styli dla lightboxa
