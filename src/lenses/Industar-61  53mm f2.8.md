@@ -5,7 +5,7 @@ rodzina: "Industar"
 kluczowe-słowa: [standard, tessar, fed, m39, ltm, lantan, rangefinder]
 ---
 
-# Industar-61 L/D 53mm f/2.8 (M39 LTM)
+# Industar-61 53mm f/2.8 (M39)
 
 ## **ℹ️ Podstawowe Informacje Historyczne**
 *   **Producent:** Fabryka FED, Charków, Ukraińska SRR (ZSRR).
@@ -29,7 +29,7 @@ kluczowe-słowa: [standard, tessar, fed, m39, ltm, lantan, rangefinder]
 *   **Wymiary i waga:** ~Ø54 x 45 mm, ~130 g.
 
 ## **🔍 Opis i Charakterystyka**
-*   **Ogólny opis:** Industar-61 L/D to jeden z ostatnich i najlepszych radzieckich obiektywów typu Tessar dla dalmierzówek (FED, Zorki). Szkło lantanowe poprawia ostrość i kontrast. Jest ceniony za kompaktowość, lekkość i charakterystyczny, "analogowy" rendering obrazu.
+*   **Ogólny opis:** Mały, niepozorny obiektyw o konstrukcji Tessar, znany z bardzo dobrej ostrości w środku zakresu przysłon. Jego unikalną cechą jest wysuwanie się przy ostrości, co pozwala na uzyskanie pół-makro/makro zbliżeń.
 *   **Konstrukcja optyczna:** Daje czysty, klasyczny obraz. Przy f/2.8 jest umiarkowanie ostry w centrum z miękkimi brzegami. Ostrość znacząco rośnie przy f/4-f/5.6. Bokeh bywa "skupione" lub "nerwowe" z powodu 6 prostych listków przysłony.
 *   **Mocne strony:**
     *   Wyjątkowo kompaktowy i lekki.
@@ -53,11 +53,11 @@ kluczowe-słowa: [standard, tessar, fed, m39, ltm, lantan, rangefinder]
 *   **Podróże i codzienne noszenie.**
 
 ## **📊 Porównanie z innymi standardowymi obiektywami w kolekcji**
-| Cecha | **Industar-61 L/D 53mm f/2.8** | **Canon FD 50mm f/1.4 S.S.C.** | **Ricoh Rikenon 50mm f/1.4** |
-| :--- | :--- | :--- | :--- |
-| **Mocowanie** | **M39 LTM (dalmierzowe)** | Canon FD | Pentax K |
-| **Charakter** | **Czysty, "analogowy", chłodny** | Szlachetny, "3D", kontrastowy | Neutralny, solidny, ostry |
-| **Bokeh** | **"Nerwowe", 6-listkowe** | Gładkie, kremowe, 8-listkowe | Gładkie, 6-listkowe |
-| **Mocne strony** | **Kompaktowość, waga, klimat** | Rendering, bokeh, ostrość | Ostrość, cena, solidność |
-| **Główne ograniczenie** | **Back-focus, MDF=1m** | Adapter FD-RF, brak AF | Brak "duszy" |
-| **Idealne na** | **R7 (portret ~85mm), ulica** | R6 II (uniwersalny), portret | R6 II/R7 (ostre kadry) |
+| Cecha                   | **Industar-61  53mm f/2.8**      | **Canon FD 50mm f/1.4 S.S.C.** | **Ricoh Rikenon 50mm f/1.4** |
+| :---------------------- | :------------------------------- | :----------------------------- | :--------------------------- |
+| **Mocowanie**           | **M39 LTM (dalmierzowe)**        | Canon FD                       | Pentax K                     |
+| **Charakter**           | **Czysty, "analogowy", chłodny** | Szlachetny, "3D", kontrastowy  | Neutralny, solidny, ostry    |
+| **Bokeh**               | **"Nerwowe", 6-listkowe**        | Gładkie, kremowe, 8-listkowe   | Gładkie, 6-listkowe          |
+| **Mocne strony**        | **Kompaktowość, waga, klimat**   | Rendering, bokeh, ostrość      | Ostrość, cena, solidność     |
+| **Główne ograniczenie** | **Back-focus, MDF=1m**           | Adapter FD-RF, brak AF         | Brak "duszy"                 |
+| **Idealne na**          | **R7 (portret ~85mm), ulica**    | R6 II (uniwersalny), portret   | R6 II/R7 (ostre kadry)       |

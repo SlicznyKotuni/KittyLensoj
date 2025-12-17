@@ -1,8 +1,22 @@
 ---
-alias: "Mały Makro"
-tags: [obiektyw, m39, pełna-klatka, stała-ogniskowa, manualny, vintage, makro]
-rodzina: "Industar"
-kluczowe-słowa: [ostry, makro, lekki]
+alias: Mały Makro
+tags:
+  - obiektyw
+  - m39
+  - pełna-klatka
+  - stała-ogniskowa
+  - manualny
+  - vintage
+  - makro
+rodzina: Industar
+kluczowe-słowa:
+  - ostry
+  - makro
+  - lekki
+  - lantan
+  - rangefinder
+  - standard
+  - tessar
 ---
 
 # Industar-61 L/D 55/2.8 (m39)
@@ -26,13 +40,14 @@ kluczowe-słowa: [ostry, makro, lekki]
 - **Silnik AF:** Manualny
 
 ## Opis i Charakterystyka
-- **Ogólny opis:** Mały, niepozorny obiektyw o konstrukcji Tessar, znany z bardzo dobrej ostrości w środku zakresu przysłon. Jego unikalną cechą jest wysuwanie się przy ostrości, co pozwala na uzyskanie pół-makro/makro zbliżeń.
-- **Konstrukcja optyczna:** Prosta i skuteczna konstrukcja Tessar, która daje ostry, kontrastowy obraz przy przymknięciu przysłony.
+- **Ogólny opis:** Industar-61 L/D to jeden z ostatnich i najlepszych radzieckich obiektywów typu Tessar dla dalmierzówek (FED, Zorki). Szkło lantanowe poprawia ostrość i kontrast. Jest ceniony za kompaktowość, lekkość i charakterystyczny, "analogowy" rendering obrazu.
+- **Konstrukcja optyczna:** Prosta i skuteczna konstrukcja Tessar, która daje ostry, kontrastowy obraz przy przymknięciu przysłony. Szkło z ulepszonym załamaniem światła dzięki zastosowaniu lantanu.
 - **Mocne strony:**
     - Bardzo ostry od f/4 do f/8
     - Niezwykle lekki i kompaktowy
     - Możliwość robienia zbliżeń (quasi-makro) dzięki wysuwaniu
     - Bardzo tani
+    - Szkło lantanowe
 - **Słabe strony:**
     - Manualne ostrzenie
     - Mocne winietowanie i miękkość przy f/2.8
