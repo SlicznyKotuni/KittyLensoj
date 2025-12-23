@@ -83,14 +83,30 @@ module.exports = function(eleventyConfig) {
             };
           }
 
-          images.push({ lens: lensDir, filename: file, path: urlPath, mtime, thumb });
+          // Extract numeric portion from filename (take the last group of digits if any)
+          let nameNumeric = null;
+          try {
+            const digitMatches = file.match(/\d+/g);
+            if (digitMatches && digitMatches.length > 0) {
+              nameNumeric = parseInt(digitMatches[digitMatches.length - 1], 10);
+              if (Number.isNaN(nameNumeric)) nameNumeric = null;
+            }
+          } catch (e) {
+            nameNumeric = null;
+          }
+
+          images.push({ lens: lensDir, filename: file, path: urlPath, mtime, nameNumeric, thumb });
         }
       }
     }
 
-    // Sort newest first based on file modification time
-    images.sort((a, b) => b.mtime - a.mtime);
-    console.log(`Znaleziono ${images.length} zdjęć (posortowano według daty)`);
+    // Sort so that files with higher numeric name come first; fallback to mtime when numeric part is missing
+    images.sort((a, b) => {
+      const aKey = (typeof a.nameNumeric === 'number' ? a.nameNumeric : (a.mtime || 0));
+      const bKey = (typeof b.nameNumeric === 'number' ? b.nameNumeric : (b.mtime || 0));
+      return bKey - aKey;
+    });
+    console.log(`Znaleziono ${images.length} zdjęć (posortowano według numeru w nazwie lub daty)`);
     return images;
   });
   
