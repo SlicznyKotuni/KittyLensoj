@@ -5,7 +5,7 @@ rodzina: "Angenieux"
 kluczowe-słowa: [tele, portret, kinowy, francuski, angeneiux, rzadki, kolekcjonerski, m42]
 ---
 
-# Angenieux Paris F.100m (Obiektyw Kinowy) - M42
+# P. Angenieux Paris F.100m (Obiektyw Kinowy) - M42
 
 ## **ℹ️ Podstawowe Informacje Historyczne**
 - **Producent:** **Angenieux**, Francja
