@@ -1,8 +1,27 @@
 ---
-alias: "Düsseldorfski Antyk"
-tags: [obiektyw, liesegang, corygon, projektor, vintage, manualny, diy, triplet, dusseldorf, pełna-klatka, rzadkość]
-rodzina: "Corygon"
-kluczowe-słowa: [projektor-slajdów, ed-liesegang, 75mm, f4.5, niemcy, vintage-look, diy-project]
+alias: Düsseldorfski Antyk
+tags:
+  - obiektyw
+  - liesegang
+  - corygon
+  - projektor
+  - vintage
+  - manualny
+  - diy
+  - triplet
+  - dusseldorf
+  - pełna-klatka
+  - rzadkość
+rodzina: Corygon
+kluczowe-słowa:
+  - projektor-slajdów
+  - ed-liesegang
+  - 75mm
+  - f4.5
+  - niemcy
+  - vintage-look
+  - diy-project
+  - diy
 ---
 
 # Ed. Liesegang Düsseldorf Corygon 4.5 / 7.5cm - DIY PROJECT
