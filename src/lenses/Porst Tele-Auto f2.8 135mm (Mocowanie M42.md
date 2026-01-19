@@ -27,7 +27,7 @@ kluczowe-słowa:
 # Porst Tele-Auto 2.8/135 (Mocowanie M42)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
-* **Producent:** Produkowany w Japonii (prawdopodobnie przez **Tomioka** lub **Mamiya**) dla Photo Porst – największej niemieckiej sieci handlowej tamtych lat.
+* **Producent:** Potwierdzone wykonanie przez Enna. Te same właściwości optyczne, dłuższa odległość minimalnego ostrzenia.
 * **Wersja:** Wczesna wersja ze srebrnym pierścieniem przy mocowaniu (tzw. **Silver Base**).
 * **Status:** **OBIEKTYW FOTOGRAFICZNY** – kompletny, z własnym helikoidem i automatyką przysłony (przełącznik A/M).
 * **Docelowe Mocowanie:** **M42x1**. Bardzo prosta adaptacja na Canon RF.
