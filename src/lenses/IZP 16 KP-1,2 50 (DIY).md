@@ -29,7 +29,7 @@ kluczowe-słowa:
   - diy
 ---
 
-# IZP 16 KP-1,2/50 (Zakład im. Dzierżyńskiego, Izium) - EXPERT PROJECT
+# IZP 16 KP-1,2/50 (Zakład im. Dzierżyńskiego, Izium) 
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **Iziumski Zakład Przyrządów Precyzyjnych (ИЗП)**, Izium, Ukraina (ZSRR).
