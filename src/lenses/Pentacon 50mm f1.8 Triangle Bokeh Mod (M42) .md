@@ -1,8 +1,24 @@
 ---
-alias: "Geometryczny Sen"
-tags: [obiektyw, pentacon, m42, pełna-klatka, standard, vintage, manualny, modyfikowany]
-rodzina: "Pentacon"
-kluczowe-słowa: [triangle-bokeh, geometryczny, kreatywny, mod, unikat]
+alias: Geometryczny Sen
+tags:
+  - obiektyw
+  - pentacon
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - modyfikowany
+  - 50mm
+  - trineagle
+  - f1_8
+rodzina: Pentacon
+kluczowe-słowa:
+  - triangle-bokeh
+  - geometryczny
+  - kreatywny
+  - mod
+  - unikat
 ---
 
 # Pentacon 50mm f/1.8 (M42) "Triangle Bokeh Mod"

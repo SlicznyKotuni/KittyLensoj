@@ -1,8 +1,22 @@
 ---
-alias: "Radziecki Portrecista"
-tags: [obiektyw, zenit, m42, pełna-klatka, tele, vintage, manualny]
-rodzina: "Jupiter"
-kluczowe-słowa: [tele, portret, manualny, sonnar]
+alias: Radziecki Portrecista
+tags:
+  - obiektyw
+  - zenit
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - 135mm
+  - f3_5
+  - portret
+rodzina: Jupiter
+kluczowe-słowa:
+  - tele
+  - portret
+  - manualny
+  - sonnar
 ---
 
 # Jupiter-37A 135mm f/3.5 (M42)

@@ -1,8 +1,31 @@
 ---
-alias: "Niemiecki Projektor 85"
-tags: [obiektyw, isco, projar, rzutnik, projekcyjny, pełna-klatka, tele, vintage, manualny, diy, project-lens, niemiecki]
-rodzina: "Isco"
-kluczowe-słowa: [tele, projektor, rzutnik, isco, projar, diy, projection-lens, preset]
+alias: Niemiecki Projektor 85
+tags:
+  - obiektyw
+  - isco
+  - projar
+  - rzutnik
+  - projekcyjny
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - diy
+  - project-lens
+  - niemiecki
+  - 85mm
+  - f2_8
+  - portret
+rodzina: Projar
+kluczowe-słowa:
+  - tele
+  - projektor
+  - rzutnik
+  - isco
+  - projar
+  - diy
+  - projection-lens
+  - preset
 ---
 
 # Isco Göttingen Projar 85mm f/2.8 (Obiektyw Projekcyjny) - PROJECT

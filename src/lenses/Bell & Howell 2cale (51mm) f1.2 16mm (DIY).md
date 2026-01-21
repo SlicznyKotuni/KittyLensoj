@@ -11,6 +11,9 @@ tags:
   - bokeh-monster
   - jasny
   - amerykański
+  - 2cale
+  - 51mm
+  - f1_2
 rodzina: Bell & Howell
 kluczowe-słowa:
   - standard

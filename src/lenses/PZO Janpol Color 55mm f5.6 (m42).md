@@ -14,6 +14,9 @@ tags:
   - tessar
   - polski
   - filtry-cmy
+  - f5_6
+  - 55mm
+  - standard
 rodzina: Janpol
 kluczowe-słowa:
   - powiększalnik

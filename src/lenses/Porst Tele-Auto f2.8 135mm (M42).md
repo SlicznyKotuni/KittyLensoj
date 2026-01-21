@@ -12,6 +12,10 @@ tags:
   - manualny
   - japoński
   - portretówka
+  - f2_8
+  - enna
+  - rebrand
+  - tele
 rodzina: Porst
 kluczowe-słowa:
   - 135mm

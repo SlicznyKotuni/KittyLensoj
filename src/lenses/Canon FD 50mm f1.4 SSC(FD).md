@@ -1,8 +1,25 @@
 ---
-alias: "Legenda z przeszłości"
-tags: [obiektyw, canon-fd, fd, pełna-klatka, standard, vintage, manualny, ssc, legenda]
-rodzina: "Canon FD"
-kluczowe-słowa: [standard, jasny, ssc, legenda, portret, fd-mount]
+alias: Legenda z przeszłości
+tags:
+  - obiektyw
+  - canon-fd
+  - fd
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - ssc
+  - legenda
+  - 50mm
+  - f1_4
+rodzina: Canon FD
+kluczowe-słowa:
+  - standard
+  - jasny
+  - ssc
+  - legenda
+  - portret
+  - fd-mount
 ---
 
 # Canon FD 50mm f/1.4 S.S.C.

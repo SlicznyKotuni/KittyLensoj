@@ -1,8 +1,27 @@
 ---
-alias: "Niemiecki Arystokrata"
-tags: [obiektyw, rollei, planar, qbm, pełna-klatka, standard, vintage, manualny, niemiecki, hft]
-rodzina: "Planar"
-kluczowe-słowa: [standard, jasny, planar, hft, qbm, ostry, wierne-kolory]
+alias: Niemiecki Arystokrata
+tags:
+  - obiektyw
+  - rollei
+  - planar
+  - qbm
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - niemiecki
+  - hft
+  - 50mm
+  - f1_8
+rodzina: Planar
+kluczowe-słowa:
+  - standard
+  - jasny
+  - planar
+  - hft
+  - qbm
+  - ostry
+  - wierne-kolory
 ---
 
 # Rollei Planar 50mm f/1.8 HFT C (QBM)

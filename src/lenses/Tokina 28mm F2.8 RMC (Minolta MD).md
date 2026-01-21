@@ -8,6 +8,10 @@ tags:
   - vintage
   - manualny
   - minolta-md
+  - szeroki-kąt
+  - szerokokątny
+  - f2_8
+  - 28mm
 rodzina: Tokina RMC
 kluczowe-słowa:
   - szeroki-kąt

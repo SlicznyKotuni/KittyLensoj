@@ -5,14 +5,16 @@ tags:
   - meopta
   - anaret
   - powiększalnik
-  - m23.5
   - m42
   - pełna-klatka
-  - aps-c
   - vintage
   - manualny
   - tessar
   - ostrość
+  - 80mm
+  - m23_5
+  - f4_5
+  - portret
 rodzina: Anaret
 kluczowe-słowa:
   - standard

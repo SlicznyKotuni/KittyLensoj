@@ -1,8 +1,30 @@
 ---
-alias: "Polski Projektor Portretowy"
-tags: [obiektyw, pzo, krytar, rzutnik, projekcyjny, pełna-klatka, tele, vintage, manualny, diy, project-lens, polski]
-rodzina: "PZO"
-kluczowe-słowa: [tele, projektor, portret, pzo, krytar, diy, 85mm]
+alias: Polski Projektor Portretowy
+tags:
+  - obiektyw
+  - pzo
+  - krytar
+  - rzutnik
+  - projekcyjny
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - diy
+  - project-lens
+  - polski
+  - f2_8
+  - 85mm
+  - portret
+rodzina: PZO
+kluczowe-słowa:
+  - tele
+  - projektor
+  - portret
+  - pzo
+  - krytar
+  - diy
+  - 85mm
 ---
 
 # PZO Krytar 85mm f/2.8 (Obiektyw Rzutnikowy) - PROJECT

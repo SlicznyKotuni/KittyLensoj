@@ -1,8 +1,22 @@
 ---
-alias: "Jasny Tele"
-tags: [obiektyw, osawa, minolta-md, pełna-klatka, tele, vintage, manualny]
-rodzina: "Osawa"
-kluczowe-słowa: [tele, portret, jasny, manualny]
+alias: Jasny Tele
+tags:
+  - obiektyw
+  - osawa
+  - minolta-md
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - 135mm
+  - f2_8
+  - japoński
+rodzina: Osawa
+kluczowe-słowa:
+  - tele
+  - portret
+  - jasny
+  - manualny
 ---
 
 # Osawa 135mm f/2.8 (Minolta MD)

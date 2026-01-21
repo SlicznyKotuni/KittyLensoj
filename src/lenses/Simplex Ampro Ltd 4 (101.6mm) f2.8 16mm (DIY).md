@@ -1,8 +1,30 @@
 ---
-alias: "Amerykański Projekcyjny Tele f/2.8"
-tags: [obiektyw, simplex, ampro, diy, 16mm, tele, vintage, manualny, jasny, amerykański]
-rodzina: "Simplex Ampro"
-kluczowe-słowa: [tele, portret, diy, amerykański, simplex, ampro, jasny, kolekcjonerski]
+alias: Amerykański Projekcyjny Tele f/2.8
+tags:
+  - obiektyw
+  - simplex
+  - ampro
+  - diy
+  - 16mm
+  - tele
+  - vintage
+  - manualny
+  - jasny
+  - amerykański
+  - portret
+  - 4cale
+  - 101mm
+  - f2_8
+rodzina: Simplex Ampro
+kluczowe-słowa:
+  - tele
+  - portret
+  - diy
+  - amerykański
+  - simplex
+  - ampro
+  - jasny
+  - kolekcjonerski
 ---
 
 # Simplex Ampro Ltd 4" (101.6mm) f/2.8 16mm Projection Lens

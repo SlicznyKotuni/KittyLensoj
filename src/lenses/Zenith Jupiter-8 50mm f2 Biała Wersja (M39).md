@@ -10,6 +10,8 @@ tags:
   - manualny
   - sonnar
   - zenit
+  - 50mm
+  - f2
 rodzina: Jupiter
 kluczowe-słowa:
   - standard

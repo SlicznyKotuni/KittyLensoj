@@ -12,6 +12,9 @@ tags:
   - dusseldorf
   - pełna-klatka
   - rzadkość
+  - 75mm
+  - 7_5cm
+  - f5_6
 rodzina: Corygon
 kluczowe-słowa:
   - projektor-slajdów

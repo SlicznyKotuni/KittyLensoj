@@ -8,6 +8,9 @@ tags:
   - manualny
   - vintage
   - makro
+  - 55mm
+  - f2_8
+  - standard
 rodzina: Industar
 kluczowe-słowa:
   - ostry

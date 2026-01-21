@@ -13,6 +13,9 @@ tags:
   - portretówka
   - bokeh
   - exa
+  - Meyer-Optik-Görlitz
+  - f3_5
+  - tele
 rodzina: Meyer-Optik Görlitz
 kluczowe-słowa:
   - 180mm

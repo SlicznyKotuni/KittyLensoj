@@ -1,8 +1,23 @@
 ---
-alias: "Kompaktowy Szeroki"
-tags: [obiektyw, pallas, m42, pełna-klatka, szeroki-kąt, vintage, manualny, japoński]
-rodzina: "Pallas"
-kluczowe-słowa: [szeroki-kąt, kompaktowy, auto-m42, reportaż, krajobraz]
+alias: Kompaktowy Szeroki
+tags:
+  - obiektyw
+  - pallas
+  - m42
+  - pełna-klatka
+  - szeroki-kąt
+  - vintage
+  - manualny
+  - japoński
+  - f2_8
+  - 28mm
+rodzina: Pallas
+kluczowe-słowa:
+  - szeroki-kąt
+  - kompaktowy
+  - auto-m42
+  - reportaż
+  - krajobraz
 ---
 
 # Pallas Auto 28mm f/2.8 (M42)

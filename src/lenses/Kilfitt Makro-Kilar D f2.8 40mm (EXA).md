@@ -14,16 +14,20 @@ tags:
   - rzadkość
   - legenda
   - exa
+  - 40mm
+  - f2_8
+  - szeroki-kąt
+  - makro
 rodzina: Kilfitt
 kluczowe-słowa:
   - 40mm
   - f2.8
-  - makro-1:1
   - kamerabau-anstalt-vaduz
   - exakta
   - pierwszy-makro
   - czerwone-c
   - exa
+  - makro1:1
 ---
 
 # Kilfitt Makro-Kilar D 2.8/40 (Mocowanie Exakta)

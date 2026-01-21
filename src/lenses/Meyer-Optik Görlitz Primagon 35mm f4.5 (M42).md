@@ -1,8 +1,27 @@
 ---
-alias: "Magiczne Słońce"
-tags: [obiektyw, meyer-optik, primagon, m42, pełna-klatka, szeroki-kąt, vintage, manualny, nr-ddr]
-rodzina: "Primagon"
-kluczowe-słowa: [szeroki-kąt, primagon, miękkie-rendering, glow, vintage, m42, gwiazdki-bokeh]
+alias: Magiczne Słońce
+tags:
+  - obiektyw
+  - meyer-optik
+  - primagon
+  - m42
+  - pełna-klatka
+  - szeroki-kąt
+  - vintage
+  - manualny
+  - nr-ddr
+  - 35mm
+  - f4_5
+  - Meyer-Optik-Görlitz
+rodzina: Primagon
+kluczowe-słowa:
+  - szeroki-kąt
+  - primagon
+  - miękkie-rendering
+  - glow
+  - vintage
+  - m42
+  - gwiazdki-bokeh
 ---
 
 # Meyer-Optik Görlitz Primagon 35mm f/4.5 (M42)

@@ -1,8 +1,26 @@
 ---
-alias: "Rosyjski Petzval"
-tags: [obiektyw, helios, m42, pełna-klatka, portret, vintage, manualny, modyfikowany, petzval]
-rodzina: "Helios"
-kluczowe-słowa: [petzval, swirly-bokeh, portret, artystyczny, modyfikowany, dreamy]
+alias: Rosyjski Petzval
+tags:
+  - obiektyw
+  - helios
+  - m42
+  - pełna-klatka
+  - portret
+  - vintage
+  - manualny
+  - modyfikowany
+  - petzval
+  - 55mm
+  - f2
+  - standard
+rodzina: Helios
+kluczowe-słowa:
+  - petzval
+  - swirly-bokeh
+  - portret
+  - artystyczny
+  - modyfikowany
+  - dreamy
 ---
 
 # Helios 44-M-4 z modem Petzval (M42)

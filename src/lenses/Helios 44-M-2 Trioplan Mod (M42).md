@@ -1,8 +1,26 @@
 ---
-alias: "Bańkowy Bokeh"
-tags: [obiektyw, helios, m42, pełna-klatka, portret, vintage, manualny, modyfikowany, trioplan]
-rodzina: "Helios"
-kluczowe-słowa: [trioplan, soap-bubble-bokeh, portret, artystyczny, modyfikowany, dreamy]
+alias: Bańkowy Bokeh
+tags:
+  - obiektyw
+  - helios
+  - m42
+  - pełna-klatka
+  - portret
+  - vintage
+  - manualny
+  - modyfikowany
+  - trioplan
+  - 58mm
+  - f2
+  - standard
+rodzina: Helios
+kluczowe-słowa:
+  - trioplan
+  - soap-bubble-bokeh
+  - portret
+  - artystyczny
+  - modyfikowany
+  - dreamy
 ---
 
 # Helios 44-M-2 z modem Trioplan (M42)

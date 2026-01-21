@@ -1,8 +1,26 @@
 ---
-alias: "Dziadek Duszy"
-tags: [obiektyw, jena-biotar, m42, pełna-klatka, standard, vintage, manualny, legenda, przed-ddr]
-rodzina: "Biotar"
-kluczowe-słowa: [prototyp-heliosa, malarski, bokeh, przed-zeiss, 1953]
+alias: Dziadek Duszy
+tags:
+  - obiektyw
+  - jena-biotar
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - legenda
+  - przed-ddr
+  - stała-ogniskowa
+  - 58mm
+  - f2
+  - carl-zeiss-jena
+rodzina: Biotar
+kluczowe-słowa:
+  - prototyp-heliosa
+  - malarski
+  - bokeh
+  - przed-zeiss
+  - 1953
 ---
 
 # Jena Biotar 58mm f/2.0 (wczesny)

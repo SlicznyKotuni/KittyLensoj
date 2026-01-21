@@ -1,8 +1,26 @@
 ---
-alias: "Orzeł wśród Obiektywów"
-tags: [obiektyw, carl-zeiss-jena, tessar, m42, pełna-klatka, standard, vintage, manualny, niemiecki, legenda]
-rodzina: "Tessar"
-kluczowe-słowa: [standard, tessar, zeiss, ostry, m42, legenda-optki]
+alias: Orzeł wśród Obiektywów
+tags:
+  - obiektyw
+  - carl-zeiss-jena
+  - tessar
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - niemiecki
+  - legenda
+  - 50mm
+  - f2_8
+rodzina: Tessar
+kluczowe-słowa:
+  - standard
+  - tessar
+  - zeiss
+  - ostry
+  - m42
+  - legenda-optki
 ---
 
 # Carl Zeiss Jena Tessar 50mm f/2.8 (M42)

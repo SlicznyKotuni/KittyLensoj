@@ -1,8 +1,26 @@
 ---
-alias: "Radziecki Pancake"
-tags: [obiektyw, industar, m42, pełna-klatka, standard, vintage, manualny, tessar, pancake]
-rodzina: "Industar"
-kluczowe-słowa: [standard, pancake, kompaktowy, tessar, ostry, m42, zenit]
+alias: Radziecki Pancake
+tags:
+  - obiektyw
+  - industar
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - tessar
+  - pancake
+  - 50mm
+  - f3_5
+rodzina: Industar
+kluczowe-słowa:
+  - standard
+  - pancake
+  - kompaktowy
+  - tessar
+  - ostry
+  - m42
+  - zenit
 ---
 
 # Industar-50-2 50mm f/3.5 (M42)

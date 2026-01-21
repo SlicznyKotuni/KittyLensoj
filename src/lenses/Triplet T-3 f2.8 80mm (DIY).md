@@ -1,8 +1,30 @@
 ---
-alias: "Bąbelkowy Triplet"
-tags: [obiektyw, radziecki, t-3, triplet, projektor, etiuda, pełna-klatka, aps-c, vintage, manualny, diy, bokeh-monster]
-rodzina: "Triplet"
-kluczowe-słowa: [projektor-slajdów, t-3, 80mm, f2.8, zsrr, bubble-bokeh, diy-project]
+alias: Bąbelkowy Triplet
+tags:
+  - obiektyw
+  - radziecki
+  - t-3
+  - triplet
+  - projektor
+  - etiuda
+  - pełna-klatka
+  - aps-c
+  - vintage
+  - manualny
+  - diy
+  - bokeh-monster
+  - f2_8
+  - 80mm
+  - portret
+rodzina: Triplet
+kluczowe-słowa:
+  - projektor-slajdów
+  - t-3
+  - 80mm
+  - f2.8
+  - zsrr
+  - bubble-bokeh
+  - diy-project
 ---
 
 # Triplet T-3 2.8/80 (Rzutnik Etiuda / Etude 2c) - DIY PROJECT

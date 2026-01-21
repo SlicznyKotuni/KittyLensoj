@@ -1,8 +1,27 @@
 ---
-alias: "Radziecki Klasyk"
-tags: [obiektyw, industar, zsrr, fso, m39, ltm, pełna-klatka, standard, vintage, manualny]
-rodzina: "Industar"
-kluczowe-słowa: [standard, tessar, fed, m39, ltm, lantan, rangefinder]
+alias: Radziecki Klasyk
+tags:
+  - obiektyw
+  - industar
+  - zsrr
+  - fso
+  - m39
+  - ltm
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - 53mm
+  - f2_8
+rodzina: Industar
+kluczowe-słowa:
+  - standard
+  - tessar
+  - fed
+  - m39
+  - ltm
+  - lantan
+  - rangefinder
 ---
 
 # Industar-61 53mm f/2.8 (M39)

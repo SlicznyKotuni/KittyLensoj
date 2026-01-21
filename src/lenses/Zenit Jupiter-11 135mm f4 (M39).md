@@ -1,8 +1,25 @@
 ---
-alias: "Szlachetny Sonnar"
-tags: [obiektyw, zenit, jupiter, m39, pełna-klatka, tele, vintage, manualny, sonnar]
-rodzina: "Jupiter"
-kluczowe-słowa: [tele, portret, sonnar, legenda, ostry, m39]
+alias: Szlachetny Sonnar
+tags:
+  - obiektyw
+  - zenit
+  - jupiter
+  - m39
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - sonnar
+  - f4
+  - 135mm
+rodzina: Jupiter
+kluczowe-słowa:
+  - tele
+  - portret
+  - sonnar
+  - legenda
+  - ostry
+  - m39
 ---
 
 # Zenit Jupiter-11 135mm f/4 (M39)

@@ -1,8 +1,26 @@
 ---
-alias: "Długi Niemiec z NRD"
-tags: [obiektyw, pentacon, m42, pełna-klatka, tele, vintage, manualny, nr-ddr, gdr]
-rodzina: "Pentacon"
-kluczowe-słowa: [tele, kompaktowy, portret, manualny, tessar, made-in-gdr]
+alias: Długi Niemiec z NRD
+tags:
+  - obiektyw
+  - pentacon
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - nr-ddr
+  - gdr
+  - 200mm
+  - f4
+  - super-tele
+rodzina: Pentacon
+kluczowe-słowa:
+  - tele
+  - kompaktowy
+  - portret
+  - manualny
+  - tessar
+  - made-in-gdr
 ---
 
 # Pentacon 200mm f/4 (M42) "Made in G.D.R."

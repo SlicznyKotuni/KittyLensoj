@@ -9,6 +9,8 @@ tags:
   - standard
   - vintage
   - manualny
+  - f1_4
+  - 50mm
 rodzina: Rikenon
 kluczowe-słowa:
   - standard

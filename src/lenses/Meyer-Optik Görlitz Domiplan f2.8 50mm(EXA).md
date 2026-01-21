@@ -6,13 +6,16 @@ tags:
   - domiplan
   - exakta
   - pełna-klatka
-  - aps-c
   - vintage
   - manualny
   - triplet
   - ddr
   - bokeh-monster
   - exa
+  - f2_8
+  - 50mm
+  - standard
+  - Meyer-Optik-Görlitz
 rodzina: Meyer-Optik Görlitz
 kluczowe-słowa:
   - standard

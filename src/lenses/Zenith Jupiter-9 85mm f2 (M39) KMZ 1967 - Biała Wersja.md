@@ -13,6 +13,8 @@ tags:
   - kolekcjonerski
   - zenit
   - m39
+  - f2
+  - 85mm
 rodzina: Jupiter
 kluczowe-słowa:
   - portret

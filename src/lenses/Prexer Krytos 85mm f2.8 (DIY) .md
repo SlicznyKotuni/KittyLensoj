@@ -1,8 +1,38 @@
 ---
-alias: "Projektorowy Triplet"
-tags: [obiektyw, łzk, prexer, krytos, rzutnik, diatrex, m42, pełna-klatka, tele, vintage, manualny, diy, project-lens, polski, triplet, projektorowy]
-rodzina: "Prexer"
-kluczowe-słowa: [tele, portret, projektor, polski, łzk, prexer, krytos, diy, raw-lens, triplet, plastikowy]
+alias: Projektorowy Triplet
+tags:
+  - obiektyw
+  - łzk
+  - prexer
+  - krytos
+  - rzutnik
+  - diatrex
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - diy
+  - project-lens
+  - polski
+  - triplet
+  - projektorowy
+  - portret
+  - 85mm
+  - f2_8
+rodzina: Prexer
+kluczowe-słowa:
+  - tele
+  - portret
+  - projektor
+  - polski
+  - łzk
+  - prexer
+  - krytos
+  - diy
+  - raw-lens
+  - triplet
+  - plastikowy
 ---
 
 # Prexer Krytos 85mm f/2.8 (Obiektyw Projektora DIAPREX B-10) - PROJECT

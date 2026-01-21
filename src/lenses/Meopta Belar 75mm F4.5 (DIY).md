@@ -5,15 +5,17 @@ tags:
   - meopta
   - belar
   - powiększalnik
-  - m23.5
   - pełna-klatka
-  - aps-c
   - vintage
   - manualny
-  - diy
   - tessar
   - czechosłowacki
-rodzina: Meopta
+  - m23_5
+  - 75mm
+  - f4_5
+  - m42
+  - diy
+rodzina: Belar
 kluczowe-słowa:
   - standard
   - powiększalnik

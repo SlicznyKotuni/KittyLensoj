@@ -1,8 +1,29 @@
 ---
-alias: "Żywiołowy Portrecista"
-tags: [obiektyw, custom, ręczna-konstrukcja, m42, portret, vintage, manualny, unikat, helios-based, swirly-bokeh]
-rodzina: "Custom"
-kluczowe-słowa: [portret, helios-based, custom-build, unikat, swirly-bokeh, 3d-effect, owalny-bokeh, żywe-kolory, m42]
+alias: Żywiołowy Portrecista
+tags:
+  - obiektyw
+  - custom
+  - ręczna-konstrukcja
+  - m42
+  - portret
+  - vintage
+  - manualny
+  - unikat
+  - helios-based
+  - swirly-bokeh
+  - 70mm
+  - f2_8
+rodzina: Custom
+kluczowe-słowa:
+  - portret
+  - helios-based
+  - custom-build
+  - unikat
+  - swirly-bokeh
+  - 3d-effect
+  - owalny-bokeh
+  - żywe-kolory
+  - m42
 ---
 
 # Custom Portrait Lens "70mm f/2.8" (M42) - Helios-Based

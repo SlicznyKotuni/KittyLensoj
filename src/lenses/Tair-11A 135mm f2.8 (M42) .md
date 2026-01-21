@@ -1,8 +1,26 @@
 ---
-alias: "Król Bokeh"
-tags: [obiektyw, tair, m42, pełna-klatka, tele, vintage, manualny, zsrr, legenda]
-rodzina: "Tair"
-kluczowe-słowa: [tele, portret, bokeh, 20-listków, legenda, ostry, unikat]
+alias: Król Bokeh
+tags:
+  - obiektyw
+  - tair
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - zsrr
+  - legenda
+  - 135mm
+  - f2_8
+rodzina: Tair
+kluczowe-słowa:
+  - tele
+  - portret
+  - bokeh
+  - 20-listków
+  - legenda
+  - ostry
+  - unikat
 ---
 
 # Tair-11A 135mm f/2.8 (M42)

@@ -12,6 +12,8 @@ tags:
   - japoński
   - pełna-klatka
   - cimko
+  - minolta-mc
+  - f2_8
 rodzina: Exaktar EEM
 kluczowe-słowa:
   - 35mm

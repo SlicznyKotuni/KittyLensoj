@@ -1,8 +1,25 @@
 ---
-alias: "Ciemny Koń"
-tags: [obiektyw, chinon, auto-chinon, m42, pełna-klatka, standard, vintage, manualny, hidden-gem]
-rodzina: "Auto Chinon"
-kluczowe-słowa: [standard, jasny, m42, hidden-gem, portret, unikalny]
+alias: Ciemny Koń
+tags:
+  - obiektyw
+  - chinon
+  - auto-chinon
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - hidden-gem
+  - 55mm
+  - f1_4
+rodzina: Auto Chinon
+kluczowe-słowa:
+  - standard
+  - jasny
+  - m42
+  - hidden-gem
+  - portret
+  - unikalny
 ---
 
 # Auto Chinon 55mm f/1.4 (M42)

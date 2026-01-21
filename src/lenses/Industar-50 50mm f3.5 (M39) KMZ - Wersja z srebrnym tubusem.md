@@ -1,8 +1,27 @@
 ---
-alias: "Srebrny Cylinder"
-tags: [obiektyw, industar, m39, pełna-klatka, standard, vintage, manualny, tessar, kmz, zorki-fed]
-rodzina: "Industar"
-kluczowe-słowa: [standard, srebrny-tubus, tessar, ostry, m39, dalmierzowy, kolekcjonerski]
+alias: Srebrny Cylinder
+tags:
+  - obiektyw
+  - industar
+  - m39
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - tessar
+  - kmz
+  - zorki-fed
+  - 50mm
+  - f3_5
+rodzina: Industar
+kluczowe-słowa:
+  - standard
+  - srebrny-tubus
+  - tessar
+  - ostry
+  - m39
+  - dalmierzowy
+  - kolekcjonerski
 ---
 
 # Industar-50 50mm f/3.5 (M39) "KMZ" - Wersja z srebrnym tubusem

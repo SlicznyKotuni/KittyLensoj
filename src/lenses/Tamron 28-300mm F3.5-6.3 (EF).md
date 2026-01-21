@@ -1,8 +1,26 @@
 ---
-alias: "Wszechstronny Gigant"
-tags: [obiektyw, tamron, canon-ef, pełna-klatka, super-zoom, autofokus]
-rodzina: "Tamron"
-kluczowe-słowa: [super-zoom, uniwersalny, podróżny, ciemny]
+alias: Wszechstronny Gigant
+tags:
+  - obiektyw
+  - tamron
+  - canon-ef
+  - pełna-klatka
+  - super-zoom
+  - autofokus
+  - tele-zoom
+  - tele-auto
+  - super-tele
+  - 28-300mm
+  - f3_5-6_3
+  - f3_5
+  - f6_3
+  - tele
+rodzina: Tamron
+kluczowe-słowa:
+  - super-zoom
+  - uniwersalny
+  - podróżny
+  - ciemny
 ---
 
 # Tamron 28-300mm F/3.5-6.3 (EF)

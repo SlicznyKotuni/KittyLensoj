@@ -1,8 +1,25 @@
 ---
-alias: "Zebra"
-tags: [obiektyw, zeiss, m42, pełna-klatka, szeroki-kąt, vintage, manualny]
-rodzina: "Flektogon"
-kluczowe-słowa: [szeroki-kąt, zebra, kultowy, architektura, manualny]
+alias: Zebra
+tags:
+  - obiektyw
+  - zeiss
+  - m42
+  - pełna-klatka
+  - szeroki-kąt
+  - vintage
+  - manualny
+  - 20mm
+  - ultra-szeroki
+  - carl-zeiss-jena
+  - f4
+rodzina: Flektogon
+kluczowe-słowa:
+  - szeroki-kąt
+  - zebra
+  - kultowy
+  - architektura
+  - manualny
+  - ultra-szeroki
 ---
 
 # Zeiss Flektogon 20mm f/4 (M42)

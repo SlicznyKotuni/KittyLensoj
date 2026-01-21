@@ -11,6 +11,8 @@ tags:
   - manualny
   - radziecki
   - zenit
+  - 50mm
+  - f1_8
 rodzina: Helios
 kluczowe-słowa:
   - standard

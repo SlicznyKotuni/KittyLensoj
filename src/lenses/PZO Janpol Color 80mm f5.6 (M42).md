@@ -16,6 +16,9 @@ tags:
   - project-lens
   - polski
   - m42
+  - 80mm
+  - portret
+  - f5_6
 rodzina: JANPOL / PZO
 kluczowe-słowa:
   - powiększalnik

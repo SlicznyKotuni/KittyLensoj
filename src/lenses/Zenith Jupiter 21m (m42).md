@@ -1,8 +1,22 @@
 ---
-alias: "Radziecki Gigant"
-tags: [obiektyw, zenit, m42, pełna-klatka, super-tele, vintage, manualny]
-rodzina: "Jupiter"
-kluczowe-słowa: [super-tele, dzika-przyroda, manualny, ciężki]
+alias: Radziecki Gigant
+tags:
+  - obiektyw
+  - zenit
+  - m42
+  - pełna-klatka
+  - super-tele
+  - vintage
+  - manualny
+  - 200mm
+  - tele
+  - f4
+rodzina: Jupiter
+kluczowe-słowa:
+  - super-tele
+  - dzika-przyroda
+  - manualny
+  - ciężki
 ---
 
 # Jupiter-21M 200mm f/4 (M42)

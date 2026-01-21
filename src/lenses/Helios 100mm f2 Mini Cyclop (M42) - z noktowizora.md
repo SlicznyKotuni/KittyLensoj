@@ -1,8 +1,27 @@
 ---
-alias: "Cyklop"
-tags: [obiektyw, helios, m42, pełna-klatka, tele, vintage, manualny, military, noktowizor, bez-przysłony]
-rodzina: "Helios"
-kluczowe-słowa: [tele, jasny, noktowizor, military, rzadki, bez-przysłony, unikat]
+alias: Cyklop
+tags:
+  - obiektyw
+  - helios
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - military
+  - noktowizor
+  - bez-przysłony
+  - 100mm
+  - f2
+rodzina: Helios
+kluczowe-słowa:
+  - tele
+  - jasny
+  - noktowizor
+  - military
+  - rzadki
+  - bez-przysłony
+  - unikat
 ---
 
 # Helios 100mm f/2 "Mini Cyclop" (M42) - z noktowizora

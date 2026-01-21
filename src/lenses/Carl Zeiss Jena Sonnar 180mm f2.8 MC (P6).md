@@ -1,8 +1,28 @@
 ---
-alias: "Król Bokeh"
-tags: [obiektyw, carl-zeiss-jena, sonnar, pełna-klatka, tele, vintage, manualny, niemiecki, legenda]
-rodzina: "Sonnar"
-kluczowe-słowa: [tele, sonnar, król-bokeh, zeiss, mc, portret, ostry]
+alias: Król Bokeh
+tags:
+  - obiektyw
+  - carl-zeiss-jena
+  - sonnar
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - niemiecki
+  - legenda
+  - P6
+  - 180mm
+  - f2_8
+rodzina: Sonnar
+kluczowe-słowa:
+  - tele
+  - sonnar
+  - król-bokeh
+  - zeiss
+  - mc
+  - portret
+  - ostry
+  - P6
 ---
 
 # Carl Zeiss Jena Sonnar 180mm f/2.8 MC

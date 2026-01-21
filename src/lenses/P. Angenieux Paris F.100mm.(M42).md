@@ -1,8 +1,32 @@
 ---
-alias: "Francuski Arystokrata"
-tags: [obiektyw, angeneiux, paris, rzutnik, kinowy, m42, pełna-klatka, tele, vintage, manualny, francuski, kolekcjonerski, rzadki]
-rodzina: "Angenieux"
-kluczowe-słowa: [tele, portret, kinowy, francuski, angeneiux, rzadki, kolekcjonerski, m42]
+alias: Francuski Arystokrata
+tags:
+  - obiektyw
+  - angeneiux
+  - paris
+  - rzutnik
+  - kinowy
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - francuski
+  - kolekcjonerski
+  - rzadki
+  - 100mm
+  - f3_5
+  - portret
+rodzina: Angenieux
+kluczowe-słowa:
+  - tele
+  - portret
+  - kinowy
+  - francuski
+  - angeneiux
+  - rzadki
+  - kolekcjonerski
+  - m42
 ---
 
 # P. Angenieux Paris F.100m (Obiektyw Kinowy) - M42

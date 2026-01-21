@@ -6,7 +6,6 @@ tags:
   - 16kp
   - projektor
   - 16mm
-  - f1.2
   - zsrr
   - ukraina
   - diy
@@ -14,6 +13,9 @@ tags:
   - swirly-bokeh
   - aps-c
   - IZP
+  - f1_2
+  - 50mm
+  - standard
 rodzina: IZP
 kluczowe-słowa:
   - izium

@@ -1,8 +1,23 @@
 ---
-alias: "Niemiecki Tele"
-tags: [obiektyw, pentacon, m42, pełna-klatka, tele, vintage, manualny, nr-ddr]
-rodzina: "Pentacon"
-kluczowe-słowa: [tele, portret, ostry, niemiecki, solidny]
+alias: Niemiecki Tele
+tags:
+  - obiektyw
+  - pentacon
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - nr-ddr
+  - 135mm
+  - f2_8
+rodzina: Pentacon
+kluczowe-słowa:
+  - tele
+  - portret
+  - ostry
+  - niemiecki
+  - solidny
 ---
 
 # Pentacon 135mm f/2.8 (M42)

@@ -1,8 +1,33 @@
 ---
-alias: "Jasny Kolektor Rzadkości"
-tags: [obiektyw, isco, kiptaron, bauer, p5, 16mm, projektor, pełna-klatka, aps-c, vintage, manualny, diy, expert-only, niemiecki]
-rodzina: "Isco"
-kluczowe-słowa: [standard, projektor-filmowy, 16mm, bauer, kiptaron, f1.6, diy-expert, pokrycie-formatu]
+alias: Jasny Kolektor Rzadkości
+tags:
+  - obiektyw
+  - isco
+  - kiptaron
+  - bauer
+  - p5
+  - 16mm
+  - projektor
+  - pełna-klatka
+  - aps-c
+  - vintage
+  - manualny
+  - diy
+  - expert-only
+  - niemiecki
+  - 50mm
+  - f1_6
+  - standard
+rodzina: Kiptaron
+kluczowe-słowa:
+  - standard
+  - projektor-filmowy
+  - 16mm
+  - bauer
+  - kiptaron
+  - f1.6
+  - diy-expert
+  - pokrycie-formatu
 ---
 
 # Isco Göttingen Kiptaron 50mm f/1.6 (Projektor Bauer P5 16mm) - EXPERT PROJECT

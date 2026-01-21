@@ -1,8 +1,30 @@
 ---
-alias: "Japoński Projekcyjny Bokeh Monster"
-tags: [obiektyw, kowa, prominar, diy, super16, standard, vintage, manualny, bokeh-monster, jasny, japoński]
-rodzina: "Kowa Prominar"
-kluczowe-słowa: [standard, portret, diy, japoński, kowa, bokeh-monster, jasny, kolekcjonerski]
+alias: Japoński Projekcyjny Bokeh Monster
+tags:
+  - obiektyw
+  - kowa
+  - prominar
+  - diy
+  - super16
+  - standard
+  - vintage
+  - manualny
+  - bokeh-monster
+  - jasny
+  - japoński
+  - 16mm
+  - 50mm
+  - f1_2
+rodzina: Super Prominar
+kluczowe-słowa:
+  - standard
+  - portret
+  - diy
+  - japoński
+  - kowa
+  - bokeh-monster
+  - jasny
+  - kolekcjonerski
 ---
 
 # KOWA SUPER PROMINAR-16 50mm 1:1.2 Eiki 16mm

@@ -1,8 +1,29 @@
 ---
-alias: "Niemiecki Projekcyjny Jasny Tele"
-tags: [obiektyw, isco, kiptaron, diy, 16mm, tele, vintage, manualny, bokeh, jasny, niemiecki]
-rodzina: "ISCO Kiptar"
-kluczowe-słowa: [tele, portret, diy, niemiecki, isco, bokeh, jasny, kolekcjonerski]
+alias: Niemiecki Projekcyjny Jasny Tele
+tags:
+  - obiektyw
+  - isco
+  - kiptaron
+  - diy
+  - 16mm
+  - vintage
+  - manualny
+  - bokeh
+  - jasny
+  - niemiecki
+  - 65mm
+  - f1_6
+  - portret
+rodzina: Kiptaron
+kluczowe-słowa:
+  - tele
+  - portret
+  - diy
+  - niemiecki
+  - isco
+  - bokeh
+  - jasny
+  - kolekcjonerski
 ---
 
 # ISCO-Gottingen Kiptaron 65mm f/1.6

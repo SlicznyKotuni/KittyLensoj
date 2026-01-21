@@ -1,8 +1,27 @@
 ---
-alias: "Elektryzująca Jakość"
-tags: [obiektyw, carl-zeiss-jena, m42, pełna-klatka, standard, vintage, manualny, zeiss, pancolar, electric]
-rodzina: "Pancolar"
-kluczowe-słowa: [standard, jasny, zeiss, electric, semi-auto, portret, premium]
+alias: Elektryzująca Jakość
+tags:
+  - obiektyw
+  - carl-zeiss-jena
+  - m42
+  - pełna-klatka
+  - standard
+  - vintage
+  - manualny
+  - zeiss
+  - pancolar
+  - electric
+  - 50mm
+  - f1_8
+rodzina: Pancolar
+kluczowe-słowa:
+  - standard
+  - jasny
+  - zeiss
+  - electric
+  - semi-auto
+  - portret
+  - premium
 ---
 
 # Carl Zeiss Jena DDR Pancolar Electric 50mm f/1.8 (M42)

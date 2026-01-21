@@ -1,8 +1,31 @@
 ---
-alias: "Niemiecki Projektorowy Tele"
-tags: [obiektyw, braun, stellar, rzutnik, projekcyjny, pełna-klatka, tele, vintage, manualny, diy, project-lens, niemiecki]
-rodzina: "Braun"
-kluczowe-słowa: [tele, projektor, rzutnik, braun, stellar, diy, projection-lens, long-tele]
+alias: Niemiecki Projektorowy Tele
+tags:
+  - obiektyw
+  - braun
+  - stellar
+  - rzutnik
+  - projekcyjny
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - diy
+  - project-lens
+  - niemiecki
+  - 150mm
+  - damaged
+  - f3_5
+rodzina: Braun
+kluczowe-słowa:
+  - tele
+  - projektor
+  - rzutnik
+  - braun
+  - stellar
+  - diy
+  - projection-lens
+  - long-tele
 ---
 
 # Braun Stellar 150mm f/3.5 (Obiektyw Projekcyjny) - PROJECT

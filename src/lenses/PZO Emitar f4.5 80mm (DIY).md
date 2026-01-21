@@ -6,14 +6,15 @@ tags:
   - emitar
   - powiększalnik
   - m42
-  - m36
   - pełna-klatka
-  - aps-c
   - vintage
   - manualny
   - diy
   - triplet
   - polski
+  - 80mm
+  - f4_5
+  - portret
 rodzina: PZO
 kluczowe-słowa:
   - standard

@@ -1,8 +1,20 @@
 ---
-alias: "Król Bokehu"
-tags: [obiektyw, m42, pełna-klatka, stała-ogniskowa, manualny, vintage]
-rodzina: "Helios 44"
-kluczowe-słowa: [charakterystyczny-bokeh, portret, swirly-bokeh]
+alias: Król Bokehu
+tags:
+  - obiektyw
+  - m42
+  - pełna-klatka
+  - stała-ogniskowa
+  - manualny
+  - vintage
+  - f2
+  - standard
+  - 58mm
+rodzina: Helios 44
+kluczowe-słowa:
+  - charakterystyczny-bokeh
+  - portret
+  - swirly-bokeh
 ---
 
 # Helios 44 58mm f2 (m42, wersja 4)

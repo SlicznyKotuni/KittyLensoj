@@ -1,8 +1,26 @@
 ---
-alias: "Geometryczny Wiral"
-tags: [obiektyw, meritar, triplet, canon-ef, pełna-klatka, makro, vintage, manualny, przerobiony, unikat]
-rodzina: "Triplet"
-kluczowe-słowa: [kwadratowy-bokeh, swirly-bokeh, makro, artystyczny, modyfikowany, ef]
+alias: Geometryczny Wiral
+tags:
+  - obiektyw
+  - meritar
+  - triplet
+  - canon-ef
+  - pełna-klatka
+  - makro
+  - vintage
+  - manualny
+  - przerobiony
+  - unikat
+  - 45mm
+  - f2_8
+rodzina: Triplet
+kluczowe-słowa:
+  - kwadratowy-bokeh
+  - swirly-bokeh
+  - makro
+  - artystyczny
+  - modyfikowany
+  - ef
 ---
 
 # Meritar / Triplet 45mm f/2.8 "Makro Swirly Kwadrat Bokeh" (przerobiony, EF)

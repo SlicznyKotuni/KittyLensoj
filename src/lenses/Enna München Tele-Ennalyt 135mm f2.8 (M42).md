@@ -1,8 +1,27 @@
 ---
-alias: "Niemiecki Zebra"
-tags: [obiektyw, enna, tele-ennalyt, m42, pełna-klatka, tele, vintage, manualny, zebra, niemiecki]
-rodzina: "Enna"
-kluczowe-słowa: [tele, portret, enna, m42, zebra, preset, sonnar]
+alias: Niemiecki Zebra
+tags:
+  - obiektyw
+  - enna
+  - tele-ennalyt
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - zebra
+  - niemiecki
+  - 135mm
+  - f2_8
+rodzina: Enna
+kluczowe-słowa:
+  - tele
+  - portret
+  - enna
+  - m42
+  - zebra
+  - preset
+  - sonnar
 ---
 
 # Enna München Tele-Ennalyt 135mm f/2.8 (M42)

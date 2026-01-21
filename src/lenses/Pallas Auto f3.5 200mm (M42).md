@@ -1,8 +1,29 @@
 ---
-alias: "Długi Portrecista Pallas"
-tags: [obiektyw, pallas, tele-auto, 200mm, m42, pełna-klatka, vintage, manualny, japoński, kompresja]
-rodzina: "Pallas"
-kluczowe-słowa: [200mm, f3.5, m42, japan, pallas-auto, telephoto, metal-build, bokeh]
+alias: Długi Portrecista Pallas
+tags:
+  - obiektyw
+  - pallas
+  - tele-auto
+  - 200mm
+  - m42
+  - pełna-klatka
+  - vintage
+  - manualny
+  - japoński
+  - kompresja
+  - f3_5
+  - tele
+  - super-tele
+rodzina: Pallas
+kluczowe-słowa:
+  - 200mm
+  - f3.5
+  - m42
+  - japan
+  - pallas-auto
+  - telephoto
+  - metal-build
+  - bokeh
 ---
 
 # Pallas Auto 3.5/200 (Mocowanie M42)

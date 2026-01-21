@@ -9,6 +9,12 @@ tags:
   - vintage
   - manualny
   - mi
+  - f4_5
+  - 75-250mm
+  - zoom
+  - tele
+  - super-tele
+  - super-zoom
 rodzina: Makinon
 kluczowe-słowa:
   - zoom

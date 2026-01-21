@@ -1,8 +1,24 @@
 ---
-alias: "Okrągły Świat"
-tags: [obiektyw, samyang, canon-ef, pełna-klatka, rybie-oko, fisheye, manualny, kreatywny]
-rodzina: "Samyang"
-kluczowe-słowa: [fisheye, 180-stopni, kreatywny, ekstremalny, manualny, aspherical]
+alias: Okrągły Świat
+tags:
+  - obiektyw
+  - samyang
+  - canon-ef
+  - rybie-oko
+  - fisheye
+  - manualny
+  - kreatywny
+  - 8mm
+  - f3_5
+  - aps-c
+rodzina: Samyang
+kluczowe-słowa:
+  - fisheye
+  - 180-stopni
+  - kreatywny
+  - ekstremalny
+  - manualny
+  - aspherical
 ---
 
 # Samyang 8mm f/3.5 Aspherical IF MC Fish-eye (Canon EF)

@@ -6,6 +6,10 @@ tags:
   - zoom
   - ultra-szeroki
   - canon-ef
+  - szeroki-kąt
+  - szerokokątny
+  - 11-16mm
+  - f2_8
 rodzina: Tokina AT-X
 kluczowe-słowa:
   - astrofotografia

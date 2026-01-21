@@ -1,8 +1,19 @@
 ---
-alias: "Nifty Fifty"
-tags: [obiektyw, canon-rf, pełna-klatka, stała-ogniskowa]
-rodzina: "Canon RF"
-kluczowe-słowa: [portret, wszechstronny, niska-przysłona]
+alias: Nifty Fifty
+tags:
+  - obiektyw
+  - canon-rf
+  - pełna-klatka
+  - stała-ogniskowa
+  - standard
+  - autofokus
+  - 50mm
+  - f1_8
+rodzina: Canon RF
+kluczowe-słowa:
+  - portret
+  - wszechstronny
+  - niska-przysłona
 ---
 
 # Canon RF 50mm F1.8 STM

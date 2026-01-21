@@ -1,8 +1,29 @@
 ---
-alias: "Wirujący Magik Makro"
-tags: [obiektyw, custom, ręczna-konstrukcja, canon-rf, makro, vintage, manualny, unikat, experimental, swirly-bokeh]
-rodzina: "Custom"
-kluczowe-słowa: [makro, variable-focus, custom-build, unikat, experimental, manual-macro, jasny, swirly-bokeh, bokeh-okrągłe]
+alias: Wirujący Magik Makro
+tags:
+  - obiektyw
+  - custom
+  - ręczna-konstrukcja
+  - canon-rf
+  - makro
+  - vintage
+  - manualny
+  - unikat
+  - experimental
+  - swirly-bokeh
+  - 50mm
+  - f2_8
+rodzina: Custom
+kluczowe-słowa:
+  - makro
+  - variable-focus
+  - custom-build
+  - unikat
+  - experimental
+  - manual-macro
+  - jasny
+  - swirly-bokeh
+  - bokeh-okrągłe
 ---
 
 # Custom Macro Lens "Variable 50mm" (Canon RF)

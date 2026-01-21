@@ -1,8 +1,29 @@
 ---
-alias: "Polski Bokeh Monster"
-tags: [obiektyw, łzk, edar, m42, pełna-klatka, tele, vintage, manualny, bokeh-monster, soap-bubble, polski]
-rodzina: "Edar"
-kluczowe-słowa: [tele, portret, m42, polski, łzk, bokeh-monster, soap-bubble, kolekcjonerski]
+alias: Polski Bokeh Monster
+tags:
+  - obiektyw
+  - łzk
+  - edar
+  - m42
+  - pełna-klatka
+  - tele
+  - vintage
+  - manualny
+  - bokeh-monster
+  - soap-bubble
+  - polski
+  - 100mm
+  - f2_8
+rodzina: Edar
+kluczowe-słowa:
+  - tele
+  - portret
+  - m42
+  - polski
+  - łzk
+  - bokeh-monster
+  - soap-bubble
+  - kolekcjonerski
 ---
 
 # Edar 2,8/100 ŁZK (M42) - Wersja Eksportowa

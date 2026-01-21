@@ -11,6 +11,8 @@ tags:
   - manualny
   - japoński
   - minolta-md
+  - 55mm
+  - f1_7
 rodzina: Rokkor
 kluczowe-słowa:
   - standard

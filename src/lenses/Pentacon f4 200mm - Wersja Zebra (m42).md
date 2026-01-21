@@ -13,6 +13,9 @@ tags:
   - zebra
   - ddr
   - m42
+  - 200mm
+  - f4
+  - super-tele
 rodzina: Pentacon / Meyer-Optik
 kluczowe-słowa:
   - tele
