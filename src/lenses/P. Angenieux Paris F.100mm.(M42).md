@@ -17,6 +17,7 @@ tags:
   - 100mm
   - f3_5
   - portret
+  - portretówka
 rodzina: Angenieux
 kluczowe-słowa:
   - tele

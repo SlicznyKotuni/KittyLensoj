@@ -13,6 +13,8 @@ tags:
   - bez-przysłony
   - 100mm
   - f2
+  - portret
+  - portretówka
 rodzina: Helios
 kluczowe-słowa:
   - tele

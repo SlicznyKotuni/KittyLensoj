@@ -1,8 +1,31 @@
 ---
-alias: "Portretowy Skarb z Görlitz"
-tags: [obiektyw, meyer-optik, görlitz, orestor, m42, ddr, vintage, manualny, rzadki, portretówka, 100mm, f2_8]
-rodzina: "Meyer-Optik Görlitz"
-kluczowe-słowa: [100mm, f2_8, meyer, orestor, m42, bokeh, ddr, portrait, sharp, vintage-glass]
+alias: Portretowy Skarb z Görlitz
+tags:
+  - obiektyw
+  - meyer-optik
+  - görlitz
+  - orestor
+  - m42
+  - ddr
+  - vintage
+  - manualny
+  - rzadki
+  - portretówka
+  - 100mm
+  - f2_8
+  - portret
+rodzina: Meyer-Optik Görlitz
+kluczowe-słowa:
+  - 100mm
+  - f2_8
+  - meyer
+  - orestor
+  - m42
+  - bokeh
+  - ddr
+  - portrait
+  - sharp
+  - vintage-glass
 ---
 
 # Meyer-Optik Görlitz Orestor 100mm f/2.8 (M42)

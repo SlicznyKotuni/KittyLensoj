@@ -14,6 +14,9 @@ tags:
   - polski
   - 100mm
   - f2_8
+  - portret
+  - portretówka
+  - macro
 rodzina: Edar
 kluczowe-słowa:
   - tele
