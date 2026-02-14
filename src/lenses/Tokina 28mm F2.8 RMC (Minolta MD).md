@@ -21,7 +21,7 @@ kluczowe-słowa:
   - rmc
 ---
 
-# Tokina 28mm F2.8 RMC (Pentax K)
+# Tokina 28mm F2.8 RMC (Minolta MD)
 
 ## Podstawowe Informacje
 - **Producent:** Tokina
