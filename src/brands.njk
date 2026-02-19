@@ -1,0 +1,28 @@
+---
+layout: layout.njk
+title: Producenci
+permalink: /producenci/
+---
+
+<header class="page-header">
+    <h1>Producenci Obiektywów</h1>
+    <p class="subtitle">Historja kaj karaktero de fabrikantoj</p>
+</header>
+
+<main class="main-content">
+    <div class="grid" id="brands-grid">
+        {% for brand in collections.brands %}
+        <div class="tile" onclick="location.href='{{ brand.url }}'">
+            <div class="tile-content">
+                <div class="tile-title">{{ brand | displayName }}</div>
+                <span class="file-title">{{ brand.fileSlug }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+<footer class="page-footer">
+    <p>&copy; 2025 Kitty Lensoj - Ĉiuj rajtoj rezervitaj</p>
+    <p class="stats">Producentoj: {{ collections.brands.length }}</p>
+</footer>

@@ -10,6 +10,7 @@
 <body>
     <nav class="main-nav">
         <a href="/" class="nav-link">Lensoj</a>
+        <a href="/producenci/" class="nav-link">Producenci</a>
         <a href="/galeria/" class="nav-link">Galerio</a>
         <a href="/lastaj-photoj/" class="nav-link">lastaj photoj</a>
     </nav>
@@ -17,9 +18,43 @@
     <!-- Back to top neon button -->
     <button id="back-to-top" aria-label="Back to top">↑</button>
     <div class="content-wrapper">
+        <!-- Display front matter attributes for detail pages -->
+        {% set showAttrs = false %}
+        {% set attrCount = 0 %}
+        {% for key, value in data %}
+            {% if key not in ['content', 'layout', 'title', 'page', 'collections', 'tags', 'pkg', 'buildTime', 'url', 'fileSlug', 'filePathStem', 'date', 'inputPath', 'outputPath', 'eleventyComputed', 'template'] and value != null and value != undefined and value != '' %}
+                {% set attrCount = attrCount + 1 %}
+            {% endif %}
+        {% endfor %}
+        
+        {% if attrCount > 0 %}
+        <div class="front-matter-attrs">
+            <h3>📋 Atrybuty</h3>
+            <div class="attrs-grid">
+                {% for key, value in data %}
+                {% if key not in ['content', 'layout', 'title', 'page', 'collections', 'tags', 'pkg', 'buildTime', 'url', 'fileSlug', 'filePathStem', 'date', 'inputPath', 'outputPath', 'eleventyComputed', 'template'] and value != null and value != undefined and value != '' %}
+                <div class="attr-item">
+                    <span class="attr-label">{{ key }}</span>
+                    {% if value is iterable and value is not string %}
+                        <ul class="attr-list">
+                        {% for item in value %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                        <span class="attr-value">{{ value }}</span>
+                    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
         {{ content | safe }}
     </div>
     
     <script src="/js/gallery.js"></script>
+    <script src="/js/shuffle-photos.js"></script>
 </body>
 </html>

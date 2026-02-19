@@ -6,18 +6,19 @@ permalink: /lastaj-photoj/
 
 <header class="page-header">
     <h1>Lastaj photoj</h1>
-    <p class="subtitle">Kvindek plej novaj fotoj en nia retejo</p>
+    <p class="subtitle">Kvindek hazardaj elektitaj fotoj en nia retejo</p>
 </header>
 
 <main class="main-content">
     <div class="gallery-controls">
-        <p>Jen la 50 plej lastaj fotoj (ĉiuj lensoj).</p>
+        
+        <button id="shuffle-btn" class="shuffle-btn">🔀 Losuj ponownie</button>
     </div>
 
     <div class="gallery-grid" id="gallery-grid">
-        {# collections.allImages is already sorted newest-first in .eleventy.js #}
-        {# Loop and limit to 50 using loop.index0 to avoid relying on the Nunjucks 'slice' filter semantics #}
-        {% for image in collections.allImages %}
+        {# Shuffle all images and take first 50 #}
+        {% set randomImages = collections.allImages | shuffle %}
+        {% for image in randomImages %}
             {% if loop.index0 < 50 %}
         <div class="gallery-item" data-lens="{{ image.lens }}">
             <img
@@ -26,9 +27,9 @@ permalink: /lastaj-photoj/
                 sizes="{{ image.thumb.sizes }}"
                 alt="{{ image.lens }} - {{ image.filename }}"
                 data-full="{{ image.path }}"
-                loading="{{ 'eager' if loop.index0 < 6 else 'lazy' }}"
+                loading="{{ 'lazy' }}"
                 decoding="async"
-                fetchpriority="{{ 'high' if loop.index0 < 6 else 'low' }}"
+                fetchpriority="{{ 'low' }}"
                 class="gallery-img"
                 {% if image.thumb.width %} width="{{ image.thumb.width }}"{% endif %}
                 {% if image.thumb.height %} height="{{ image.thumb.height }}"{% endif %}
