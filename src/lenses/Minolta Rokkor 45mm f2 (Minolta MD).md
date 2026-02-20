@@ -13,6 +13,7 @@ tags:
   - f2_0
   - japonia
   - standard
+  - minolta-md
 rodzina: Rokkor
 kluczowe-słowa:
   - 45mm

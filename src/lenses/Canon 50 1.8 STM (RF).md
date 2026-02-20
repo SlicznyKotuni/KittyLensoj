@@ -9,6 +9,7 @@ tags:
   - autofokus
   - 50mm
   - f1_8
+  - canon
 rodzina: Canon RF
 kluczowe-słowa:
   - portret

@@ -14,6 +14,7 @@ tags:
   - portret
   - tele
   - portretówka
+  - canon-fd
 rodzina: Canon
 kluczowe-słowa:
   - 135mm

@@ -13,6 +13,7 @@ tags:
   - f1_4
   - japonia
   - standard
+  - minolta-md
 rodzina: Rokkor
 kluczowe-słowa:
   - 50mm

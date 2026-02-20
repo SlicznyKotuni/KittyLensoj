@@ -25,7 +25,7 @@ kluczowe-słowa:
   - manual-focus
 ---
 
-# Vivitar 135mm f/2.8 Auto Telephoto (Mocowanie: Minolta MD)
+# Vivitar 135mm f/2.8 Auto Telephoto (Minolta MD)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** Wyprodukowany w Japonii dla marki **Vivitar** (często przez firmy takie jak Komine, Tokina lub Kiron – sprawdź początek numeru seryjnego!).

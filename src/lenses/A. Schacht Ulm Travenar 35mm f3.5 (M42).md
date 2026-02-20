@@ -14,6 +14,7 @@ tags:
   - kolekcjonerski
   - m42
   - szeroki-kąt
+  - ASchachtUlm
 rodzina: Travenar
 kluczowe-słowa:
   - 35mm

@@ -32,7 +32,7 @@ kluczowe-słowa:
   - vintage-zoom
 ---
 
-# Vivitar Series 1 Macro Focusing Auto Zoom 70-210mm f/2.8-4 (Mocowanie PK)
+# Vivitar Series 1 Macro Focusing Auto Zoom 70-210mm f/2.8-4 (Pentax-k)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** Wyprodukowany dla Vivitara przez firmę **Komine** (numer seryjny zaczynający się od 28...).

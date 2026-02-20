@@ -15,6 +15,7 @@ tags:
   - tele
   - portretówka
   - portret
+  - minolta-md
 rodzina: Rokkor
 kluczowe-słowa:
   - 135mm
