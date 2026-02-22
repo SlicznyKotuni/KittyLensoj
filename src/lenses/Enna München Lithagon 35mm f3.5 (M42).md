@@ -29,7 +29,7 @@ kluczowe-słowa:
   - szeroki-kąt
 ---
 
-# Enna München Lithagon 35mm f/3.5 ( M42)
+# Enna München Lithagon 35mm f/3.5 (M42)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **Enna München**, RFN (Niemcy Zachodnie).

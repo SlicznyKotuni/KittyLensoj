@@ -29,13 +29,13 @@ kluczowe-słowa:
   - exa
 ---
 
-# Meyer-Optik Görlitz Orestor 100mm f/2.8 (M42)
+# Meyer-Optik Görlitz Orestor 100mm f/2.8 (EXA)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **Meyer-Optik Görlitz**, NRD (Wschodnie Niemcy).
 * **Kontekst historyczny:** Orestor 100mm to jedna z najbardziej udanych konstrukcji z Görlitz. Jest rzadszy niż wersja 135mm i był pozycjonowany jako obiektyw klasy wyższej dla wymagających portrecistów.
 * **Status:** **RARYTAS KOLEKCJONERSKI**. Uważany za jeden z najlepszych obiektywów 100mm ery manualnej. Łączy w sobie legendarny rendering Meyera z bardzo nowoczesną ostrością.
-* **Mocowanie:** **M42** (Pentax Universal).
+* **Mocowanie:** EXA
 * **Typ:** Jasny obiektyw portretowy (krótkie tele).
 
 ## **⚙️ Specyfikacja Techniczna i Analiza**

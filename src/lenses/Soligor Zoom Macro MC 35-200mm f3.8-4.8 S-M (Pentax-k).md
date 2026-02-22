@@ -30,7 +30,7 @@ kluczowe-słowa:
   - vintage-glass
 ---
 
-# Soligor Zoom Macro MC 35-200mm f/3.8-4.8 S/M (Pentax k)
+# Soligor Zoom Macro MC 35-200mm f/3.8-4.8 S/M (Pentax-k)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** Wyprodukowany w Japonii dla marki **Soligor** (często przez firmy Sun lub Tokina).

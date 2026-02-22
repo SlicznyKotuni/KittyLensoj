@@ -25,7 +25,7 @@ kluczowe-słowa:
   - m42
 ---
 
-# Feinmess Dresden Bonotar 105mm f/4.5 V
+# Feinmess Dresden Bonotar 105mm f/4.5 V (M42)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **Feinmess Dresden**, NRD (Niemcy Wschodnie). Firma ta specjalizowała się w precyzyjnych urządzeniach pomiarowych, a ich przygoda z optyką foto zaowocowała m.in. tym modelem.

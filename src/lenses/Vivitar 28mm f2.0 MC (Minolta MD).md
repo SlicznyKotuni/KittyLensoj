@@ -27,7 +27,6 @@ kluczowe-słowa:
   - mc
   - japan
 ---
-m
 # Vivitar 28mm f/2.0 MC (Minolta MD)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
