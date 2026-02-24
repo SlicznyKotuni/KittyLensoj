@@ -17,8 +17,7 @@ tags:
   - travel
   - tele-auto
   - teleobiektyw
-  - minolta-md
-  - md
+  - olympus-om
 rodzina: Vivitar
 kluczowe-słowa:
   - 70-210mm
@@ -31,7 +30,7 @@ kluczowe-słowa:
   - vintage-glass
 ---
 
-# Vivitar 70-210mm f/4.5-5.6 Macro Focusing Zoom MC (Minolta MD)
+# Vivitar 70-210mm f/4.5-5.6 Macro Focusing Zoom MC (Olympus OM)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** Wyprodukowany w Japonii (lub Korei, zależnie od numeru seryjnego) dla marki **Vivitar**. 
