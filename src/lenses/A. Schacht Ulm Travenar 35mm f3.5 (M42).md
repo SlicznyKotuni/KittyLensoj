@@ -28,7 +28,7 @@ kluczowe-słowa:
   - m42
 ---
 
-# A. Schacht Ulm Travenar 35mm f/3.5 (Mocowanie: UNKNOWN)
+# A. Schacht Ulm Travenar 35mm f/3.5 (M42)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **A. Schacht Ulm**, RFN (Niemcy Zachodnie).
