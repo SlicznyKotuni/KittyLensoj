@@ -4,69 +4,62 @@ tags:
   - obiektyw
   - canon
   - fd
-  - nfd
-  - ssc
   - 135mm
   - f2_8
-  - prime
+  - canon-fd
   - vintage
   - manualny
-  - portret
-  - tele
-  - portretówka
-  - canon-fd
-rodzina: Canon
+  - japonia
+  - portrait
+rodzina: Canon FD
 kluczowe-słowa:
   - 135mm
   - f2_8
   - canon-fd
-  - ssc
   - nfd
+  - japanese-optics
   - portrait-lens
-  - vintage-canon
-  - telephoto
-  - manual-focus
+  - creamy-bokeh
+  - sharp-tele
 ---
 
-# Canon FD 135mm f/2.8 (FD)
+# Canon FD 135mm f/2.8 (Mocowanie: Canon FD/nFD)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **Canon**, Japonia.
-* **Wersje:** Istnieją dwie główne: starsza (z pierścieniem blokującym, często z napisem S.S.C.) oraz nowsza **nFD** (cała czarna, z przyciskiem blokady). Optycznie obie są wybitne.
-* **Powłoki S.S.C.:** Jeśli masz wersję nFD, powłoki S.S.C. są tam standardem (nawet jeśli nie ma napisu). Dzięki temu kolory będą idealnie pasować do Twojej 50-tki 1.4 S.S.C.
-* **Status:** **NIEZNISZCZALNY KLASYK**. Jeden z najlepszych stosunków jakości do ceny w systemie FD.
-* **Mocowanie:** **Canon FD** (wymaga adaptera FD-RF).
+* **Seria:** System FD (prawdopodobnie wersja New FD, bez srebrnego pierścienia blokującego, jeśli jest to nowszy egzemplarz).
+* **Kontekst:** Jeden z najpopularniejszych obiektywów tele tamtej ery. Canon zaprojektował go tak, aby dawał idealny balans między ostrością a pięknym rozmyciem tła.
+* **Status:** **NIEZAWODNY KLASYK**. To szkło, które rzadko zawodzi i zawsze "dowozi" plastyczny obrazek.
+* **Numer seryjny:** 88057.
 
 ## **⚙️ Specyfikacja Techniczna i Analiza**
 * **Ogniskowa:** 135 mm.
 * **Maksymalna przysłona:** **f/2.8**.
-* **Konstrukcja optyczna:** Prosty, ale genialny układ (zazwyczaj 4 elementy w 4 grupach).
-* **Liczba listków przysłony:** 8 listków (zapewnia bardzo ładne, okrągłe rozmycie).
-* **Minimalna odległość ostrzenia:** 1.3 m.
-* **Średnica filtra:** **52 mm** (wersja nFD) lub **55 mm** (starsza wersja).
-* **Osłona:** Zazwyczaj posiada **wbudowaną, wysuwaną osłonę przeciwsłoneczną**.
+* **Konstrukcja optyczna:** Bardzo dopracowana, zazwyczaj 4 elementy w 4 grupach.
+* **Liczba listków przysłony:** 6 (daje klasyczne sześcioboki po przymknięciu).
+* **Budowa:** Solidna, zwarta konstrukcja. Mimo że mniejszy niż niektóre 135-tki, wciąż budzi zaufanie masą.
 
-## **🔍 Charakterystyka Obrazu i Współpraca z 50mm S.S.C.**
-* **Spójność kolorystyczna:** To największa zaleta tego duetu. Oba obiektywy używają tych samych powłok Spectra Coating, więc zdjęcia z obu będą miały ten sam ciepły, nasycony „Canonowski” charakter.
-* **Ostrość:** f/2.8 jest w pełni użyteczne i bardzo ostre. Od f/4 to już prawdziwa „żyleta”.
-* **Bokeh:** Bardzo gładkie, kremowe przejścia. 135mm f/2.8 „wycina” obiekt z tła znacznie mocniej niż 50-tka, co daje niesamowity efekt 3D.
-* **Kontrast:** Wysoki, doskonale radzi sobie z cyfrowymi matrycami R6 II i R7.
+## **🔍 Charakterystyka Obrazu i "Canon Color"**
+* **Ostrość:** Bardzo dobra od f/2.8. Canon FD słynie z tego, że "wybacza" błędy, ale jednocześnie rejestruje mnóstwo detali.
+* **Bokeh:** Bardzo miękki, "kremowy". Przejścia tonalne w nieostrościach są płynne, co jest znakiem rozpoznawczym szkieł FD.
+* **Kontrast:** Bardzo zrównoważony – nie tak agresywny jak w Nikonach, ale wystarczający, by zdjęcia wyglądały nowocześnie.
+* **Vibe:** Naturalność. Ten obiektyw nie przekłamuje rzeczywistości, on ją po prostu ładnie maluje.
 
 ## **💡 Praca z Canon R6 Mark II / R7**
-1. **Zestaw Kompletny:** Mając 50mm i 135mm, masz pokryte 90% potrzeb portretowych i streetowych. 
-2. **Na R7 (APS-C):** Tu robi się ciekawie! 135mm staje się ekwiwalentem **216mm f/2.8**. To idealne, jasne tele do fotografowania z dystansu (np. dzieci na boisku czy zwierzęta w parku).
-3. **Na R6 II (Full Frame):** Klasyczny portret. Przy f/2.8 tło za modelem po prostu znika.
-4. **Stabilizacja (IBIS):** Ustaw w menu ręcznie **135mm**. Canon FD nie ma elektroniki, więc aparat musi wiedzieć, jak mocno „bujać” matrycą.
+1. **Natywne połączenie:** Na **R6 II** z adapterem FD-RF czuje się jak w domu. To w końcu ta sama rodzina (choć z różnych epok).
+2. **Precyzyjne Tele na R7:** Jako ekwiwalent **216mm**, daje Ci zasięg potrzebny do dyskretnego portretu ulicznego.
+3. **Focus Peaking:** Dzięki f/2.8 krawędzie w wizjerze podświetlają się bardzo wyraźnie, co ułatwia trafienie w punkt.
+4. **Stabilizacja (IBIS):** Ustaw ręcznie **135mm**. Z tym szkłem IBIS Canona działa wybitnie dobrze.
 
-## **🎯 Dlaczego to genialne uzupełnienie?**
-* **Ta sama rodzina:** Ta sama mechanika, ten sam kierunek obrotu pierścieni, ten sam adapter.
-* **Lekkość:** nFD 135/2.8 jest zaskakująco mały i lekki jak na tę ogniskową.
-* **Look:** Tworzysz spójny materiał zdjęciowy – nie widać różnicy w renderingu między szerokim a wąskim kadrem.
+## **🎯 Dlaczego dwa egzemplarze to "słodki" problem?**
+* **Porównanie:** Możesz sprawdzić, który ma mniejszą aberrację chromatyczną (tzw. fioletowe obwódki) – w vintage to loteria zależna od stanu powłok.
+* **Dubler:** Jednego możesz używać do "zadań specjalnych", a drugiego trzymać w stanie kolekcjonerskim.
+* **Canonowski Look:** Szkła FD mają swoją specyficzną paletę barw, którą łatwo polubić, jeśli używasz nowoczesnych body Canona.
 
-## **📊 Porównanie: Duet Canon FD**
-| Cecha | **Canon FD 50mm f/1.4 S.S.C.** | **Canon FD 135mm f/2.8** |
+## **📊 Porównanie: Canon FD vs Minolta Rokkor MC**
+| Cecha | **Canon FD 135mm f/2.8** | **Minolta MC Rokkor 135/2.8** |
 | :--- | :--- | :--- |
-| **Zastosowanie** | Standard, Noc, Street | **Portret, Tele, Detal** |
-| **Charakter** | "Król Jasności" | **"Król Izolacji"** |
-| **Filtry** | Zazwyczaj 55 mm | 52 mm lub 55 mm |
-| **Wspólny mianownik** | **Powłoki S.S.C. i legenda Canon FD** | |
+| **Charakter** | **Naturalny / Kremowy** | Ciepły / Artystyczny |
+| **Ostrość** | Zrównoważona | **Bardzo wysoka** |
+| **Kolory** | Neutralne | Nasycone / Ciepłe |
+| **Wygoda** | Bardziej kompaktowy | Masywny |

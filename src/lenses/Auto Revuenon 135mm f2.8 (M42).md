@@ -1,66 +1,46 @@
 ---
-alias: Solidny Revuenon
-tags:
-  - obiektyw
-  - revuenon
-  - telephoto
-  - 135mm
-  - f2_8
-  - m42
-  - vintage
-  - manualny
-  - japonia
-  - budżetowy
-  - portret
-  - portretówka
-  - tele
-rodzina: Revuenon
-kluczowe-słowa:
-  - 135mm
-  - f2_8
-  - auto-revuenon
-  - m42
-  - vintage-tele
-  - japanese-optics
-  - budget-lens
+alias: "Metalowy Revuenon 135"
+tags: [obiektyw, revuenon, 135mm, f2_8, m42, vintage, manualny, japonia, metal-build]
+rodzina: "Auto Revuenon"
+kluczowe-słowa: [135mm, f2_8, auto-revuenon, m42, vintage-tele, japanese-optics, solid-build]
 ---
 
-# Auto Revuenon 135mm f/2.8 (M42)
+# Auto Revuenon 135mm f/2.8 (Mocowanie: M42)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
-* **Producent:** Marka handlowa sieci **Quelle**. Wyprodukowany w Japonii (najprawdopodobniej przez firmę **Chinon** lub **Cosina**).
-* **Kontekst:** Sprzedawany jako tańsza, ale solidna alternatywa dla markowych szkieł systemowych. 
-* **Status:** **SOLIDNY ŚREDNIAK**. Choć nie ma prestiżu Minolty, mechanicznie zazwyczaj jest nie do zajechania.
-* **Mocowanie:** Najczęściej **M42** (uniwersalny gwint).
+* **Producent:** Wyprodukowany w Japonii dla marki **Revuenon** (sieć handlowa Quelle).
+* **Kontekst:** Klasyczna, w pełni metalowa konstrukcja z lat 70. W przeciwieństwie do wersji plastikowych (MV), ten model reprezentuje "pancerną" szkołę budowy z czasów, gdy nie oszczędzano na mosiądzu i aluminium.
+* **Status:** **SOLIDNA BUDŻETÓWKA**. Obiektyw typu "workhorse" – prosty, trwały i oferujący przyzwoitą jakość obrazu.
+* **Numer seryjny:** 76471.
 
 ## **⚙️ Specyfikacja Techniczna i Analiza**
 * **Ogniskowa:** 135 mm.
 * **Maksymalna przysłona:** **f/2.8**.
-* **Konstrukcja:** Klasyczny układ 4-elementowy. Prosty i sprawdzony.
-* **Liczba listków przysłony:** Zazwyczaj 6.
-* **Średnica filtra:** Najczęściej **55 mm**.
-* **Przełącznik Auto/Manual:** Pozwala na ręczne przymykanie przysłony na adapterach bez "popychacza".
+* **Budowa:** Całkowicie metalowy tubus. Cięższy i solidniejszy od nowszych wersji, co pomaga w stabilizacji zestawu w rękach.
+* **Liczba listków przysłony:** 6.
+* **Mocowanie:** **M42** (uniwersalny klasyk).
 
-## **🔍 Charakterystyka Obrazu i "Surowy Vibe"**
-* **Ostrość:** Przy f/2.8 może być nieco miękki („marzycielski”), co paradoksalnie pomaga w portretach, maskując zmarszczki. Po domknięciu do f/5.6 staje się bardzo przyzwoitym teleobiektywem.
-* **Kontrast:** Niższy niż w Rokkorach, co daje obraz o bardziej „płaskim”, filmowym charakterze – świetna baza do późniejszej obróbki (grading kolorów).
-* **Flary:** Potrafi złapać spore, kolorowe bliki pod światło, co fani stylu vintage uwielbiają.
-* **Rendering:** Mniej wyrafinowany niż w Canonie, ale bardzo autentyczny.
+## **🔍 Charakterystyka Obrazu i "Vintage Feel"**
+* **Ostrość:** Przyzwoita w centrum od f/2.8, znacznie zyskuje na klarowności po przymknięciu do f/4 - f/5.6.
+* **Plastyka:** Typowa dla japońskich konstrukcji sferycznych z tamtego okresu – daje bardzo klasyczny, nieco miękki wygląd zdjęć na pełnym otwarciu, co jest pożądane w portrecie "retro".
+* **Kontrast:** Umiarkowany. Bardzo dobrze nadaje się do czarno-białej fotografii, gdzie można wyciągnąć dużo detali z cieni.
+* **Vibe:** "Old-school" w czystej postaci. Mechanika pracy metalowego pierścienia ostrości daje dużo większą satysfakcję niż plastikowe "wydmuszki".
 
 ## **💡 Praca z Canon R6 Mark II / R7**
-1. **Szkło do zadań specjalnych:** Idealny tam, gdzie boisz się zabrać drogie Rokkory (kurz, trudne warunki). 
-2. **Efekt Vintage:** Jeśli chcesz uzyskać zdjęcia wyglądające jak z lat 70., Revuenon da Ci ten efekt prosto z puszki, bez filtrów w Photoshopie.
-3. **Stabilizacja (IBIS):** Wpisz ręcznie **135mm**.
-4. **Adapter:** Standardowy M42-RF.
+1. **Nauka Manuala:** Na **R6 II** to idealne szkło do ćwiczenia precyzji ostrzenia z użyciem Focus Peakingu.
+2. **Budżetowe Tele na R7:** Jako ekwiwalent ok. **216mm**, świetnie sprawdzi się w statycznych ujęciach detali architektonicznych lub portretach z większej odległości.
+3. **Stabilizacja (IBIS):** Ustaw ręcznie **135mm**. Masa obiektywu w połączeniu ze stabilizacją matrycy pozwoli Ci na robienie ostrych zdjęć przy zaskakująco długich czasach.
+4. **Adapter:** Pasuje do każdego standardowego adaptera M42-RF.
 
-## **🎯 Dlaczego warto go mieć w tej kolekcji?**
-* **Porównanie:** To świetny punkt odniesienia. Dopiero widząc obraz z Revuenona, docenisz, za co ludzie płacą krocie przy Minolcie czy Zeissie.
-* **Charakter:** Czasem "perfekcyjne" szkła są nudne. Revuenon ma swoje wady, które można przekuć w artystyczny atut.
+## **🎯 Dlaczego warto go mieć (mimo "biedy")?**
+* **Trwałość:** Metalowa obudowa wybacza znacznie więcej niż plastik. To szkło, które trudno zepsuć.
+* **Charakter:** Nie jest tak perfekcyjny jak Rokkor, ale jego wady (jak np. specyficzne flary) można przekuć w artystyczny atut.
+* **Cena:** W Twoim pakiecie ten obiektyw to w zasadzie darmowy dodatek, który wciąż potrafi wypluć obrazek z duszą.
 
-## **📊 Porównanie: Revuenon vs Rokkor MC**
-| Cecha | **Auto Revuenon 135/2.8** | **Minolta Rokkor MC 135/2.8** |
+## **📊 Porównanie: Auto Revuenon (Metal) vs MV Revuenon (Plastik)**
+| Cecha | **Auto Revuenon 135/2.8 (Metal)** | **MV Revuenon 135/2.8 (Plastik)** |
 | :--- | :--- | :--- |
-| **Pochodzenie** | Dom sprzedaży (Quelle) | **Producent Premium (Minolta)** |
-| **Ostrość na f/2.8** | Miękka / Vintage | **Solidna / Kontrastowa** |
-| **Kontrast** | Umiarkowany | **Wysoki** |
-| **Budowa** | Prosta, metalowa | **Wybitna, pancerna** |
+| **Budowa** | **Metal / Mosiądz** | Poliwęglan / Plastik |
+| **Waga** | Masywny | **Super lekki** |
+| **Odczucia** | Klasyczne / Solidne | Nowoczesne / Tanie |
+| **Optyka** | Vintage / Miękka | Bardziej sterylna |
