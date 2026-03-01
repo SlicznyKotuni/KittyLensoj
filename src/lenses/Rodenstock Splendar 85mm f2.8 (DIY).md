@@ -1,8 +1,29 @@
 ---
-alias: "Precyzyjny Portrecista z Monachium"
-tags: [obiektyw, rodenstock, splendar, 85mm, f2_8, projektor, diy, lens-hack, vintage, germany, sharp-bokeh]
-rodzina: "Splendar"
-kluczowe-słowa: [85mm, f2_8, rodenstock, splendar, projection-lens, diy-lens, vintage-hack, micro-contrast, sharp-portrait]
+alias: Precyzyjny Portrecista z Monachium
+tags:
+  - obiektyw
+  - rodenstock
+  - splendar
+  - 85mm
+  - f2_8
+  - projektor
+  - diy
+  - lens-hack
+  - vintage
+  - germany
+  - sharp-bokeh
+  - portret
+rodzina: Splendar
+kluczowe-słowa:
+  - 85mm
+  - f2_8
+  - rodenstock
+  - splendar
+  - projection-lens
+  - diy-lens
+  - vintage-hack
+  - micro-contrast
+  - sharp-portrait
 ---
 
 # Rodenstock Splendar 85mm f/2.8 (DIY)

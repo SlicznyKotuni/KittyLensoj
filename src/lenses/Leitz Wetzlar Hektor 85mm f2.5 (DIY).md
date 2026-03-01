@@ -13,6 +13,7 @@ tags:
   - wetzlar
   - portrait-bokeh
   - diy
+  - portret
 rodzina: Leitz
 kluczowe-słowa:
   - 85mm

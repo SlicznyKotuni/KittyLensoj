@@ -1,8 +1,29 @@
 ---
-alias: "Kremowy Chirurg Rodenstocka"
-tags: [obiektyw, rodenstock, splendar, 100mm, f2_8, projektor, diy, lens-hack, vintage, germany, bokehmaster]
-rodzina: "Splendar"
-kluczowe-słowa: [100mm, f2_8, rodenstock, splendar, projection-lens, diy-lens, vintage-hack, creamy-bokeh, razor-sharp]
+alias: Kremowy Chirurg Rodenstocka
+tags:
+  - obiektyw
+  - rodenstock
+  - splendar
+  - 100mm
+  - f2_8
+  - projektor
+  - diy
+  - lens-hack
+  - vintage
+  - germany
+  - bokehmaster
+  - portret
+rodzina: Splendar
+kluczowe-słowa:
+  - 100mm
+  - f2_8
+  - rodenstock
+  - splendar
+  - projection-lens
+  - diy-lens
+  - vintage-hack
+  - creamy-bokeh
+  - razor-sharp
 ---
 
 # Rodenstock Splendar 100mm f/2.8 (DIY)
