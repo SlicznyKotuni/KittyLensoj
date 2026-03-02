@@ -10,6 +10,11 @@ permalink: /lastaj-photoj/
 </header>
 
 <main class="main-content">
+    {# Embed all images data as JSON for JavaScript access #}
+    <script type="application/json" id="all-images-data">
+    {{ collections.allImages | dump | safe }}
+    </script>
+
     <div class="gallery-controls">
         
         <button id="shuffle-btn" class="shuffle-btn">🔀 Losuj ponownie</button>

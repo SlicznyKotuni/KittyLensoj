@@ -13,6 +13,8 @@ tags:
   - japonia
   - rare
   - high-end
+  - olympus-om
+  - zoom
 rodzina: Olympus OM Zuiko
 kluczowe-słowa:
   - 28-48mm

@@ -234,15 +234,13 @@ h1 {
         box-shadow: 
             0 0 10px rgba(0, 255, 170, 0.3),
             0 0 20px rgba(0, 255, 170, 0.2),
-            0 0 30px rgba(0, 255, 170, 0.1),
-            inset 0 0 10px rgba(0, 255, 170, 0.1);
+            0 0 30px rgba(0, 255, 170, 0.1);
     }
     50% {
         box-shadow: 
             0 0 20px rgba(0, 255, 170, 0.6),
             0 0 40px rgba(0, 255, 170, 0.4),
-            0 0 60px rgba(0, 255, 170, 0.2),
-            inset 0 0 15px rgba(0, 255, 170, 0.2);
+            0 0 60px rgba(0, 255, 170, 0.2);
     }
 }
 
@@ -264,33 +262,16 @@ h1 {
     border: 1px solid rgba(0, 255, 170, 0.2);
 }
 
-.tile::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(45deg, var(--neon-color), transparent, var(--neon-color));
-    mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+a.tile {
+    color: inherit;
+    text-decoration: none;
 }
 
 .tile:hover {
     transform: scale(1.05);
     animation: breatheGlow 1.5s ease-in-out infinite;
     border-color: var(--neon-color);
-}
-
-.tile:hover::before {
-    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.3);
 }
 
 .tile-content {
@@ -304,6 +285,18 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 8px;
+}
+
+a.tile-content {
+    color: inherit !important;
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
 }
 
 .file-title {
@@ -345,7 +338,7 @@ h1 {
     gap: 5px;
     justify-content: center;
     margin-top: 8px;
-    max-height: 70px;
+    max-height: 75px;
     overflow: hidden;
     align-items: flex-start;
 }
@@ -1126,7 +1119,7 @@ main article tr:hover {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 0 30px rgba(0, 255, 170, 0.2), inset 0 0 15px rgba(0, 255, 170, 0.05);
-    max-height: calc(100vh - 160px);
+    max-height: calc(100vh - 280px);
     overflow-y: auto;
     z-index: 100;
 }

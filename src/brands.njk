@@ -12,11 +12,11 @@ permalink: /producenci/
 <main class="main-content">
     <div class="grid" id="brands-grid">
         {% for brand in collections.brands %}
-        <div class="tile" onclick="location.href='{{ brand.url }}'">
-            <div class="tile-content">
+        <div class="tile">
+            <a href="{{ brand.url }}" class="tile-content">
                 <div class="tile-title">{{ brand | displayName }}</div>
                 <span class="file-title">{{ brand.fileSlug }}</span>
-            </div>
+            </a>
         </div>
         {% endfor %}
     </div>

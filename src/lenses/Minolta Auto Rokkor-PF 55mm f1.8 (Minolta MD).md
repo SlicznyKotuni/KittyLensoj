@@ -1,8 +1,29 @@
 ---
-alias: "Chromowy Mechanik Minolty"
-tags: [obiektyw, minolta, rokkor, auto-rokkor, 55mm, f1_8, minolta-sr, vintage, manualny, japonia, classic-beauty]
-rodzina: "Auto Rokkor"
-kluczowe-słowa: [55mm, f1_8, rokkor-pf, auto-rokkor, minolta-md, preset-lens, vintage-minolta, classic-rendering, rare-find]
+alias: Chromowy Mechanik Minolty
+tags:
+  - obiektyw
+  - minolta
+  - rokkor
+  - auto-rokkor
+  - 55mm
+  - f1_8
+  - minolta-sr
+  - vintage
+  - manualny
+  - japonia
+  - classic-beauty
+  - minolta-md
+rodzina: Auto Rokkor
+kluczowe-słowa:
+  - 55mm
+  - f1_8
+  - rokkor-pf
+  - auto-rokkor
+  - minolta-md
+  - preset-lens
+  - vintage-minolta
+  - classic-rendering
+  - rare-find
 ---
 
 # Minolta Auto Rokkor-PF 55mm f/1.8 (Mocowanie: Minolta SR/MC/MD)

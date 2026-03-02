@@ -32,7 +32,7 @@ title: Kitty Lensoj
         <div class="grid" id="lens-grid">
             {% for lens in collections.lenses %}
             <div class="tile" data-lens-index="{{ loop.index0 }}" {% if lens.data.tags %}data-tags="{{ lens.data.tags | join(',') }}"{% endif %}>
-                <div class="tile-content" onclick="location.href='{{ lens.url }}'">
+                <a href="{{ lens.url }}" class="tile-content">
                     <div class="tile-title">{{ lens | displayName }}</div>
                     <span class="file-title">{{ lens.fileSlug }}</span>
                     {% if lens.data.tags %}
@@ -42,7 +42,7 @@ title: Kitty Lensoj
                         {% endfor %}
                     </div>
                     {% endif %}
-                </div>
+                </a>
             </div>
             {% endfor %}
         </div>
