@@ -10,9 +10,9 @@ tags:
   - manualny
   - modyfikowany
   - petzval
-  - 55mm
   - f2
   - standard
+  - 58mm
 rodzina: Helios
 kluczowe-słowa:
   - petzval
