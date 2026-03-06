@@ -36,7 +36,7 @@ module.exports = function(eleventyConfig) {
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name);
 
-      // Iterate serially to avoid overwhelming the system with parallel image processing
+      // Process images in parallel for faster builds
       for (const lensDir of lensDirs) {
         const lensPath = path.join(imagesDir, lensDir);
         if (!fs.existsSync(lensPath)) continue;
@@ -44,7 +44,8 @@ module.exports = function(eleventyConfig) {
         const imageFiles = fs.readdirSync(lensPath)
           .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file));
 
-        for (const file of imageFiles) {
+        // Process all images in this lens folder in parallel
+        const imagePromises = imageFiles.map(async (file) => {
           const fullPath = path.join(lensPath, file);
           let mtime = 0;
           try {
@@ -60,7 +61,7 @@ module.exports = function(eleventyConfig) {
           let thumb = null;
           try {
             const metadata = await Image(fullPath, {
-              widths: [320, 640],
+              widths: [640],
               formats: ["webp"],
               outputDir: "./_site/images/thumbnails",
               urlPath: "/images/thumbnails/",
@@ -102,8 +103,11 @@ module.exports = function(eleventyConfig) {
             nameNumeric = null;
           }
 
-          images.push({ lens: lensDir, filename: file, path: urlPath, mtime, nameNumeric, thumb });
-        }
+          return { lens: lensDir, filename: file, path: urlPath, mtime, nameNumeric, thumb };
+        });
+
+        const lensImages = await Promise.all(imagePromises);
+        images.push(...lensImages);
       }
     }
 
