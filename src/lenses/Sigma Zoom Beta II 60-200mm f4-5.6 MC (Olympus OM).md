@@ -11,10 +11,10 @@ tags:
   - 60-200mm
   - f4-5_6
   - japonia
-  - unknown
   - tele
   - portret
   - travel
+  - olympus-om
 rodzina: Sigma
 kluczowe-słowa:
   - 60-200mm
@@ -28,7 +28,7 @@ kluczowe-słowa:
   - push-pull
 ---
 
-# Sigma Zoom Beta II 60-200mm f/4-5.6 MC (UNKNOWN)
+# Sigma Zoom Beta II 60-200mm f/4-5.6 MC (Olympus OM)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** **Sigma**, Japonia.
