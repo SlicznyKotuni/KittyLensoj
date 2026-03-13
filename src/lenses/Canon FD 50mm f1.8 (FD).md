@@ -11,6 +11,7 @@ tags:
   - 50mm
   - f1_8
   - standard
+  - canon-fd
 rodzina: Canon FD
 kluczowe-słowa:
   - 50mm
