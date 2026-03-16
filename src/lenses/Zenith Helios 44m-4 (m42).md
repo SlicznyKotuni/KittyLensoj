@@ -10,6 +10,7 @@ tags:
   - f2
   - standard
   - 58mm
+  - helios
 rodzina: Helios 44
 kluczowe-słowa:
   - charakterystyczny-bokeh
