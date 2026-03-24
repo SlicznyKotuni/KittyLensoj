@@ -9,6 +9,9 @@ tags:
   - tele
   - autofokus
   - makro
+  - 90mm
+  - f2_8
+  - portret
 rodzina: Tamron SP
 kluczowe-słowa:
   - makro

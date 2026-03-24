@@ -11,6 +11,7 @@ tags:
   - 135mm
   - f3_5
   - portret
+  - jupiter
 rodzina: Jupiter
 kluczowe-słowa:
   - tele

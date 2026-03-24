@@ -11,6 +11,7 @@ tags:
   - 200mm
   - tele
   - f4
+  - jupiter
 rodzina: Jupiter
 kluczowe-słowa:
   - super-tele

@@ -2,7 +2,6 @@
 alias: Radziecki Sonnar
 tags:
   - obiektyw
-  - jupiter-9
   - kmz
   - pełna-klatka
   - portret
@@ -15,6 +14,7 @@ tags:
   - m39
   - f2
   - 85mm
+  - jupiter
 rodzina: Jupiter
 kluczowe-słowa:
   - portret
