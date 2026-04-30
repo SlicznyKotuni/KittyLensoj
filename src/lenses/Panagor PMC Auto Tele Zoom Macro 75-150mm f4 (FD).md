@@ -1,5 +1,5 @@
 ---
-alias: Kiron w Przebraniu
+alias: Lord Panagor - Makro-Gigant o Stałym Świetle
 tags:
   - obiektyw
   - panagor
@@ -8,63 +8,64 @@ tags:
   - canon-fd
   - zoom
   - pmc
+  - macro
   - vintage
   - manualny
   - japonia
-  - macro
-  - kiron-oem
+  - kobori-oem
+  - constant-aperture
+  - heavy-duty
   - fd
-  - portret
-  - tele
-  - tele-zoom
 rodzina: Panagor PMC Series
 kluczowe-słowa:
   - 75-150mm
   - f4
   - panagor-pmc
   - canon-fd
-  - constant-aperture
-  - macro-zoom
-  - kiron
-  - vintage-optics
+  - dedicated-macro
+  - kobori
+  - japanese-optics
+  - constant-aperture-zoom
 ---
 
 # Panagor PMC Auto Tele Zoom Macro 75-150mm f/4 (Canon FD)
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
-* **Dystrybutor:** **Panagor**. Marka znana z tego, że wybierała tylko najlepsze projekty od japońskich producentów OEM.
-* **Producent (OEM):** Najprawdopodobniej **Kino Precision (Kiron)**. Kiron był w tamtym czasie jednym z nielicznych producentów, którzy potrafili zrobić zoom o stałym świetle, który nie był "mydlany".
-* **Seria:** **PMC (Panagor Multi Coated)**. Oznacza zaawansowane, wielowarstwowe powłoki antyrefleksyjne, które poprawiają kontrast i nasycenie barw, co jest kluczowe w zoomach o skomplikowanej budowie.
-* **Mocowanie:** **Canon FD**. System z pierścieniem (Breech-lock) lub nowszy New FD. Idealnie pasuje do Twoich bezlusterkowców przez adapter FD-RF.
-* **Status:** **SOLIDNY WOŁEK ROBOCZY**. To obiektyw, który oferuje stałe światło f/4 w bardzo poręcznym rozmiarze.
+* **Dystrybutor:** **Panagor**. Marka premium, która kładła ogromny nacisk na jakość powłok i możliwości makrofotograficzne swoich szkieł.
+* **Producent (OEM):** **Kobori** (prefiks 77). Fabryka znana z bezkompromisowej budowy mechanicznej. To szkło to dowód na to, że w latach 70/80 "większy znaczy lepszy" w kontekście precyzji helikoidu.
+* **Mocowanie:** **Canon FD**.
+* **Kontekst:** Zakres 75-150mm był uważany za "portretowy ideał". W przeciwieństwie do tańszych zoomów 80-200mm, ten model oferował stałe światło f/4 i znacznie lepszą korekcję wad optycznych na krótszych ogniskowych.
+* **Status:** **MECHANICZNY ARYSTOKRATA**. Oddzielny przesuwnik makro sugeruje, że funkcja ta nie jest "dodatkiem", ale integralną częścią projektu optycznego.
+* **Numer seryjny:** 772068.
 
 ## **⚙️ Specyfikacja Techniczna i Budowa**
-* **Ogniskowa:** 75 - 150 mm. Idealny zakres portretowy i krótkie tele.
-* **Maksymalna przysłona:** **$f/4$ (Stała)**. Bardzo pożądana cecha – parametry ekspozycji nie zmieniają się podczas zoomowania.
-* **Funkcja Macro:** Panagor/Kiron słynęli z bardzo dobrych trybów makro w zoomach. Pozwala na efektowne zbliżenia detali roślin czy przedmiotów.
-* **Budowa:** W pełni metalowa, zwarta konstrukcja. Zazwyczaj jest to konstrukcja typu "pompka" lub dwupierścieniowa (zależnie od konkretnej rewizji), ale zawsze wykonana z ogromną precyzją.
-* **Powłoki PMC:** Skutecznie eliminują duszki i flary, co przy 150mm pomaga zachować "czysty" obrazek.
+* **Ogniskowa:** 75 - 150 mm. Krótszy, ale bardziej dopracowany zakres niż w typowych tele-zoomach.
+* **Maksymalna przysłona:** **$f/4$ (Stała)**. Stała jasność w tym zakresie to rzadkość – pozwala na pełną kontrolę nad głębią ostrości bez względu na zoom.
+* **System Makro:** Oddzielny przesuwnik (Macro Switch/Ring). To rozwiązanie mechaniczne pozwala na zmianę konfiguracji grup soczewek wewnątrz, co optymalizuje ostrość przy bardzo małych odległościach.
+* **Odwzorowanie:** Choć nie ma napisu, systemy Panagora z tamtej ery zazwyczaj oscylowały w granicach **1:3** lub nawet **1:2**, co przy 150mm daje niesamowite powiększenie.
+* **Powłoki:** **PMC (Panagor Multi-Coated)**. Specjalistyczne powłoki o wysokiej transmisji światła.
+* **Filtr:** **Ø62 mm**. Duża średnica frontu potwierdza, że mamy do czynienia z jasnym szkłem wysokiej klasy.
 
-## **🔍 Charakterystyka Obrazu i Wrażenia**
-* **Ostrość:** Kironowskie konstrukcje 75-150mm są znane z bardzo wysokiej ostrości w całym zakresie ogniskowych, co nie było standardem w tamtej epoce.
-* **Kontrast:** Dzięki PMC obraz jest soczysty i kontrastowy, o nieco bardziej nowoczesnym charakterze niż w najstarszych szkłach vintage.
-* **Rendering:** Daje bardzo plastyczny bokeh, szczególnie przy 150mm i f/4, co czyni go świetnym wyborem do portretu plenerowego.
+## **🔍 Charakterystyka Obrazu i "Panagor Look"**
+* **Ostrość:** Panagory PMC słyną z "chirurgicznej" ostrości w centrum kadru. Ten obiektyw został zaprojektowany tak, aby konkurować ze stałkami 85mm, 105mm i 135mm.
+* **Makrofotografia:** Dzięki oddzielnemu przesuwnikowi, w trybie makro obiektyw staje się niemal dedykowanym szkłem do detali. Spodziewaj się minimalnej dystorsji i bardzo płaskiego pola ostrości.
+* **Plastyka:** Stałe f/4 przy 150mm generuje bardzo miękki, niemal kremowy bokeh, który idealnie izoluje portretowaną osobę od tła.
 
 ## **💡 Praca z Canon R6 Mark II / R7**
-1. **Portretowy Zoom (R6 II):** Na pełnej klatce to niezwykle uniwersalne narzędzie. Zakres 75-150mm pozwala na płynne przejście od portretu całej sylwetki do ciasnego zbliżenia twarzy.
-2. **Kompaktowe Tele (R7):** Jako eqv. ok. **$120-240mm$**. Na matrycy APS-C dostajesz bardzo sensowny zasięg przy zachowaniu stałego światła f/4.
-3. **Stabilizacja (IBIS):** Ustaw w menu aparatu **100mm** lub **135mm** jako złoty środek dla sprawnego działania stabilizacji matrycy w całym zakresie zoomu.
-4. **Adapter FD-RF:** Pamiętaj o przełączeniu pierścienia na adapterze w pozycję "LOCK", aby móc sterować przysłoną!
+1. **Portretowy Perfekcjonista (R6 II):** Na pełnej klatce to idealne narzędzie do sesji w plenerze. Stałe f/4 daje spójność ekspozycji, co docenisz przy szybkim kadrowaniu.
+2. **Makro-Bestia (R7):** Jako eqv. ok. **$120-240mm$**. Na matrycy APS-C funkcja makro w połączeniu z taką ogniskową pozwoli Ci na fotografowanie owadów z bardzo dużej odległości, nie płosząc ich.
+3. **Masa i Stabilizacja (IBIS):** Duży rozmiar to Twoja zaleta. Masa obiektywu działa jak naturalny stabilizator. W menu IBIS ustaw **105mm** jako wartość średnią lub zmieniaj ręcznie na 150mm przy makro.
+4. **Adapter FD-RF:** Solidność mocowania FD w tym Panagorze jest legendarna – na Twoim Canonie R będzie siedział sztywno i pewnie.
 
-## **🎯 Dlaczego warto go używać?**
-* **Kultowa optyka:** Jeśli to faktycznie Kiron (a wszystko na to wskazuje), masz w rękach jeden z najlepszych zoomów tamtej ery.
-* **Stałe światło:** f/4 w całym zakresie to komfort pracy, którego brakuje tanim zoomom.
-* **Uniwersalność:** Od makro-detali po portrety i krajobraz – to szkło potrafi prawie wszystko.
+## **🎯 Dlaczego to wyjątkowy "Pan"?**
+* **Inżynieria Kobori:** To nie jest wydmuszka. To obiektyw, który w dłoni sprawia wrażenie instrumentu naukowego.
+* **Dedykowane Makro:** Oddzielny przełącznik to wyższy stopień wtajemniczenia niż "macro" na pierścieniu zoomu.
+* **Rzadkość:** Panagory w wersji 75-150mm f/4 nie pojawiają się na aukcjach codziennie – to był drogi sprzęt w swoich czasach.
 
-## **📊 Porównanie: Panagor 75-150/4 vs Pentax-M 75-150/4**
-| Cecha | **Panagor PMC 75-150mm f/4** | **SMC Pentax-M 75-150mm f/4** |
+## **📊 Porównanie: Panagor 75-150 vs Tokina 80-200**
+| Cecha | **Panagor PMC 75-150mm f/4** | **RMC Tokina 80-200mm f/4** |
 | :--- | :--- | :--- |
-| **Powłoki** | PMC (Multi Coated) | SMC (Super Multi Coated) |
-| **Mocowanie** | Canon FD | Pentax-K |
-| **Funkcja Macro** | **Zazwyczaj obecna/rozbudowana** | Podstawowa |
-| **Charakter** | Bardziej kontrastowy / "Kironowski" | Bardziej naturalny / Plastyczny |
+| **Zakres** | 75-150mm (Precyzyjny) | 80-200mm (Dłuższy) |
+| **System Makro** | **Oddzielny przesuwnik (Specjalistyczny)** | Podstawowy/Brak |
+| **Budowa** | **Masywna / Duża średnica** | Smukła / Tele-pompka |
+| **Przeznaczenie** | Portret, Precyzyjne Makro | Telefoto, Reportaż |
