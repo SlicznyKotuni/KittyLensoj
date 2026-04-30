@@ -16,7 +16,7 @@ tags:
   - triplet
   - bokeh-monster
   - 135mm
-  - f3
+  - f3_0
 rodzina: PZO
 kluczowe-słowa:
   - tele

@@ -11,6 +11,7 @@ tags:
   - 28mm
   - f2_8
   - szeroki-kąt
+  - fd
 rodzina: Hoya
 kluczowe-słowa:
   - 28mm
