@@ -1,5 +1,5 @@
 ---
-alias: Soligor f/3.5 - Jasny Finał Kolekcji
+alias: Kobori-Soligor - Król Zawirowanego Bokeh
 tags:
   - obiektyw
   - soligor
@@ -11,61 +11,58 @@ tags:
   - vintage
   - manualny
   - japonia
-  - sun-optical
-  - constant-aperture
-  - two-touch
-  - fd
+  - kobori-oem
+  - swirly-bokeh
+  - glowing
+  - macro-beast
   - tele
+  - fd
   - portret
-rodzina: Soligor Auto Zoom Series
+  - zoom-macro
+  - tele-zoom
+rodzina: Soligor Auto Zoom (Kobori Series)
 kluczowe-słowa:
   - 75-205mm
   - f3_5
-  - soligor-macro
+  - soligor-kobori
   - canon-fd
   - two-touch-zoom
-  - sun-optical
-  - constant-aperture
-  - vintage-tele
+  - swirly-bokeh
+  - macro-1-2
+  - vintage-glowing
+  - flare-resistant
+  - soligor
 ---
 
-# Soligor Auto Zoom Macro 75-205mm f/3.5 (Canon FD)
+# Soligor Auto Zoom Macro 75-205mm f/3.5 (FD)
 
-## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
-* **Dystrybutor:** **Soligor**. Model ten był flagowym zoomem tele w ich ofercie na przełomie lat 70. i 80.
-* **Producent (OEM):** **Sun Optical** (prefiks 98). Fabryka ta słynęła z produkcji "jasnych" zoomów, które były bardzo solidnie wykonane.
-* **Typ:** **Two-touch zoom**. Posiada dwa oddzielne pierścienie (jeden do zoomu, drugi do ostrości), co przy tak dużej masie obiektywu jest znacznie wygodniejsze i stabilniejsze niż "pompka".
+## **ℹ️ Weryfikacja Pochodzenia i Budowa**
+* **Producent (OEM):** **Kobori Seisakujo** (potwierdzone prefiksem **9**). To wyższa szkoła jazdy japońskiej optyki. Kobori projektowało szkła, które miały charakter, a nie tylko parametry.
 * **Mocowanie:** **Canon FD**.
-* **Status:** **GWIAZDA WIECZORU**. Stałe światło f/3.5 w tym zakresie to rzadkość, która stawia ten obiektyw w klasie wyższej (tzw. "pro-sumer").
-* **Numer seryjny:** 9800586.
+* **Konstrukcja:** **Two-touch** (oddzielne pierścienie). Pancerna, ciężka, "gęsta" budowa, która mimo wagi daje poczucie obcowania z instrumentem profesjonalnym.
+* **Osłona:** Wbudowany wysuwany kaptur (hood), który – w przeciwieństwie do radzieckich konstrukcji – faktycznie działa!
 
-## **⚙️ Specyfikacja Techniczna i Budowa**
-* **Ogniskowa:** 75 - 205 mm. Klasyczny zakres tele, idealny do wszystkiego, co wymaga dystansu.
-* **Maksymalna przysłona:** **$f/3.5$ (Stała)**. Bardzo jasny jak na zooma z tamtej ery. Daje zauważalnie płytszą głębię ostrości niż standardowe f/4.5.
-* **System Makro:** Dedykowany pierścień makro. Soligory z tej serii zazwyczaj oferowały odwzorowanie w okolicach **1:3** lub **1:4**, co przy 205mm pozwala na niesamowite zbliżenia detali.
-* **Budowa:** Potężna, w pełni metalowa obudowa. To kawał solidnego japońskiego inżynierstwa.
-* **Filtr:** **Ø62 mm**. Duża przednia soczewka, niezbędna do utrzymania światła f/3.5.
+## **🔍 Charakterystyka Obrazu (Informacje z Testów)**
+* **Swirly Bokeh:** Na pełnym otwarciu ($f/3.5$) krawędzie obrazu wykazują tendencję do wirowania. To cecha pożądana w artystycznym portrecie, rzadko spotykana w zoomach!
+* **The Glow (Poświata):** Przy f/3.5 występuje delikatny "glowing" (aberracja sferyczna), który nadaje zdjęciom marzycielski, vintage'owy sznyt.
+* **Korekcja:** CA (aberracja chromatyczna) jest zaskakująco niska. Po przymknięciu "glow" znika, a obiektyw staje się technicznie bardzo ostry.
+* **Pod światło:** Świetna odporność na flary i spadek kontrastu. Jak zauważyłeś – przy Tairze (który potrafi "oślepić" od byle odblasku) ten Soligor to inna liga powłok.
 
-## **🔍 Charakterystyka Obrazu i "Sun Optical Magic"**
-* **Plastyka:** Dzięki światłu f/3.5 i ogniskowej 205mm, ten obiektyw "wycina" tło niemal jak stałka 200mm. Bokeh jest gładki i bardzo przyjemny dla oka.
-* **Ostrość:** Sun Optical projektował te szkła z myślą o wysokim kontraście. Spodziewaj się bardzo ostrego centrum. Przy f/3.5 może pojawić się delikatna, artystyczna poświata (glow), która znika po przymknięciu do f/5.6, zostawiając "żyletę".
-* **Makrofotografia:** Praca z pierścieniem makro przy tak jasnym szkle pozwala na uzyskanie niemal bajkowych ujęć roślin czy owadów z bardzo małą głębią ostrości.
+## **🌿 Tryb Macro - "Pogromca Mrówek"**
+* **Zaskoczenie:** To nie jest marketingowy dodatek. To realna zmiana układu soczewek.
+* **Odległość ostrzenia:** **30-40 cm** przy ogniskowej 205mm (eqv. ok. **328mm** na R7!).
+* **Powiększenie:** Pozwala na szczegółowe zdjęcia owadów (mrówki) i detali roślinnych.
+* **Efekt:** Połączenie długiej ogniskowej, małej odległości i f/3.5 w makro daje ekstremalną izolację obiektu.
 
 ## **💡 Praca z Canon R6 Mark II / R7**
-1. **Portretowy Mocarz (R6 II):** Na pełnej klatce to szkło będzie konkurować z Twoją Tokiną 80-200 f/4. Soligor wygrywa jasnością, co docenisz przy zachodzącym słońcu.
-2. **Snajper z Makro (R7):** Jako eqv. ok. **$120-328mm$**. Na cropie to już bardzo poważne tele. Możesz fotografować detale na czubkach drzew z zachowaniem świetnej separacji tła.
-3. **Stabilizacja (IBIS):** Ustaw w aparacie **200mm**. Przy świetle f/3.5 i stabilizacji matrycy, to szkło staje się potężnym narzędziem do zdjęć tele "z ręki" w gorszym oświetleniu.
-4. **Ergonomia:** Brak systemu "pompki" sprawia, że przy fotografowaniu makro obiektyw nie będzie samoczynnie zmieniał ogniskowej pod własnym ciężarem.
+* **Na R7 (APS-C):** Masz zasięg ok. **120-328mm**. Twoje porównanie do "liścia i mrówki" pokazuje potęgę tego szkła na gęstej matrycy R7.
+* **Stabilizacja:** Przy 205mm i f/3.5 "glow" może utrudniać pracę Focus Peakingu – warto wtedy użyć powiększenia cyfrowego (lupki) w wizjerze dla idealnej precyzji.
+* **Waga:** "Daje w kość", ale dzięki niej obraz w wizjerze jest stabilniejszy (większa bezwładność zestawu).
 
-## **🎯 Dlaczego to godne zamknięcie paczki?**
-* **Światło f/3.5:** To unikalny parametr, który wyróżnia Cię z tłumu posiadaczy ciemniejszych zoomów.
-* **Mechanika Two-Touch:** Precyzja i wygoda, która sprawia, że praca z tym obiektywem to czysta przyjemność.
-* **Uniwersalność:** Od jasnych portretów po precyzyjne makro – ten Soligor potrafi wszystko.
-
-## **📊 Porównanie: Soligor 75-205 vs Panagor 75-150**
-| Cecha | **Soligor 75-205mm f/3.5** | **Panagor PMC 75-150mm f/4** |
-| :--- | :--- | :--- |
-| **Jasność** | **$f/3.5$ (Jaśniejszy)** | $f/4$ |
-| **Zasięg** | **do 205mm (Większy)** | do 150mm |
-| **Typ Zoomu** | Two-Touch | Two-Touch |
-| **Filtr** | 62 mm | 62 mm |
+## **📊 Porównanie: Soligor (Kobori) vs Tair 11A (135mm)**
+| Cecha                 | **Soligor 75-205mm f/3.5** | **Tair 11A 135mm f/2.8**    |
+| :-------------------- | :------------------------- | :-------------------------- |
+| **Praca pod światło** | **Bardzo dobra (MC)**      | Słaba (Potrzebuje "komina") |
+| **Wszechstronność**   | Zoom + Realne Makro        | Stałka / Portret            |
+| **Charakter**         | Swirly Bokeh / Glow        | Klasyczny rosyjski bokeh    |
+| **Waga**              | Bardzo ciężki              | Ciężki                      |
