@@ -15,6 +15,7 @@ tags:
   - rare
   - bokeh-machine
   - mir
+  - standard
 rodzina: Auto Miranda / Mitar Series
 kluczowe-słowa:
   - 50mm
