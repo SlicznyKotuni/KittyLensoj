@@ -5,7 +5,6 @@ tags:
   - sigma
   - telemax
   - ys
-  - m42
   - vintage
   - manualny
   - japonia
@@ -13,6 +12,7 @@ tags:
   - f2_8
   - teleobiektyw
   - pentax-k
+  - macro
 rodzina: Sigma Telemax YS
 kluczowe-słowa:
   - 135mm
@@ -20,11 +20,11 @@ kluczowe-słowa:
   - sigma
   - telemax
   - ys
-  - m42
   - japan
   - dual-focus-ring
   - tele
   - vintage-glass
+  - pentax-k
 ---
 
 # Sigma Telemax YS 135mm f/2.8 (M42 / YS)
@@ -33,7 +33,7 @@ kluczowe-słowa:
 * **Producent:** **Sigma**, Japonia.
 * **Kontekst historyczny:** Seria **YS** to autorski system Sigmy (skrót od nazwiska założyciela, Michihiro Yamaki). Był to system "uniwersalnego bagnetu" – obiektyw był ten sam, zmieniało się tylko końcówkę. Twój egzemplarz ma adapter na M42, co czyni go najbardziej uniwersalnym szkiełkiem w kolekcji.
 * **Status:** **MECHANICZNA OSOBLIWOŚĆ**. Ze względu na swoją nietypową konstrukcję z dwoma pierścieniami (jeden do standardowego ostrzenia, drugi często powiązany z funkcją bliskiego ostrzenia lub synchronizacją z body), jest to obiekt pożądania kolekcjonerów dziwnej optyki.
-* **Mocowanie:** **M42 (system YS)**.
+* **Mocowanie:** **Pentax-K (system YS)**.
 * **Typ:** Jasny teleobiektyw portretowy.
 
 ## **⚙️ Specyfikacja Techniczna i Analiza**
