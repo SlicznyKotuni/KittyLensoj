@@ -27,7 +27,7 @@ kluczowe-słowa:
   - 62mm-filter
 ---
 
-# GEMINI MACRO ZOOM 28-80mm f/3.5-4.5 MC (Canon FD)
+# Gemini Macro Zoom 28-80mm f/3.5-4.5 MC (FD)
 
 ## **ℹ️ Rodowód i Tożsamość Konstrukcji**
 * **Dystrybutor:** **Gemini** (Rzadki i poszukiwany brand handlowy z lat 80., dystrybuujący wyselekcjonowaną optykę OEM na rynki zachodnie).

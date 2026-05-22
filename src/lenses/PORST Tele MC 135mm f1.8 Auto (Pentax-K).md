@@ -30,7 +30,7 @@ kluczowe-słowa:
   - bokeh-king
 ---
 
-# PORST Tele MC 135mm f/1.8 Auto (Pentax-K)
+# PorstTele MC 135mm f/1.8 Auto (Pentax-K)
 
 ## **ℹ️ Rodowód i Konstrukcja: Narodziny Bokeh-Potwora**
 * **Dystrybutor:** Photo Porst, Norymberga, RFN (elitarna marka na rynku niemieckim).
