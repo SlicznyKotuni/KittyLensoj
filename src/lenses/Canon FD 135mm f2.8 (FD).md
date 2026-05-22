@@ -11,6 +11,7 @@ tags:
   - manualny
   - japonia
   - portrait
+  - nfd
 rodzina: Canon FD
 kluczowe-słowa:
   - 135mm

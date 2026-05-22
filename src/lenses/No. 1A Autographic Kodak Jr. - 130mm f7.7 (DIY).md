@@ -1,8 +1,29 @@
 ---
-alias: "Stuletnia Legenda - Kodak Autographic"
-tags: [aparat, kodak, autographic, 130mm, f7_7, anastigmat, vintage, antique, rochester, bellows-camera, diy-mount, medium-format]
-rodzina: "Kodak Junior Series"
-kluczowe-słowa: [130mm, f7_7, eastman-kodak, rochester-ny, kodak-anastigmat, diomatic-shutter, autographic, antique-lens]
+alias: Stuletnia Legenda - Kodak Autographic
+tags:
+  - aparat
+  - kodak
+  - autographic
+  - 130mm
+  - f7_7
+  - anastigmat
+  - vintage
+  - antique
+  - rochester
+  - bellows-camera
+  - diy-mount
+  - medium-format
+  - diy
+rodzina: Kodak Junior Series
+kluczowe-słowa:
+  - 130mm
+  - f7_7
+  - eastman-kodak
+  - rochester-ny
+  - kodak-anastigmat
+  - diomatic-shutter
+  - autographic
+  - antique-lens
 ---
 
 # No. 1A Autographic Kodak Jr. - 130mm f/7.7
