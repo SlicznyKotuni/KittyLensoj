@@ -111,13 +111,29 @@ module.exports = function(eleventyConfig) {
       }
     }
 
-    // Sort so that files with higher numeric name come first; fallback to mtime when numeric part is missing
+    // Najpierw najwyższy numer w nazwie (= najnowsze), potem data pliku, potem lens
     images.sort((a, b) => {
-      const aKey = (typeof a.nameNumeric === 'number' ? a.nameNumeric : (a.mtime || 0));
-      const bKey = (typeof b.nameNumeric === 'number' ? b.nameNumeric : (b.mtime || 0));
-      return bKey - aKey;
+      const aNum =
+        typeof a.nameNumeric === "number" ? a.nameNumeric : -1;
+      const bNum =
+        typeof b.nameNumeric === "number" ? b.nameNumeric : -1;
+      if (aNum !== bNum) return bNum - aNum;
+
+      const mtimeCmp = (b.mtime || 0) - (a.mtime || 0);
+      if (mtimeCmp !== 0) return mtimeCmp;
+
+      const fileCmp = b.filename.localeCompare(a.filename, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
+      if (fileCmp !== 0) return fileCmp;
+
+      return a.lens.localeCompare(b.lens, undefined, {
+        numeric: true,
+        sensitivity: "base",
+      });
     });
-    console.log(`Znaleziono ${images.length} zdjęć (posortowano według numeru w nazwie lub daty)`);
+    console.log(`Znaleziono ${images.length} zdjęć (posortowano: numer ↓, najnowsze pierwsze)`);
     return images;
   });
   
@@ -131,6 +147,22 @@ module.exports = function(eleventyConfig) {
       .map(dirent => dirent.name);
   });
   
+  eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
+
+  eleventyConfig.addFilter("galleryJson", (images) => {
+    if (!Array.isArray(images)) return "[]";
+    return JSON.stringify(
+      images.map(({ lens, filename, path, thumb }) => ({
+        lens,
+        filename,
+        path,
+        src: thumb?.src || path,
+        w: thumb?.width || 0,
+        h: thumb?.height || 0,
+      })),
+    );
+  });
+
   // 6. Filtry
   eleventyConfig.addFilter("displayName", (lens) => {
     if (!lens) return "Nieznany obiektyw";

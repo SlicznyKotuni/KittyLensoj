@@ -1,11 +1,5 @@
-const GALLERY_SHAPES = [
-  "square",
-  "landscape",
-  "portrait",
-  "portrait-tall",
-  "panorama",
-  "panorama-wide",
-];
+const GALLERY_BATCH_SIZE = 72;
+const GALLERY_DATA_URL = "/gallery-data.json";
 
 function getGalleryShape(width, height) {
   if (!width || !height) return "square";
@@ -18,71 +12,179 @@ function getGalleryShape(width, height) {
   return "square";
 }
 
-function applyGalleryShape(item, width, height) {
-  const shape = getGalleryShape(width, height);
-  GALLERY_SHAPES.forEach((s) => item.classList.remove(`gallery-item--${s}`));
-  item.classList.add(`gallery-item--${shape}`);
+function buildGalleryItemElement(image, index, eagerLoad) {
+  const w = image.w || image.thumb?.width || 0;
+  const h = image.h || image.thumb?.height || 0;
+  const shape = getGalleryShape(w, h);
+
+  const item = document.createElement("article");
+  item.className = `gallery-item gallery-item--${shape}`;
+  item.dataset.lens = image.lens;
   item.dataset.shape = shape;
-  if (width && height) {
-    item.style.setProperty("--gallery-ar", `${width} / ${height}`);
+  item.dataset.index = String(index);
+  if (w > 0 && h > 0) {
+    item.style.setProperty("--gallery-ar", `${w} / ${h}`);
   }
-  return shape;
+
+  const media = document.createElement("div");
+  media.className = "gallery-item__media";
+
+  const img = document.createElement("img");
+  img.src = image.src || image.thumb?.src || image.path;
+  img.alt = `${image.lens} - ${image.filename}`;
+  img.dataset.full = image.path;
+  img.loading = eagerLoad ? "eager" : "lazy";
+  img.decoding = "async";
+  if (eagerLoad) img.fetchPriority = "high";
+  img.className = "gallery-img";
+
+  const glow = document.createElement("div");
+  glow.className = "gallery-item__glow";
+  glow.setAttribute("aria-hidden", "true");
+
+  const info = document.createElement("div");
+  info.className = "image-info";
+  const lensSpan = document.createElement("span");
+  lensSpan.className = "lens-name";
+  lensSpan.textContent = image.lens;
+  const fileSpan = document.createElement("span");
+  fileSpan.className = "file-title";
+  fileSpan.textContent = image.filename;
+  info.append(lensSpan, fileSpan);
+  media.append(img, glow);
+  item.append(media, info);
+  return item;
 }
 
-function applyGalleryLayout(item, width, height) {
-  return applyGalleryShape(item, width, height);
-}
-
-function initGalleryShapes(grid) {
-  if (!grid) return;
-  grid.querySelectorAll(".gallery-item").forEach((item) => {
-    if (item.style.display === "none") return;
-    const img = item.querySelector(".gallery-img, img");
-    if (!img) return;
-
-    const apply = () => {
-      const w = img.naturalWidth || Number(img.getAttribute("width"));
-      const h = img.naturalHeight || Number(img.getAttribute("height"));
-      if (w && h) applyGalleryLayout(item, w, h);
-    };
-
-    if (img.complete && img.naturalWidth) apply();
-    else img.addEventListener("load", apply, { once: true });
-  });
-}
-
-function initGalleryLayout(root = document) {
-  const grid =
-    root.id === "gallery-grid"
-      ? root
-      : root.querySelector?.("#gallery-grid") ||
-        document.getElementById("gallery-grid");
-  if (grid) initGalleryShapes(grid);
+function manifestToLightboxEntry(image, element) {
+  return {
+    src: image.src || image.thumb?.src || image.path,
+    full: image.path,
+    alt: `${image.lens} - ${image.filename}`,
+    element: element || null,
+  };
 }
 
 window.getGalleryShape = getGalleryShape;
-window.applyGalleryLayout = applyGalleryLayout;
-window.initGalleryLayout = initGalleryLayout;
+window.buildGalleryItemElement = buildGalleryItemElement;
 
-// Filtrowanie zdjęć w galerii
 document.addEventListener("DOMContentLoaded", function () {
   const folderSelect = document.getElementById("folder-select");
   const galleryGrid = document.getElementById("gallery-grid");
+  const galleryStatus = document.getElementById("gallery-status");
+  const gallerySentinel = document.getElementById("gallery-sentinel");
 
-  if (folderSelect && galleryGrid) {
-    folderSelect.addEventListener("change", function () {
-      const selectedLens = this.value;
-      const galleryItems = galleryGrid.querySelectorAll(".gallery-item");
+  let allGalleryImages = [];
+  let filteredGalleryImages = [];
+  let renderedCount = 0;
+  let galleryLoadObserver = null;
+  let virtualGallery = false;
 
-      galleryItems.forEach((item) => {
-        if (selectedLens === "all" || item.dataset.lens === selectedLens) {
-          item.style.display = "";
-        } else {
-          item.style.display = "none";
+  function updateGalleryStatus() {
+    if (!galleryStatus) return;
+    const total = filteredGalleryImages.length;
+    const shown = Math.min(renderedCount, total);
+    galleryStatus.textContent =
+      total > 0 ? `Montras ${shown} el ${total} fotoj` : "";
+  }
+
+  function syncLightboxManifest() {
+    visibleImages = filteredGalleryImages.map((image) =>
+      manifestToLightboxEntry(image),
+    );
+  }
+
+  function renderGalleryBatch() {
+    if (!galleryGrid || renderedCount >= filteredGalleryImages.length) return;
+
+    const end = Math.min(
+      renderedCount + GALLERY_BATCH_SIZE,
+      filteredGalleryImages.length,
+    );
+    const fragment = document.createDocumentFragment();
+
+    for (let i = renderedCount; i < end; i++) {
+      fragment.appendChild(
+        buildGalleryItemElement(filteredGalleryImages[i], i, i < 8),
+      );
+    }
+
+    galleryGrid.appendChild(fragment);
+    renderedCount = end;
+    updateGalleryStatus();
+
+    if (gallerySentinel) {
+      gallerySentinel.hidden = renderedCount >= filteredGalleryImages.length;
+    }
+  }
+
+  function resetVirtualGallery() {
+    if (!galleryGrid) return;
+    galleryGrid.innerHTML = "";
+    renderedCount = 0;
+    if (gallerySentinel) gallerySentinel.hidden = false;
+    renderGalleryBatch();
+    syncLightboxManifest();
+    setupGalleryInfiniteScroll();
+  }
+
+  function applyLensFilter(lensValue) {
+    filteredGalleryImages =
+      lensValue === "all"
+        ? allGalleryImages
+        : allGalleryImages.filter((image) => image.lens === lensValue);
+    resetVirtualGallery();
+  }
+
+  function setupGalleryInfiniteScroll() {
+    if (!gallerySentinel || !("IntersectionObserver" in window)) return;
+    if (galleryLoadObserver) galleryLoadObserver.disconnect();
+
+    galleryLoadObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          renderGalleryBatch();
         }
+      },
+      { rootMargin: "1200px 0px" },
+    );
+    galleryLoadObserver.observe(gallerySentinel);
+  }
+
+  function startVirtualGallery(data) {
+    if (!galleryGrid || !Array.isArray(data) || data.length === 0) return false;
+
+    allGalleryImages = data;
+    virtualGallery = true;
+    filteredGalleryImages = allGalleryImages;
+    resetVirtualGallery();
+
+    if (folderSelect) {
+      folderSelect.addEventListener("change", function () {
+        applyLensFilter(this.value);
       });
-      requestAnimationFrame(() => initGalleryShapes(galleryGrid));
-    });
+    }
+
+    return true;
+  }
+
+  async function initVirtualGallery() {
+    if (!galleryGrid) return false;
+
+    try {
+      const response = await fetch(GALLERY_DATA_URL, {
+        credentials: "same-origin",
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      return startVirtualGallery(data);
+    } catch (error) {
+      console.error("Nie udało się wczytać danych galerii", error);
+      if (galleryStatus) {
+        galleryStatus.textContent = "Eraro ŝargante galerion.";
+      }
+      return false;
+    }
   }
 
   // Lightbox — pokaz slajdów na pełnym ekranie
@@ -168,6 +270,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getVisibleImages() {
+    if (virtualGallery) {
+      return filteredGalleryImages.map((image) => manifestToLightboxEntry(image));
+    }
     if (!galleryGrid) return visibleImages;
     const images = galleryGrid.querySelectorAll(".gallery-item img");
     const visible = Array.from(images).filter((img) => {
@@ -183,8 +288,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openLightbox(imageIndex) {
-    if (galleryGrid) {
+    if (!virtualGallery && galleryGrid) {
       visibleImages = getVisibleImages();
+    } else if (virtualGallery) {
+      syncLightboxManifest();
     }
     if (visibleImages.length === 0) return;
 
@@ -354,16 +461,40 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Attach click handlers to gallery items (works better on mobile)
+  initVirtualGallery();
+
+  if (!virtualGallery && folderSelect && galleryGrid) {
+    folderSelect.addEventListener("change", function () {
+      const selectedLens = this.value;
+      galleryGrid.querySelectorAll(".gallery-item").forEach((item) => {
+        if (selectedLens === "all" || item.dataset.lens === selectedLens) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  }
+
   if (galleryGrid) {
   galleryGrid.addEventListener("click", function (e) {
     const item = e.target.closest(".gallery-item");
     if (!item || !galleryGrid.contains(item)) return;
 
+    e.preventDefault();
+
+    if (virtualGallery) {
+      const index = parseInt(item.dataset.index, 10);
+      if (!Number.isNaN(index)) {
+        syncLightboxManifest();
+        openLightbox(index);
+      }
+      return;
+    }
+
     const img = item.querySelector("img");
     if (!img) return;
 
-    e.preventDefault();
     visibleImages = getVisibleImages();
     const clickedImage = visibleImages.findIndex(
       (imgData) => imgData.element === img,
@@ -406,6 +537,15 @@ document.addEventListener("DOMContentLoaded", function () {
         if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
           e.preventDefault();
           const item = e.target.closest(".gallery-item");
+          if (!item) return;
+          if (virtualGallery) {
+            const index = parseInt(item.dataset.index, 10);
+            if (!Number.isNaN(index)) {
+              syncLightboxManifest();
+              openLightbox(index);
+            }
+            return;
+          }
           const img = item.querySelector("img");
           if (img) {
             visibleImages = getVisibleImages();
@@ -472,7 +612,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleBackToTop();
   }
 
-  initGalleryLayout();
 });
 
 // Style pokazu slajdów na pełnym ekranie

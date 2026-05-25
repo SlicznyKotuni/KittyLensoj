@@ -3,7 +3,6 @@ layout: layout.njk
 title: Galerio
 permalink: /galeria/
 ---
-{% from "gallery-item.njk" import galleryItem %}
 
 <header class="page-header">
     <h1>Galerio</h1>
@@ -19,11 +18,9 @@ permalink: /galeria/
             <option value="{{ folder }}">{{ folder }}</option>
             {% endfor %}
         </select>
+        <p class="gallery-status" id="gallery-status" aria-live="polite">Ŝargas galerion…</p>
     </div>
 
-    <div class="gallery-grid" id="gallery-grid">
-        {% for image in collections.allImages %}
-        {{ galleryItem(image, loop.index0 < 6, 'high' if loop.index0 < 6 else 'low') }}
-        {% endfor %}
-    </div>
+    <div class="gallery-grid" id="gallery-grid"></div>
+    <div id="gallery-sentinel" class="gallery-sentinel" aria-hidden="true"></div>
 </main>
