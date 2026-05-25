@@ -1,3 +1,69 @@
+const GALLERY_SHAPES = [
+  "square",
+  "landscape",
+  "portrait",
+  "portrait-tall",
+  "panorama",
+  "panorama-wide",
+];
+
+function getGalleryShape(width, height) {
+  if (!width || !height) return "square";
+  const ratio = height / width;
+  if (ratio >= 1.35) return "portrait-tall";
+  if (ratio >= 1.02) return "portrait";
+  if (ratio <= 0.48) return "panorama-wide";
+  if (ratio <= 0.68) return "panorama";
+  if (ratio < 0.92) return "landscape";
+  return "square";
+}
+
+function applyGalleryShape(item, width, height) {
+  const shape = getGalleryShape(width, height);
+  GALLERY_SHAPES.forEach((s) => item.classList.remove(`gallery-item--${s}`));
+  item.classList.add(`gallery-item--${shape}`);
+  item.dataset.shape = shape;
+  if (width && height) {
+    item.style.setProperty("--gallery-ar", `${width} / ${height}`);
+  }
+  return shape;
+}
+
+function applyGalleryLayout(item, width, height) {
+  return applyGalleryShape(item, width, height);
+}
+
+function initGalleryShapes(grid) {
+  if (!grid) return;
+  grid.querySelectorAll(".gallery-item").forEach((item) => {
+    if (item.style.display === "none") return;
+    const img = item.querySelector(".gallery-img, img");
+    if (!img) return;
+
+    const apply = () => {
+      const w = img.naturalWidth || Number(img.getAttribute("width"));
+      const h = img.naturalHeight || Number(img.getAttribute("height"));
+      if (w && h) applyGalleryLayout(item, w, h);
+    };
+
+    if (img.complete && img.naturalWidth) apply();
+    else img.addEventListener("load", apply, { once: true });
+  });
+}
+
+function initGalleryLayout(root = document) {
+  const grid =
+    root.id === "gallery-grid"
+      ? root
+      : root.querySelector?.("#gallery-grid") ||
+        document.getElementById("gallery-grid");
+  if (grid) initGalleryShapes(grid);
+}
+
+window.getGalleryShape = getGalleryShape;
+window.applyGalleryLayout = applyGalleryLayout;
+window.initGalleryLayout = initGalleryLayout;
+
 // Filtrowanie zdjęć w galerii
 document.addEventListener("DOMContentLoaded", function () {
   const folderSelect = document.getElementById("folder-select");
@@ -10,19 +76,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
       galleryItems.forEach((item) => {
         if (selectedLens === "all" || item.dataset.lens === selectedLens) {
-          item.style.display = "block";
+          item.style.display = "";
         } else {
           item.style.display = "none";
         }
       });
+      requestAnimationFrame(() => initGalleryShapes(galleryGrid));
     });
   }
 
-  // Lightbox dla zdjęć z nawigacją
+  // Lightbox — pokaz slajdów na pełnym ekranie
   let currentImageIndex = 0;
   let visibleImages = [];
   let currentLightbox = null;
   let isFullscreenActive = false;
+  let lightboxTouchStartX = 0;
 
   const fullscreenEvents = [
     "fullscreenchange",
@@ -74,34 +142,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return Promise.resolve();
   }
 
-  function toggleFullscreen(element) {
+  function enterSlideshowFullscreen(element) {
     if (!element) return;
-    // If already in fullscreen, exit and ensure any zoomed UI class is removed
-    if (getFullscreenElement()) {
-      try {
-        // Remove zoomed class immediately so captions re-appear in normal view
-        element.classList.remove("zoomed");
-      } catch (e) {
-        // ignore if element isn't in DOM
-      }
-      exitFullscreen();
-    } else {
-      // Add a class that the CSS listens to (.lightbox.zoomed) to hide captions
-      try {
-        element.classList.add("zoomed");
-      } catch (e) {
-        // ignore if element isn't in DOM
-      }
-
-      const req = requestFullscreen(element);
-      // If request fails, remove the zoomed class so UI stays consistent
-      if (req && typeof req.then === "function") {
-        req.catch(() => {
-          try {
-            element.classList.remove("zoomed");
-          } catch (e) {}
-        });
-      }
+    const req = requestFullscreen(element);
+    if (req && typeof req.then === "function") {
+      req.catch(() => {});
     }
   }
 
@@ -113,7 +158,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener(eventName, handleFullscreenChange);
   });
 
+  function showLightboxUi(lightbox) {
+    if (!lightbox) return;
+    lightbox.classList.add("show-ui");
+    clearTimeout(lightbox._uiHideTimer);
+    lightbox._uiHideTimer = setTimeout(() => {
+      lightbox.classList.remove("show-ui");
+    }, 3000);
+  }
+
   function getVisibleImages() {
+    if (!galleryGrid) return visibleImages;
     const images = galleryGrid.querySelectorAll(".gallery-item img");
     const visible = Array.from(images).filter((img) => {
       const item = img.closest(".gallery-item");
@@ -128,7 +183,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function openLightbox(imageIndex) {
-    visibleImages = getVisibleImages();
+    if (galleryGrid) {
+      visibleImages = getVisibleImages();
+    }
     if (visibleImages.length === 0) return;
 
     currentImageIndex = imageIndex;
@@ -139,65 +196,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!lightbox) {
       lightbox = document.createElement("div");
-      lightbox.className = "lightbox";
+      lightbox.className = "lightbox lightbox-slideshow";
       currentLightbox = lightbox;
     }
 
-    const prevButton =
-      currentImageIndex > 0
-        ? '<button class="lightbox-nav lightbox-prev" aria-label="Previous image">‹</button>'
-        : '<button class="lightbox-nav lightbox-prev disabled" aria-label="Previous image" disabled>‹</button>';
-
-    const nextButton =
-      currentImageIndex < visibleImages.length - 1
-        ? '<button class="lightbox-nav lightbox-next" aria-label="Next image">›</button>'
-        : '<button class="lightbox-nav lightbox-next disabled" aria-label="Next image" disabled>›</button>';
+    const hasPrev = currentImageIndex > 0;
+    const hasNext = currentImageIndex < visibleImages.length - 1;
 
     lightbox.innerHTML = `
-             <div class="lightbox-content">
-                 <span class="close">&times;</span>
-                 ${prevButton}
-           <div class="lightbox-image-wrapper">
-           <img src="${image.full}" alt="${image.alt}" loading="eager" decoding="async" style="opacity: 0;">
-           <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
-         </div>
-                 ${nextButton}
-                 <div class="image-caption">${image.alt}</div>
-             </div>
-         `;
+      <button class="lightbox-close close" type="button" aria-label="Zamknij">&times;</button>
+      <button class="lightbox-nav lightbox-prev${hasPrev ? "" : " disabled"}" type="button" aria-label="Poprzednie zdjęcie"${hasPrev ? "" : " disabled"}>‹</button>
+      <button class="lightbox-nav lightbox-next${hasNext ? "" : " disabled"}" type="button" aria-label="Następne zdjęcie"${hasNext ? "" : " disabled"}>›</button>
+      <div class="lightbox-stage">
+        <img src="${image.full}" alt="${image.alt}" loading="eager" decoding="async" class="lightbox-slide-img">
+      </div>
+      <div class="lightbox-ui">
+        <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
+        <div class="image-caption">${image.alt}</div>
+      </div>
+    `;
 
-    // Load image and scale it properly
     const lightboxImg = lightbox.querySelector("img");
     if (lightboxImg) {
+      lightboxImg.classList.add("is-loading");
       lightboxImg.onload = function () {
-        // Remove loading opacity once image is loaded
-        this.style.opacity = "1";
-
-        // Auto-scale based on image aspect ratio and screen size
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
-        const imageRatio = this.naturalWidth / this.naturalHeight;
-        const screenRatio = windowWidth / windowHeight;
-
-        if (imageRatio > screenRatio) {
-          // Image is wider than screen - scale by width
-          this.style.maxWidth = "95vw";
-          this.style.maxHeight = "auto";
-        } else {
-          // Image is taller than screen - scale by height
-          this.style.maxHeight = "90vh";
-          this.style.maxWidth = "auto";
-        }
-
-        // Force reflow to apply styles
-        this.offsetHeight;
+        this.classList.remove("is-loading");
       };
-
-      // Handle error loading
       lightboxImg.onerror = function () {
-        this.style.opacity = "1";
-        this.style.maxWidth = "95vw";
-        this.style.maxHeight = "90vh";
+        this.classList.remove("is-loading");
       };
     }
 
@@ -205,14 +231,52 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.appendChild(lightbox);
       document.addEventListener("keydown", handleLightboxKeydown);
       document.body.style.overflow = "hidden";
+      enterSlideshowFullscreen(lightbox);
+
       lightbox.addEventListener("click", function (e) {
-        if (e.target === lightbox) {
-          closeLightbox();
+        if (
+          e.target === lightbox ||
+          e.target.classList.contains("lightbox-stage")
+        ) {
+          showLightboxUi(lightbox);
         }
       });
+
+      lightbox.addEventListener(
+        "touchstart",
+        function (e) {
+          lightboxTouchStartX = e.changedTouches[0].screenX;
+        },
+        { passive: true },
+      );
+
+      lightbox.addEventListener(
+        "touchend",
+        function (e) {
+          const diffX = lightboxTouchStartX - e.changedTouches[0].screenX;
+          if (Math.abs(diffX) < 50) {
+            showLightboxUi(lightbox);
+            return;
+          }
+          if (diffX > 0 && currentImageIndex < visibleImages.length - 1) {
+            openLightbox(currentImageIndex + 1);
+          } else if (diffX < 0 && currentImageIndex > 0) {
+            openLightbox(currentImageIndex - 1);
+          }
+        },
+        { passive: true },
+      );
+
+      lightbox.addEventListener("mousemove", () => showLightboxUi(lightbox));
+    } else if (
+      isFullscreenActive &&
+      getFullscreenElement() !== currentLightbox
+    ) {
+      enterSlideshowFullscreen(currentLightbox);
     }
 
-    // Close button
+    showLightboxUi(lightbox);
+
     const closeButton = lightbox.querySelector(".close");
     if (closeButton) {
       closeButton.addEventListener("click", function (e) {
@@ -221,57 +285,20 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Prevent image clicks from closing and allow fullscreen toggle
-    const lightboxImg2 = lightbox.querySelector("img");
-    if (lightboxImg2) {
-      lightboxImg2.addEventListener("click", function (e) {
-        e.stopPropagation();
-        toggleFullscreen(currentLightbox);
-      });
-
-      // Double-click for fullscreen on desktop
-      lightboxImg2.addEventListener("dblclick", function (e) {
-        e.stopPropagation();
-        toggleFullscreen(currentLightbox);
-      });
-    }
-
-    const imageWrapper = lightbox.querySelector(".lightbox-image-wrapper");
-    if (imageWrapper) {
-      imageWrapper.addEventListener("click", function (e) {
-        e.stopPropagation();
-      });
-    }
-
-    // Previous button
     const prevBtn = lightbox.querySelector(".lightbox-prev");
-    if (prevBtn && !prevBtn.disabled) {
+    if (prevBtn && hasPrev) {
       prevBtn.addEventListener("click", function (e) {
         e.stopPropagation();
-        if (currentImageIndex > 0) {
-          openLightbox(currentImageIndex - 1);
-        }
+        openLightbox(currentImageIndex - 1);
       });
     }
 
-    // Next button
     const nextBtn = lightbox.querySelector(".lightbox-next");
-    if (nextBtn && !nextBtn.disabled) {
+    if (nextBtn && hasNext) {
       nextBtn.addEventListener("click", function (e) {
         e.stopPropagation();
-        if (currentImageIndex < visibleImages.length - 1) {
-          openLightbox(currentImageIndex + 1);
-        }
+        openLightbox(currentImageIndex + 1);
       });
-    }
-
-    // Restore fullscreen if active after rebuilding content
-    if (
-      isFullscreenActive &&
-      currentLightbox &&
-      getFullscreenElement() !== currentLightbox
-    ) {
-      requestFullscreen(currentLightbox);
     }
   }
 
@@ -324,14 +351,11 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault();
         closeLightbox();
         break;
-      case " ": // Spacebar
-        e.preventDefault();
-        toggleFullscreen(currentLightbox);
-        break;
     }
   }
 
   // Attach click handlers to gallery items (works better on mobile)
+  if (galleryGrid) {
   galleryGrid.addEventListener("click", function (e) {
     const item = e.target.closest(".gallery-item");
     if (!item || !galleryGrid.contains(item)) return;
@@ -397,6 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     { passive: true },
   );
+  }
 
   // Also handle images on lens detail pages
   const lensImages = document.querySelectorAll(".image-item img");
@@ -406,6 +431,7 @@ document.addEventListener("DOMContentLoaded", function () {
       visibleImages = [
         {
           src: this.src,
+          full: this.dataset.full || this.src,
           alt: this.alt,
           element: this,
         },
@@ -445,237 +471,220 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initial check
     toggleBackToTop();
   }
+
+  initGalleryLayout();
 });
 
-// Dodanie styli dla lightboxa
+// Style pokazu slajdów na pełnym ekranie
 const lightboxStyles = `
-.lightbox {
+.lightbox-slideshow {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: #000;
+    z-index: 10000;
+    overflow: hidden;
+    cursor: none;
 }
 
-.lightbox-content {
-    position: relative;
-    max-width: 95%;
-    max-height: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+.lightbox-slideshow.show-ui,
+.lightbox-slideshow:hover {
+    cursor: default;
 }
 
-.lightbox-image-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.lightbox-content img {
-    max-width: 95vw;
-    max-height: 90vh;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 40px rgba(0, 255, 170, 0.5);
-    transition: all 0.3s ease;
-    object-fit: contain;
-    cursor: zoom-in;
-    /* Better scaling for different aspect ratios */
-    aspect-ratio: auto;
-}
-
-.lightbox .close {
+.lightbox-stage {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    color: var(--neon-color);
-    font-size: 40px;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid var(--neon-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1001;
+    padding: 0;
+}
+
+.lightbox-slide-img {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: 100vw;
+    max-height: 100vh;
+    max-height: 100dvh;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox-slide-img.is-loading {
+    opacity: 0.35;
+}
+
+.lightbox-slideshow .close,
+.lightbox-slideshow .lightbox-close {
+    position: fixed;
+    top: max(16px, env(safe-area-inset-top, 0px));
+    right: max(16px, env(safe-area-inset-right, 0px));
+    color: var(--neon-color);
+    font-size: 36px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.55);
+    border: 2px solid var(--neon-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.2s ease, background 0.2s ease;
+    z-index: 10002;
     line-height: 1;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.lightbox .close:hover {
-    background: var(--neon-color);
-    color: var(--background-color);
-    box-shadow: 0 0 20px var(--neon-color);
-    transform: scale(1.1);
-}
-
-.lightbox-nav {
-    background: rgba(0, 0, 0, 0.7);
+.lightbox-slideshow .lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
     border: 2px solid var(--neon-color);
     color: var(--neon-color);
-    font-size: 50px;
-    width: 60px;
-    height: 60px;
+    font-size: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1001;
+    transition: opacity 0.3s ease, transform 0.2s ease, background 0.2s ease;
+    z-index: 10002;
     line-height: 1;
     padding: 0;
     user-select: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.lightbox-nav:hover:not(.disabled) {
+.lightbox-slideshow.show-ui .close,
+.lightbox-slideshow.show-ui .lightbox-close,
+.lightbox-slideshow.show-ui .lightbox-nav,
+.lightbox-slideshow:hover .close,
+.lightbox-slideshow:hover .lightbox-close,
+.lightbox-slideshow:hover .lightbox-nav {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-slideshow .lightbox-prev {
+    left: max(12px, env(safe-area-inset-left, 0px));
+}
+
+.lightbox-slideshow .lightbox-next {
+    right: max(12px, env(safe-area-inset-right, 0px));
+}
+
+.lightbox-slideshow .close:hover,
+.lightbox-slideshow .lightbox-nav:hover:not(.disabled) {
     background: var(--neon-color);
     color: var(--background-color);
-    box-shadow: 0 0 25px var(--neon-color);
-    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--neon-color);
 }
 
-.lightbox-nav.disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
-    border-color: rgba(0, 255, 170, 0.3);
+.lightbox-slideshow .lightbox-nav.disabled {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.lightbox-ui {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 48px 24px 24px;
+    padding-bottom: max(24px, env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    text-align: center;
+    z-index: 10001;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.lightbox-slideshow.show-ui .lightbox-ui,
+.lightbox-slideshow:hover .lightbox-ui {
+    opacity: 1;
 }
 
 .image-caption {
     color: var(--neon-color);
-    text-align: center;
-    margin-top: 15px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-shadow: 0 0 10px var(--neon-color);
+    margin-top: 8px;
 }
 
 .image-counter {
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: inline-block;
     color: var(--neon-color);
-    background: rgba(0, 0, 0, 0.7);
-    padding: 5px 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 6px 16px;
     border-radius: 20px;
     border: 1px solid var(--neon-color);
     font-size: 0.9rem;
     text-shadow: 0 0 5px var(--neon-color);
 }
 
+.lightbox-slideshow:fullscreen,
+.lightbox-slideshow:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+.lightbox-slideshow:fullscreen .lightbox-slide-img,
+.lightbox-slideshow:-webkit-full-screen .lightbox-slide-img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 @media (max-width: 768px) {
-    .lightbox-content {
-        flex-direction: row;
-        gap: 10px;
-        align-items: center;
+    .lightbox-slideshow .close,
+    .lightbox-slideshow .lightbox-close {
+        width: 44px;
+        height: 44px;
+        font-size: 28px;
     }
 
-    .lightbox-nav {
-        position: absolute;
-        width: 45px;
-        height: 45px;
-        font-size: 35px;
+    .lightbox-slideshow .lightbox-nav {
+        width: 48px;
+        height: 48px;
+        font-size: 38px;
     }
 
-    .lightbox-prev {
-        left: 10px;
+    .lightbox-slideshow.show-ui .close,
+    .lightbox-slideshow.show-ui .lightbox-close,
+    .lightbox-slideshow.show-ui .lightbox-nav {
+        opacity: 1;
+        pointer-events: auto;
     }
 
-    .lightbox-next {
-        right: 10px;
-    }
-
-    .lightbox-image-wrapper {
-        width: 100%;
-    }
-
-    .lightbox-content img {
-        max-width: 95vw;
-        max-height: 80vh;
-        object-fit: contain;
-        /* Better mobile scaling */
-        max-width: calc(100vw - 40px);
-        max-height: calc(100vh - 120px);
-        /* Smooth scaling animation */
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .lightbox .close {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 30px;
-    }
-
-    .image-counter {
-        top: -30px;
-        font-size: 0.8rem;
-        padding: 4px 12px;
+    .lightbox-slideshow.show-ui .lightbox-ui {
+        opacity: 1;
     }
 }
 `;
 
-// Add responsive improvements for better photo scaling
 const responsiveStyles = `
-/* Better responsive scaling for all devices */
-@media (orientation: landscape) {
-    .lightbox-content img {
-        max-height: 95vh;
-        max-width: 90vw;
-    }
-}
-
-@media (orientation: portrait) {
-    .lightbox-content img {
-        max-height: 85vh;
-        max-width: 95vw;
-    }
-}
-
-/* Ultra-wide screens */
-@media (min-aspect-ratio: 16/9) and (min-width: 1920px) {
-    .lightbox-content img {
-        max-height: 85vh;
-        max-width: 80vw;
-    }
-}
-
-/* High resolution displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .lightbox-content img {
-        image-rendering: -webkit-optimize-contrast;
-    }
-}
-
-/* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
-    .lightbox-nav {
-        width: 60px;
-        height: 60px;
-        font-size: 45px;
-    }
-
-    .lightbox .close {
-        width: 50px;
-        height: 50px;
-        font-size: 35px;
-    }
-
-    .lightbox-content img {
+    .lightbox-slideshow {
         cursor: default;
+    }
+
+    .lightbox-slideshow .lightbox-nav {
+        width: 52px;
+        height: 52px;
     }
 }
 `;

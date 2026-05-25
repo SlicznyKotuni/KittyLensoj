@@ -3,6 +3,7 @@ layout: layout.njk
 title: Lastaj photoj
 permalink: /lastaj-photoj/
 ---
+{% from "gallery-item.njk" import galleryItem %}
 
 <header class="page-header">
     <h1>Lastaj photoj</h1>
@@ -25,25 +26,7 @@ permalink: /lastaj-photoj/
         {% set randomImages = collections.allImages | shuffle %}
         {% for image in randomImages %}
             {% if loop.index0 < 50 %}
-        <div class="gallery-item" data-lens="{{ image.lens }}">
-            <img
-                src="{{ image.thumb.src }}"
-                srcset="{{ image.thumb.srcset }}"
-                sizes="{{ image.thumb.sizes }}"
-                alt="{{ image.lens }} - {{ image.filename }}"
-                data-full="{{ image.path }}"
-                loading="{{ 'lazy' }}"
-                decoding="async"
-                fetchpriority="{{ 'low' }}"
-                class="gallery-img"
-                {% if image.thumb.width %} width="{{ image.thumb.width }}"{% endif %}
-                {% if image.thumb.height %} height="{{ image.thumb.height }}"{% endif %}
-            >
-            <div class="image-info">
-                <span class="lens-name">{{ image.lens }}</span>
-                <span class="file-title">{{ image.filename }}</span>
-            </div>
-        </div>
+        {{ galleryItem(image) }}
             {% endif %}
         {% endfor %}
     </div>

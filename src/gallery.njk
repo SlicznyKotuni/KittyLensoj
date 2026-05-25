@@ -3,6 +3,7 @@ layout: layout.njk
 title: Galerio
 permalink: /galeria/
 ---
+{% from "gallery-item.njk" import galleryItem %}
 
 <header class="page-header">
     <h1>Galerio</h1>
@@ -22,27 +23,7 @@ permalink: /galeria/
 
     <div class="gallery-grid" id="gallery-grid">
         {% for image in collections.allImages %}
-        <div class="gallery-item" data-lens="{{ image.lens }}">
-            {# Use generated responsive thumbnails; thumbnails below the fold load lazily.
-               We approximate 'below the fold' by making the first 6 images eager. #}
-            <img
-                src="{{ image.thumb.src }}"
-                srcset="{{ image.thumb.srcset }}"
-                sizes="{{ image.thumb.sizes }}"
-                alt="{{ image.lens }} - {{ image.filename }}"
-                data-full="{{ image.path }}"
-                loading="{{ 'eager' if loop.index0 < 6 else 'lazy' }}"
-                decoding="async"
-                fetchpriority="{{ 'high' if loop.index0 < 6 else 'low' }}"
-                class="gallery-img"
-                {% if image.thumb.width %} width="{{ image.thumb.width }}"{% endif %}
-                {% if image.thumb.height %} height="{{ image.thumb.height }}"{% endif %}
-            >
-            <div class="image-info">
-                <span class="lens-name">{{ image.lens }}</span>
-                <span class="file-title">{{ image.filename }}</span>
-            </div>
-        </div>
+        {{ galleryItem(image, loop.index0 < 6, 'high' if loop.index0 < 6 else 'low') }}
         {% endfor %}
     </div>
-</div>
+</main>

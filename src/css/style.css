@@ -407,24 +407,125 @@ a.tile-content {
     transform: scale(0.98);
 }
 
+/* Galeria — mozaika kolumnowa (naturalne proporcje, poziome na pełną szerokość) */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    max-width: 1200px;
+    column-count: 2;
+    column-gap: clamp(14px, 2vw, 20px);
+    max-width: 1520px;
     margin: 0 auto;
+    padding: 8px 4px 40px;
 }
 
 .gallery-item {
     position: relative;
-    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    border-radius: 14px;
     overflow: hidden;
-    aspect-ratio: 1;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #0a100e;
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(0, 255, 170, 0.12);
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.5s ease,
+        filter 0.45s ease;
+    animation: gallery-float 7s ease-in-out infinite;
+    will-change: transform;
+    vertical-align: top;
 }
 
-.gallery-item:hover {
-    transform: scale(1.03);
+/* Poziome i panoramy — na całą szerokość mozaiki */
+.gallery-item--landscape,
+.gallery-item--panorama,
+.gallery-item--panorama-wide {
+    column-span: all;
+}
+
+.gallery-item:nth-child(6n + 1) { animation-delay: 0s; }
+.gallery-item:nth-child(6n + 2) { animation-delay: -1.2s; }
+.gallery-item:nth-child(6n + 3) { animation-delay: -2.4s; }
+.gallery-item:nth-child(6n + 4) { animation-delay: -3.6s; }
+.gallery-item:nth-child(6n + 5) { animation-delay: -4.8s; }
+.gallery-item:nth-child(6n) { animation-delay: -6s; }
+
+@keyframes gallery-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(0.15deg); }
+}
+
+.gallery-item:hover,
+.gallery-item:focus-visible {
+    animation-play-state: paused;
+    transform: translateY(-10px) scale(1.02);
+    z-index: 20;
+    filter: brightness(1.06);
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(0, 255, 170, 0.55),
+        0 0 40px rgba(0, 255, 170, 0.25),
+        0 0 64px rgba(240, 0, 255, 0.1);
+}
+
+.gallery-item__media {
+    position: relative;
+    display: block;
+    line-height: 0;
+    overflow: hidden;
+    background: #060a09;
+    transition: filter 0.45s ease;
+}
+
+.gallery-item__media img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    display: block;
+    pointer-events: none;
+    vertical-align: top;
+}
+
+.gallery-item__glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 255, 170, 0.12) 0%,
+        transparent 45%,
+        rgba(240, 0, 255, 0.08) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-item:hover .gallery-item__glow,
+.gallery-item:focus-visible .gallery-item__glow {
+    opacity: 1;
+}
+
+@media (min-width: 700px) {
+    .gallery-grid {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1000px) {
+    .gallery-grid {
+        column-count: 4;
+    }
+}
+
+@media (min-width: 1400px) {
+    .gallery-grid {
+        column-count: 5;
+    }
 }
 
 .gallery-item::after,
@@ -433,11 +534,12 @@ a.tile-content {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    border: 1px solid rgba(0, 255, 170, 0.45);
-    box-shadow: 0 0 18px rgba(0, 255, 170, 0.45), 0 0 32px rgba(0, 255, 170, 0.25);
+    border: 1px solid rgba(0, 255, 170, 0.5);
+    box-shadow: inset 0 0 30px rgba(0, 255, 170, 0.08);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
     pointer-events: none;
+    z-index: 2;
 }
 
 .gallery-item:hover::after,
@@ -447,11 +549,23 @@ a.tile-content {
     opacity: 1;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.gallery-item .image-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.88) 45%);
+    padding: 28px 12px 12px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery-item:hover .image-info,
+.gallery-item:focus-visible .image-info {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .image-info {
@@ -465,8 +579,15 @@ a.tile-content {
     transition: opacity 0.3s ease;
 }
 
-.gallery-item:hover .image-info {
-    opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+    .gallery-item {
+        animation: none;
+    }
+
+    .gallery-item:hover,
+    .gallery-item:focus-visible {
+        transform: translateY(-4px) scale(1.01);
+    }
 }
 
 .lens-name {
@@ -698,7 +819,12 @@ a.tile-content {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        column-count: 2;
+        column-gap: 10px;
+    }
+
+    .gallery-item {
+        margin-bottom: 10px;
     }
     
     h1 {
@@ -735,9 +861,10 @@ a.tile-content {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        column-count: 2;
+        column-gap: 8px;
     }
-    
+
     h1 {
         font-size: 1.8rem;
     }
@@ -1043,59 +1170,9 @@ main article td {
 main article tr:hover {
     background-color: rgba(0, 255, 170, 0.05);
 }
-/* Tryb zoom dla lightboxa - zdjęcie na pełnym ekranie */
-.lightbox.zoomed .lightbox-content {
-    max-width: 100%;
-    max-height: 100%;
-    width: 100%;
-    height: 100%;
-}
-
-.lightbox.zoomed .lightbox-image-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox.zoomed .lightbox-content img {
-    max-width: 95%;
-    max-height: 95%;
-    width: auto;
-    height: auto;
-    cursor: zoom-out;
-}
-
-.lightbox.zoomed .image-caption,
-.lightbox.zoomed .image-counter {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Pokazujemy napisy gdy najedziemy na zdjęcie w trybie zoom */
-.lightbox.zoomed:hover .image-caption,
-.lightbox.zoomed:hover .image-counter {
-    opacity: 1;
-}
-
-/* Na mobile - lepsze wsparcie dotykowe */
-@media (max-width: 768px) {
-    .lightbox.zoomed .lightbox-content img {
-        max-width: 100%;
-        max-height: 100%;
-    }
-    
-    .lightbox.zoomed .image-caption,
-    .lightbox.zoomed .image-counter {
-        opacity: 0;
-    }
-    
-    /* Na mobile pokazujemy napisy po dotknięciu */
-    .lightbox.zoomed.show-ui .image-caption,
-    .lightbox.zoomed.show-ui .image-counter {
-        opacity: 1;
-    }
+/* Pokaz slajdów — sterowanie UI (style główne w gallery.js) */
+.lightbox-slideshow.show-ui {
+    cursor: default;
 }
 
 /* ===== TAG FILTERING SYSTEM ===== */

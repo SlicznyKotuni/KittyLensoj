@@ -1,0 +1,41 @@
+{% macro galleryItem(image, eagerLoad=false, priority='low') %}
+{% set w = image.thumb.width %}
+{% set h = image.thumb.height %}
+{% set shape = 'square' %}
+{% if w and h and w > 0 %}
+  {% set ratio = h / w %}
+  {% if ratio >= 1.4 %}
+    {% set shape = 'portrait-tall' %}
+  {% elif ratio >= 1.05 %}
+    {% set shape = 'portrait' %}
+  {% elif ratio <= 0.45 %}
+    {% set shape = 'panorama-wide' %}
+  {% elif ratio <= 0.65 %}
+    {% set shape = 'panorama' %}
+  {% elif ratio < 0.88 %}
+    {% set shape = 'landscape' %}
+  {% endif %}
+{% endif %}
+<div class="gallery-item gallery-item--{{ shape }}" data-lens="{{ image.lens }}" data-shape="{{ shape }}"{% if w and h %} style="--gallery-ar: {{ w }} / {{ h }}"{% endif %}>
+    <div class="gallery-item__media">
+        <img
+            src="{{ image.thumb.src }}"
+            srcset="{{ image.thumb.srcset }}"
+            sizes="(max-width: 699px) 50vw, (max-width: 1199px) 33vw, 280px"
+            alt="{{ image.lens }} - {{ image.filename }}"
+            data-full="{{ image.path }}"
+            loading="{{ 'eager' if eagerLoad else 'lazy' }}"
+            decoding="async"
+            fetchpriority="{{ priority }}"
+            class="gallery-img"
+            {% if w %} width="{{ w }}"{% endif %}
+            {% if h %} height="{{ h }}"{% endif %}
+        >
+        <div class="gallery-item__glow" aria-hidden="true"></div>
+    </div>
+    <div class="image-info">
+        <span class="lens-name">{{ image.lens }}</span>
+        <span class="file-title">{{ image.filename }}</span>
+    </div>
+</div>
+{% endmacro %}
