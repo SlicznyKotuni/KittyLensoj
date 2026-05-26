@@ -314,8 +314,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <button class="lightbox-close close" type="button" aria-label="Zamknij">&times;</button>
       <button class="lightbox-nav lightbox-prev${hasPrev ? "" : " disabled"}" type="button" aria-label="Poprzednie zdjęcie"${hasPrev ? "" : " disabled"}>‹</button>
       <button class="lightbox-nav lightbox-next${hasNext ? "" : " disabled"}" type="button" aria-label="Następne zdjęcie"${hasNext ? "" : " disabled"}>›</button>
-      <div class="lightbox-stage">
-        <img src="${image.full}" alt="${image.alt}" loading="eager" decoding="async" class="lightbox-slide-img">
+           <div class="lightbox-stage" id="lightbox-stage">
+        <img src="${image.full}" alt="${image.alt}" loading="eager" decoding="async" class="lightbox-slide-img" style="transform: scale(1); transform-origin: center center; cursor: zoom-in;">
       </div>
       <div class="lightbox-ui">
         <div class="image-counter">${currentImageIndex + 1} / ${visibleImages.length}</div>
@@ -324,6 +324,10 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
     const lightboxImg = lightbox.querySelector("img");
+        const lightboxStage = lightbox.querySelector("#lightbox-stage");
+    if (lightboxImg && lightboxStage) {
+      setupLightboxZoom(lightboxImg, lightboxStage);
+    }
     if (lightboxImg) {
       lightboxImg.classList.add("is-loading");
       lightboxImg.onload = function () {
@@ -408,6 +412,159 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+  function setupLightboxZoom(imgElement, stageElement) {
+    if (!imgElement || !stageElement) return;
+
+    let scale = 1;
+    let posX = 0;
+    let posY = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+
+    const resetZoom = () => {
+      scale = 1;
+      posX = 0;
+      posY = 0;
+      imgElement.style.transition = 'transform 0.2s ease';
+      imgElement.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+      imgElement.style.transformOrigin = 'center center';
+      imgElement.style.cursor = 'zoom-in';
+    };
+
+    const applyTransform = () => {
+      imgElement.style.transition = 'none';
+      imgElement.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
+    };
+
+    // Mouse wheel zoom
+    stageElement.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const rect = stageElement.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const zoomFactor = e.deltaY < 0 ? 1.2 : 0.8;
+      const newScale = Math.min(Math.max(scale * zoomFactor, 1), 8);
+
+      if (newScale !== scale) {
+        const scaleChange = newScale / scale;
+        posX = mouseX - (mouseX - posX) * scaleChange;
+        posY = mouseY - (mouseY - posY) * scaleChange;
+        scale = newScale;
+        applyTransform();
+        imgElement.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+      }
+    }, { passive: false });
+
+    // Double click = toggle zoom
+    stageElement.addEventListener('dblclick', () => {
+      if (scale > 1) {
+        resetZoom();
+      } else {
+        scale = 3;
+        posX = 0;
+        posY = 0;
+        applyTransform();
+        imgElement.style.cursor = 'grab';
+      }
+    });
+        // Single click = zoom in / reset (lupa)
+    let clickTimeout = null;
+    stageElement.addEventListener('click', (e) => {
+      // ignorujemy kliknięcia podczas dragowania
+      if (isDragging) return;
+
+      if (clickTimeout) {
+        clearTimeout(clickTimeout);
+        clickTimeout = null;
+        return; // to był double-click – nie robimy nic (dblclick obsłuży)
+      }
+
+      clickTimeout = setTimeout(() => {
+        clickTimeout = null;
+
+        if (scale === 1) {
+          // zoom w miejsce kliknięcia
+          const rect = stageElement.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const clickY = e.clientY - rect.top;
+
+          scale = 3;
+          posX = clickX - (clickX * scale);
+          posY = clickY - (clickY * scale);
+          applyTransform();
+          imgElement.style.cursor = 'grab';
+        } 
+      }, 250); // 250ms – czas na wykrycie double-clicku
+    });
+
+    // Drag when zoomed
+    imgElement.addEventListener('mousedown', (e) => {
+      if (scale <= 1) return;
+      isDragging = true;
+      startX = e.clientX - posX;
+      startY = e.clientY - posY;
+      imgElement.style.cursor = 'grabbing';
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        imgElement.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging || scale <= 1) return;
+      posX = e.clientX - startX;
+      posY = e.clientY - startY;
+      applyTransform();
+    });
+
+    // Touch support (basic pinch + drag)
+    let initialDistance = 0;
+    let initialScale = 1;
+
+    stageElement.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 2) {
+        initialDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        initialScale = scale;
+      } else if (e.touches.length === 1 && scale > 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - posX;
+        startY = e.touches[0].clientY - posY;
+      }
+    }, { passive: true });
+
+    stageElement.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const currentDistance = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        const newScale = Math.min(Math.max(initialScale * (currentDistance / initialDistance), 1), 8);
+        scale = newScale;
+        applyTransform();
+      } else if (e.touches.length === 1 && isDragging && scale > 1) {
+        posX = e.touches[0].clientX - startX;
+        posY = e.touches[0].clientY - startY;
+        applyTransform();
+      }
+    }, { passive: false });
+
+    stageElement.addEventListener('touchend', () => {
+      isDragging = false;
+      imgElement.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+    });
+
+    // Reset when changing image
+    imgElement.dataset.zoomInitialized = 'true';
+  }
 
   function closeLightbox() {
     const lightbox = currentLightbox;
@@ -461,7 +618,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  initVirtualGallery();
+  if (document.getElementById("folder-select")) {
+    initVirtualGallery();
+}
 
   if (!virtualGallery && folderSelect && galleryGrid) {
     folderSelect.addEventListener("change", function () {

@@ -1203,7 +1203,10 @@ main article tr:hover {
 .lightbox-slideshow.show-ui {
     cursor: default;
 }
-
+.lightbox-slide-img {
+    touch-action: none;
+    transition: transform 0.1s ease-out;
+}
 /* ===== TAG FILTERING SYSTEM ===== */
 
 .main-content-with-sidebar {
