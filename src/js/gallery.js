@@ -192,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let visibleImages = [];
   let currentLightbox = null;
   let isFullscreenActive = false;
-  let lightboxTouchStartX = 0;
 
   const fullscreenEvents = [
     "fullscreenchange",
@@ -353,31 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      lightbox.addEventListener(
-        "touchstart",
-        function (e) {
-          lightboxTouchStartX = e.changedTouches[0].screenX;
-        },
-        { passive: true },
-      );
-
-      lightbox.addEventListener(
-        "touchend",
-        function (e) {
-          const diffX = lightboxTouchStartX - e.changedTouches[0].screenX;
-          if (Math.abs(diffX) < 50) {
-            showLightboxUi(lightbox);
-            return;
-          }
-          if (diffX > 0 && currentImageIndex < visibleImages.length - 1) {
-            openLightbox(currentImageIndex + 1);
-          } else if (diffX < 0 && currentImageIndex > 0) {
-            openLightbox(currentImageIndex - 1);
-          }
-        },
-        { passive: true },
-      );
-
+      // Disable swipe navigation on mobile: use buttons only.
       lightbox.addEventListener("mousemove", () => showLightboxUi(lightbox));
     } else if (
       isFullscreenActive &&
@@ -485,17 +460,12 @@ document.addEventListener("DOMContentLoaded", function () {
         clickTimeout = null;
 
         if (scale === 1) {
-          // zoom w miejsce kliknięcia
-          const rect = stageElement.getBoundingClientRect();
-          const clickX = e.clientX - rect.left;
-          const clickY = e.clientY - rect.top;
-
           scale = 3;
-          posX = clickX - (clickX * scale);
-          posY = clickY - (clickY * scale);
+          posX = 0;
+          posY = 0;
           applyTransform();
           imgElement.style.cursor = 'grab';
-        } 
+        }
       }, 250); // 250ms – czas na wykrycie double-clicku
     });
 
@@ -521,11 +491,11 @@ document.addEventListener("DOMContentLoaded", function () {
       posY = e.clientY - startY;
       applyTransform();
     });
-
+/* To tu zmiana dotyk
     // Touch support (basic pinch + drag)
     let initialDistance = 0;
     let initialScale = 1;
-
+*/
     stageElement.addEventListener('touchstart', (e) => {
       if (e.touches.length === 2) {
         initialDistance = Math.hypot(
@@ -662,65 +632,7 @@ document.addEventListener("DOMContentLoaded", function () {
       openLightbox(clickedImage);
     }
   });
-
-  // Add touch gesture support for mobile
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let touchEndX = 0;
-  let touchEndY = 0;
-
-  galleryGrid.addEventListener(
-    "touchstart",
-    function (e) {
-      if (e.target.closest(".gallery-item")) {
-        const touch = e.changedTouches[0];
-        touchStartX = touch.screenX;
-        touchStartY = touch.screenY;
-      }
-    },
-    { passive: true },
-  );
-
-  galleryGrid.addEventListener(
-    "touchend",
-    function (e) {
-      if (e.target.closest(".gallery-item")) {
-        const touch = e.changedTouches[0];
-        touchEndX = touch.screenX;
-        touchEndY = touch.screenY;
-
-        const diffX = touchStartX - touchEndX;
-        const diffY = touchStartY - touchEndY;
-
-        // Only trigger on horizontal swipes (to avoid conflicts with scrolling)
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
-          e.preventDefault();
-          const item = e.target.closest(".gallery-item");
-          if (!item) return;
-          if (virtualGallery) {
-            const index = parseInt(item.dataset.index, 10);
-            if (!Number.isNaN(index)) {
-              syncLightboxManifest();
-              openLightbox(index);
-            }
-            return;
-          }
-          const img = item.querySelector("img");
-          if (img) {
-            visibleImages = getVisibleImages();
-            const clickedImage = visibleImages.findIndex(
-              (imgData) => imgData.element === img,
-            );
-            if (clickedImage !== -1) {
-              openLightbox(clickedImage);
-            }
-          }
-        }
-      }
-    },
-    { passive: true },
-  );
-  }
+}
 
   // Also handle images on lens detail pages
   const lensImages = document.querySelectorAll(".image-item img");
