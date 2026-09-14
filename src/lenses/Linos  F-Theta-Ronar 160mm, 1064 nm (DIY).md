@@ -3,7 +3,6 @@ alias: Przemysłowy Skaner F-Theta do Podczerwieni
 tags:
   - obiektyw
   - linos
-  - rodenstock
   - f-theta
   - ronar
   - 160mm
@@ -24,10 +23,10 @@ kluczowe-słowa:
   - custom-mount
 ---
 
-# Linos (Rodenstock) F-Theta-Ronar f=160 mm, 1064 nm
+# Linos  F-Theta-Ronar f=160 mm, 1064 nm
 
 ## **ℹ️ Rodowód i Przeznaczenie Przemysłowe**
-* **Producent:** **Linos / Rodenstock** (Światowej klasy niemiecka optyka precyzyjna dla przemysłu i fotoniki).
+* **Producent:** **Linos  (Światowej klasy niemiecka optyka precyzyjna dla przemysłu i fotoniki).
 * **Model / Typ:** Obiektyw skanujący **F-Theta-Ronar**.
 * **Długość fali optymalizacji:** **1064 nm** (Bliska podczerwień / pasmo laserów Nd:YAG). Powłoki antyrefleksyjne są skrojone perfekcyjnie pod transmisję tego konkretnego zakresu widma.
 * **Przeznaczenie pierwotne:** Układ optyczny w systemach laserowych, odpowiedzialny za płaskie ogniskowanie wiązki na polu roboczym bez zniekształceń poduszkowych.
