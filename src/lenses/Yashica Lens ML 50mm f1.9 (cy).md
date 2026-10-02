@@ -14,6 +14,7 @@ tags:
   - standard-lens
   - zeiss-style
   - cy
+  - contax-yashica
 rodzina: Yashica ML Series
 kluczowe-słowa:
   - 50mm

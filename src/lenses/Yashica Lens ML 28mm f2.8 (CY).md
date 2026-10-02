@@ -6,7 +6,6 @@ tags:
   - ml
   - 28mm
   - f2_8
-  - cy-mount
   - vintage
   - manualny
   - japonia
@@ -14,7 +13,8 @@ tags:
   - szeroki-kąt
   - szerokokątny
   - cy
-rodzina: Yashica ML
+  - contax-yashica
+rodzina: Yashica ML Series
 kluczowe-słowa:
   - 28mm
   - f2_8
