@@ -50,6 +50,15 @@ kluczowe-słowa:
 * **Ostrość:** Po domknięciu do f/4 staje się brutalnie ostra, zachowując przy tym piękną mikroseparację planów.
 * **Bokeh:** Bardzo gładki, z lekką tendencją do kręcenia tłem, co w połączeniu z jasnością f/1.9 daje niesamowity "pop-up" fotografowanego obiektu.
 
+## **⚙️ Specyfikacja Optyczna i Innowacje Mechaniczne**
+ **Schemat optyczny:** Zaawansowany, zmodyfikowany układ typu **Double Gauss** (6 elementów w 4 lub 5 grupach), zoptymalizowany pod kątem jasności f/1.9 oraz ostrego, kontrastowego odwzorowania detali w centralnej strefie kadru.
+* **Ogniskowa:** **50 mm** (oficjalnie oznaczana jako *5 cm*).
+* **Światło / Przysłona:** Maksymalny otwór względny **f/1.9**, domykający się do f/16.
+* **Charakterystyczna Dźwignia Przysłony (External Aperture Lever):** Unikalny dla wczesnych systemów Miranda zewnętrzny mechanizm dźwigniowy na obiektywie, służący do szybkiego sterowania wstępnego i domykania przysłony bezpośrednio podczas kadrowania, co w tamtych latach stanowiło szczyt ergonomii mechanicznej.
+
+## **🔍 Charakterystyka Obrazu i Render**
+ * **Ostrość i Mikrokontrast:** Układ optyczny autorstwa Kowy zapewnia miękkie, nasycone kolory z przyjemnym, klasycznym mikrokontrastem. Pełny otwór f/1.9 generuje subtelną, organiczną poświatę wokół mocnych świateł, która znika po przymknięciu do f/2.8–f/4, uwalniając ostrą i czystą plastykę.
+*  **Bokeh:** Miękkie, plastyczne rozmycie tła z delikatnie zakręconymi punktami świetlnymi na krawędziach kadru, typowe dla japońskiej szkoły optycznej lat 50. i 60.
 ## **💡 Praca z Canon R6 Mark II / R7**
 1. **Portrecista z Duszą (R6 II):** Na pełnej klatce to obiektyw, który ma "to coś". Nie jest klinicznie czysty, ale maluje obraz w sposób, którego nie da się podrobić w postprodukcji.
 2. **Idealny Standard (R7):** Jako eqv. ok. **$80mm$**. Na cropie zmienia się w wybitną, jasną portretówkę. 
