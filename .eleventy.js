@@ -42,7 +42,7 @@ module.exports = function(eleventyConfig) {
         if (!fs.existsSync(lensPath)) continue;
 
         const imageFiles = fs.readdirSync(lensPath)
-          .filter(file => /\.(jpg|jpeg|png|gif|webp)$/i.test(file));
+          .filter(file => /\.(jpg|jpeg|png|gif|avif|heif|av1|webp)$/i.test(file));
 
         // Process all images in this lens folder in parallel
         const imagePromises = imageFiles.map(async (file) => {
@@ -62,7 +62,7 @@ module.exports = function(eleventyConfig) {
           try {
             const metadata = await Image(fullPath, {
               widths: [640],
-              formats: ["webp"],
+              formats: ["avif"],
               outputDir: "./_site/images/thumbnails",
               urlPath: "/images/thumbnails/",
               // keep generated files deterministic and small
