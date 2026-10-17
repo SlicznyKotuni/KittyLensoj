@@ -62,7 +62,7 @@ module.exports = function(eleventyConfig) {
           try {
             const metadata = await Image(fullPath, {
               widths: [640],
-              formats: ["avif"],
+              formats: ["webp"],
               outputDir: "./_site/images/thumbnails",
               urlPath: "/images/thumbnails/",
               // keep generated files deterministic and small
