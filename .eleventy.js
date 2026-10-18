@@ -26,17 +26,37 @@ module.exports = function(eleventyConfig) {
     return brands;
   });
 
+  // 3c. WYCZYSZCZENIE CACHE W PAMIĘCI ELEVENTY-IMG
+  // Zapobiega OOM przy dużej liczbie obrazów. Cache dyskowy (.cache) pozostaje nietknięty.
+  try {
+    const { memCache: imgMemCache } = require("@11ty/eleventy-img/src/caches.js");
+    eleventyConfig.on("eleventy.before", () => {
+      const size = imgMemCache.size ? imgMemCache.size() : 0;
+      if (size > 0) {
+        imgMemCache.cache = {};
+        console.log(`[eleventy-img] Wyczyszczono cache w pamięci (${size} wpisów).`);
+      }
+    });
+  } catch (e) {
+    console.warn("[eleventy-img] Nie udało się załadować modułu cache w pamięci:", e.message);
+  }
+
   // 4. Kolekcja obrazów — zbieramy zdjęcia i generujemy responsywne miniatury (thumbnails)
   eleventyConfig.addCollection("allImages", async function(collectionApi) {
     const images = [];
     const imagesDir = './images';
+    // Docelowy katalog w _site (tam trafią skopiowane miniatury)
+    const outputThumbDir = './_site/images/thumbnails';
+    // Katalog roboczy w .cache — to on jest zachowywany przez Cloudflare Pages
+    const cacheThumbDir = './.cache/eleventy-img-thumbnails';
 
     if (fs.existsSync(imagesDir)) {
       const lensDirs = fs.readdirSync(imagesDir, { withFileTypes: true })
         .filter(dirent => dirent.isDirectory())
         .map(dirent => dirent.name);
 
-      // Process images in parallel for faster builds
+      // Przetwarzanie folderów po kolei, ale obrazy w folderze partiami,
+      // aby nie trzymać w pamięci zbyt wielu zdekompresowanych bitmap naraz.
       for (const lensDir of lensDirs) {
         const lensPath = path.join(imagesDir, lensDir);
         if (!fs.existsSync(lensPath)) continue;
@@ -44,8 +64,8 @@ module.exports = function(eleventyConfig) {
         const imageFiles = fs.readdirSync(lensPath)
           .filter(file => /\.(jpg|jpeg|png|gif|avif|av1|webp)$/i.test(file));
 
-        // Process all images in this lens folder in parallel
-        const imagePromises = imageFiles.map(async (file) => {
+        // Budujemy funkcje przetwarzające (bez wywoływania ich od razu)
+        const imageTasks = imageFiles.map((file) => async () => {
           const fullPath = path.join(lensPath, file);
           let mtime = 0;
           try {
@@ -57,15 +77,14 @@ module.exports = function(eleventyConfig) {
 
           const urlPath = `/images/${lensDir}/${file}`;
 
-          // Generate small responsive thumbnails (webp) and return metadata
+          // Generujemy miniatury WebP do .cache (nie do _site!)
           let thumb = null;
           try {
             const metadata = await Image(fullPath, {
               widths: [640],
               formats: ["webp"],
-              outputDir: "./_site/images/thumbnails",
+              outputDir: cacheThumbDir,
               urlPath: "/images/thumbnails/",
-              // keep generated files deterministic and small
               useAbsolutePath: false
             });
 
@@ -80,7 +99,6 @@ module.exports = function(eleventyConfig) {
               };
             }
           } catch (err) {
-            // If generation fails, fall back to original image path
             console.warn(`Thumbnail generation failed for ${fullPath}:`, err.message || err);
             thumb = {
               src: urlPath,
@@ -91,7 +109,7 @@ module.exports = function(eleventyConfig) {
             };
           }
 
-          // Extract numeric portion from filename (take the last group of digits if any)
+          // Wyciągamy numer z nazwy pliku (ostatnia grupa cyfr)
           let nameNumeric = null;
           try {
             const digitMatches = file.match(/\d+/g);
@@ -106,17 +124,24 @@ module.exports = function(eleventyConfig) {
           return { lens: lensDir, filename: file, path: urlPath, mtime, nameNumeric, thumb };
         });
 
-        const lensImages = await Promise.all(imagePromises);
+        // PARTYCJONOWANIE: maksymalnie 4 obrazy jednocześnie.
+        // To kluczowa zmiana — zamiast Promise.all na całej tablicy.
+        const CONCURRENCY = 4;
+        const lensImages = [];
+        for (let i = 0; i < imageTasks.length; i += CONCURRENCY) {
+          const batch = imageTasks.slice(i, i + CONCURRENCY);
+          const results = await Promise.all(batch.map(fn => fn()));
+          lensImages.push(...results);
+        }
+
         images.push(...lensImages);
       }
     }
 
-    // Najpierw najwyższy numer w nazwie (= najnowsze), potem data pliku, potem lens
+    // Sortowanie: najwyższy numer w nazwie, potem data pliku, potem lens
     images.sort((a, b) => {
-      const aNum =
-        typeof a.nameNumeric === "number" ? a.nameNumeric : -1;
-      const bNum =
-        typeof b.nameNumeric === "number" ? b.nameNumeric : -1;
+      const aNum = typeof a.nameNumeric === "number" ? a.nameNumeric : -1;
+      const bNum = typeof b.nameNumeric === "number" ? b.nameNumeric : -1;
       if (aNum !== bNum) return bNum - aNum;
 
       const mtimeCmp = (b.mtime || 0) - (a.mtime || 0);
@@ -195,13 +220,30 @@ module.exports = function(eleventyConfig) {
     return shuffled;
   });
 
+  // 7. KOPIOWANIE MINIATUR Z .cache DO _site PO BUILDZIE
+  // Dzięki temu Cloudflare Pages zachowa .cache między buildami,
+  // a Eleventy nie będzie musiało generować miniatur od nowa.
+  eleventyConfig.on("eleventy.after", () => {
+    const cacheThumbDir = './.cache/eleventy-img-thumbnails';
+    const outputThumbDir = path.join(eleventyConfig.directories.output, "images/thumbnails");
+    if (fs.existsSync(cacheThumbDir)) {
+      try {
+        fs.cpSync(cacheThumbDir, outputThumbDir, { recursive: true });
+        console.log(`[eleventy-img] Skopiowano miniatury z ${cacheThumbDir} do ${outputThumbDir}`);
+      } catch (e) {
+        console.warn("[eleventy-img] Nie udało się skopiować miniatur:", e.message);
+      }
+    } else {
+      console.log("[eleventy-img] Brak katalogu cache z miniaturami (pierwszy build lub brak obrazów).");
+    }
+  });
+
   return {
     dir: {
       input: "src",
       output: "_site",
       includes: "_includes"
     },
-    // DODAJ TO: Eleventy będzie przetwarzać pliki poza katalogiem src
     templateFormats: ["njk", "md", "html"],
     markdownTemplateEngine: "njk"
   };
