@@ -18,6 +18,10 @@ const Image = require("@11ty/eleventy-img");
 // Ustaw w Cloudflare Pages: MAX_NEW_THUMBS=3500
 // Brak zmiennej (lub 0) = bez limitu (np. lokalnie).
 const MAX_NEW_THUMBS = parseInt(process.env.MAX_NEW_THUMBS || "0", 10);
+// Limit CZASU generowania nowych miniatur w minutach (np. 14). 0 = brak.
+// Po jego przekroczeniu build kończy się normalnie i zapisuje cache.
+const MAX_THUMB_MINUTES = parseFloat(process.env.MAX_THUMB_MINUTES || "0");
+console.log(`[KittyLensoj] config załadowany, MAX_NEW_THUMBS=${MAX_NEW_THUMBS || "brak"}, MAX_THUMB_MINUTES=${MAX_THUMB_MINUTES || "brak"}, node ${process.version}`);
 
 module.exports = function(eleventyConfig) {
   // 1. Watch
@@ -82,6 +86,8 @@ module.exports = function(eleventyConfig) {
     let pending = 0;      // odłożone na kolejne buildy
     let reused = 0;       // już w cache
     let lastLogged = 0;
+    const startedAt = Date.now();
+    const timeUp = () => MAX_THUMB_MINUTES > 0 && (Date.now() - startedAt) > MAX_THUMB_MINUTES * 60000;
 
     if (fs.existsSync(imagesDir)) {
       const lensDirs = fs.readdirSync(imagesDir, { withFileTypes: true })
@@ -120,8 +126,9 @@ module.exports = function(eleventyConfig) {
             const expectedPath = Image.statsSync(fullPath, imgOpts).webp[0].outputPath;
             const alreadyDone = fs.existsSync(expectedPath);
 
-            if (!alreadyDone && MAX_NEW_THUMBS > 0 && newThisBuild >= MAX_NEW_THUMBS) {
-              // Limit na ten build wyczerpany – zostaje oryginał, dokończymy w następnym buildzie
+            const limitHit = (MAX_NEW_THUMBS > 0 && newThisBuild >= MAX_NEW_THUMBS) || timeUp();
+            if (!alreadyDone && limitHit) {
+              // Limit (liczby lub czasu) wyczerpany – zostaje oryginał, dokończymy w następnym buildzie
               pending++;
               thumb = fallbackThumb;
             } else {
@@ -168,7 +175,7 @@ module.exports = function(eleventyConfig) {
       }
     }
 
-    console.log(`[Galeria] Z cache: ${reused}, nowe: ${newThisBuild}, ODŁOŻONE na kolejne buildy: ${pending}`);
+    console.log(`[Galeria] Z cache: ${reused}, nowe: ${newThisBuild}, ODŁOŻONE na kolejne buildy: ${pending}, czas: ${((Date.now() - startedAt) / 60000).toFixed(1)} min`);
     if (pending > 0) {
       console.log(`[Galeria] ⚠️ Zostało ${pending} zdjęć bez miniatur – uruchom kolejny deployment.`);
     }
@@ -245,9 +252,13 @@ module.exports = function(eleventyConfig) {
   });
 
   // 7. Kopiowanie miniatur z cache do _site po zakończeniu
-  eleventyConfig.on("eleventy.after", () => {
+  eleventyConfig.on("eleventy.after", ({ dir } = {}) => {
     const cacheThumbDir = './.cache/eleventy-img-thumbnails';
-    const outputThumbDir = path.join(eleventyConfig.directories.output, "images/thumbnails");
+    // Eleventy v2 przekazuje katalogi w argumencie zdarzenia (v3 ma też eleventyConfig.directories)
+    const outputDir = (dir && dir.output)
+      || (eleventyConfig.directories && eleventyConfig.directories.output)
+      || "_site";
+    const outputThumbDir = path.join(outputDir, "images/thumbnails");
     if (fs.existsSync(cacheThumbDir)) {
       try {
         fs.cpSync(cacheThumbDir, outputThumbDir, { recursive: true });
