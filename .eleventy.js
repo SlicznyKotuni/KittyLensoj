@@ -18,6 +18,7 @@ const Image = require("@11ty/eleventy-img");
 // Ustaw w Cloudflare Pages: MAX_NEW_THUMBS=3500
 // Brak zmiennej (lub 0) = bez limitu (np. lokalnie).
 const MAX_NEW_THUMBS = parseInt(process.env.MAX_NEW_THUMBS || "0", 10);
+console.log(`[KittyLensoj] config załadowany, MAX_NEW_THUMBS=${MAX_NEW_THUMBS || "brak (bez limitu)"}, node ${process.version}`);
 
 module.exports = function(eleventyConfig) {
   // 1. Watch
