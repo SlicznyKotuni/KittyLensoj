@@ -14,16 +14,21 @@ try {
 
 const Image = require("@11ty/eleventy-img");
 
+// Limit NOWYCH miniatur generowanych w jednym buildzie.
+// Ustaw w Cloudflare Pages: MAX_NEW_THUMBS=3500
+// Brak zmiennej (lub 0) = bez limitu (np. lokalnie).
+const MAX_NEW_THUMBS = parseInt(process.env.MAX_NEW_THUMBS || "0", 10);
+
 module.exports = function(eleventyConfig) {
-  // 1. Dodaj katalog lenses jako dodatkowy katalog wejściowy
+  // 1. Watch
   eleventyConfig.addWatchTarget("./lenses/");
-  
+
   // 2. Kopiowanie assets
   eleventyConfig.addPassthroughCopy({"src/css": "css"});
   eleventyConfig.addPassthroughCopy({"src/js": "js"});
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy({"src/favicon.ico": "favicon.ico"});
-  
+
   // 3. Kolekcja lenses
   eleventyConfig.addCollection("lenses", function(collectionApi) {
     const lenses = collectionApi.getFilteredByGlob("src/lenses/*.md");
@@ -52,12 +57,31 @@ module.exports = function(eleventyConfig) {
     console.warn("[eleventy-img] Nie udało się załadować modułu cache:", e.message);
   }
 
-  // 4. Kolekcja obrazów z sekwencyjnym przetwarzaniem
+  // 4. Kolekcja obrazów z sekwencyjnym przetwarzaniem i limitem na build
   eleventyConfig.addCollection("allImages", async function(collectionApi) {
     const images = [];
     const imagesDir = './images';
-    // Cache zapisywany w .cache (Cloudflare Pages to zachowa między buildami)
+    // Cache zapisywany w .cache (Cloudflare Pages zachowuje go po UDANYM buildzie)
     const cacheThumbDir = './.cache/eleventy-img-thumbnails';
+
+    const imgOpts = {
+      widths: [640],
+      formats: ["webp"],
+      outputDir: cacheThumbDir,
+      urlPath: "/images/thumbnails/",
+      useAbsolutePath: false,
+      sharpOptions: { sequentialRead: true, failOn: "none" },
+      sharpWebpOptions: { quality: 72, effort: 2 },
+      cacheOptions: {
+        duration: "30d",
+        directory: ".cache/eleventy-img",
+      }
+    };
+
+    let newThisBuild = 0; // wygenerowane w tym buildzie
+    let pending = 0;      // odłożone na kolejne buildy
+    let reused = 0;       // już w cache
+    let lastLogged = 0;
 
     if (fs.existsSync(imagesDir)) {
       const lensDirs = fs.readdirSync(imagesDir, { withFileTypes: true })
@@ -71,8 +95,6 @@ module.exports = function(eleventyConfig) {
         const imageFiles = fs.readdirSync(lensPath)
           .filter(file => /\.(jpg|jpeg|png|gif|avif|av1|webp)$/i.test(file));
 
-        // Przetwarzamy obrazy JEDEN PO DRUGIM. 
-        // Przy 9600 obrazach to potrwa, ale NIE wywali OOM.
         for (const file of imageFiles) {
           const fullPath = path.join(lensPath, file);
           let mtime = 0;
@@ -84,42 +106,45 @@ module.exports = function(eleventyConfig) {
           }
 
           const urlPath = `/images/${lensDir}/${file}`;
+          const fallbackThumb = {
+            src: urlPath,
+            srcset: `${urlPath} 800w`,
+            sizes: "100vw",
+            width: null,
+            height: null
+          };
 
           let thumb = null;
           try {
-            const metadata = await Image(fullPath, {
-              widths: [640],
-              formats: ["webp"],
-              outputDir: cacheThumbDir,
-              urlPath: "/images/thumbnails/",
-              useAbsolutePath: false,
-              // WYMUSZAMY CACHE DYSKOWY:
-              cacheOptions: {
-                duration: "30d",
-                directory: ".cache/eleventy-img",
-              }
-            });
+            // Czy miniatura już jest w cache na dysku?
+            const expectedPath = Image.statsSync(fullPath, imgOpts).webp[0].outputPath;
+            const alreadyDone = fs.existsSync(expectedPath);
 
-            const webp = metadata.webp || [];
-            if (webp.length > 0) {
-              thumb = {
-                src: webp[0].url,
-                srcset: webp.map(i => `${i.url} ${i.width}w`).join(", "),
-                sizes: "(max-width: 600px) 100vw, 25vw",
-                width: webp[0].width,
-                height: webp[0].height
-              };
+            if (!alreadyDone && MAX_NEW_THUMBS > 0 && newThisBuild >= MAX_NEW_THUMBS) {
+              // Limit na ten build wyczerpany – zostaje oryginał, dokończymy w następnym buildzie
+              pending++;
+              thumb = fallbackThumb;
+            } else {
+              if (alreadyDone) reused++; else newThisBuild++;
+
+              const metadata = await Image(fullPath, imgOpts);
+              const webp = metadata.webp || [];
+              if (webp.length > 0) {
+                thumb = {
+                  src: webp[0].url,
+                  srcset: webp.map(i => `${i.url} ${i.width}w`).join(", "),
+                  sizes: "(max-width: 600px) 100vw, 25vw",
+                  width: webp[0].width,
+                  height: webp[0].height
+                };
+              }
             }
           } catch (err) {
             console.warn(`Błąd miniatury ${fullPath}:`, err.message || err);
-            thumb = {
-              src: urlPath,
-              srcset: `${urlPath} 800w`,
-              sizes: "100vw",
-              width: null,
-              height: null
-            };
+            thumb = fallbackThumb;
           }
+
+          if (!thumb) thumb = fallbackThumb;
 
           // Numer z nazwy pliku
           let nameNumeric = null;
@@ -134,13 +159,18 @@ module.exports = function(eleventyConfig) {
           }
 
           images.push({ lens: lensDir, filename: file, path: urlPath, mtime, nameNumeric, thumb });
-          
-          // Wypisujemy postęp co 100 zdjęć, żeby widzieć, że nie stoi
-          if (images.length % 100 === 0) {
-            console.log(`[Galeria] Przetworzono ${images.length} zdjęć...`);
+
+          if (newThisBuild > 0 && newThisBuild % 100 === 0 && newThisBuild !== lastLogged) {
+            lastLogged = newThisBuild;
+            console.log(`[Galeria] Nowych miniatur w tym buildzie: ${newThisBuild}/${MAX_NEW_THUMBS || "∞"}`);
           }
         }
       }
+    }
+
+    console.log(`[Galeria] Z cache: ${reused}, nowe: ${newThisBuild}, ODŁOŻONE na kolejne buildy: ${pending}`);
+    if (pending > 0) {
+      console.log(`[Galeria] ⚠️ Zostało ${pending} zdjęć bez miniatur – uruchom kolejny deployment.`);
     }
 
     // Sortowanie
@@ -157,11 +187,11 @@ module.exports = function(eleventyConfig) {
 
       return a.lens.localeCompare(b.lens, undefined, { numeric: true, sensitivity: "base" });
     });
-    
+
     console.log(`Znaleziono ${images.length} zdjęć (gotowe).`);
     return images;
   });
-  
+
   // 5. Kolekcja katalogów
   eleventyConfig.addCollection("imageFolders", function(collectionApi) {
     const imagesDir = './images';
@@ -170,7 +200,7 @@ module.exports = function(eleventyConfig) {
       .filter(dirent => dirent.isDirectory())
       .map(dirent => dirent.name);
   });
-  
+
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
 
   eleventyConfig.addFilter("galleryJson", (images) => {
@@ -192,7 +222,7 @@ module.exports = function(eleventyConfig) {
     if (!lens) return "Nieznany obiektyw";
     return lens.data.alias || lens.data.title || lens.fileSlug;
   });
-  
+
   eleventyConfig.addFilter("groupByLens", (images) => {
     const groups = {};
     if (images && Array.isArray(images)) {
