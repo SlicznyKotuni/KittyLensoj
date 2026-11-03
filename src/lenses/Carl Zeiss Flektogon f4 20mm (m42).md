@@ -12,7 +12,9 @@ tags:
   - ultra-szeroki
   - carl-zeiss-jena
   - f4
-rodzina: Flektogon
+  - flektogon
+  - macro
+rodzina: Carl Zeiss Jena Flektogon Series
 kluczowe-słowa:
   - szeroki-kąt
   - zebra

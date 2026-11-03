@@ -16,6 +16,7 @@ tags:
   - bokeh-machine
   - mir
   - standard
+  - auto-miranda
 rodzina: Auto Miranda / Mitar Series
 kluczowe-słowa:
   - 50mm
