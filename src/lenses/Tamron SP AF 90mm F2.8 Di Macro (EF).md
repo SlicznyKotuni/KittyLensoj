@@ -9,9 +9,9 @@ tags:
   - tele
   - autofokus
   - makro
+  - portret
   - 90mm
   - f2_8
-  - portret
 rodzina: Tamron SP
 kluczowe-słowa:
   - makro
@@ -23,12 +23,15 @@ kluczowe-słowa:
 
 # Tamron SP AF 90mm F/2.8 Di Macro 1:1 (EF)
 
+
 ## Podstawowe Informacje
-- **Producent:** Tamron
-- **Mocowanie:** **Canon EF** → wymaga adaptera EF-RF (który zachowuje AF!)
-- **Typ:** Stałoogniskowy (Makro)
-- **Przeznaczenie dla formatu:** **Pełna klatka (FF)**
-- **Efektywna ogniskowa na APS-C (R7):** **~144mm**
+- **Producent:** **Tamron Co., Ltd.**, Japonia. 
+* **Oznaczenie fabryczne modelu:** **Model 272E** (generacja Di z powłokami antyrefleksyjnymi zoptymalizowanymi pod cyfrowe matryce). 
+* **Numer seryjny egzemplarza:** **000813** (bardzo wczesna seria produkcyjna tego modelu z fabryki Tamrona).
+* **Mocowanie:** **Canon EF** – działa z bezlusterkowcami (Canon EOS R / R7) przez adapter EF-RF z zachowaniem pełnej automatyki AF i sterowania przysłoną.
+* **Format:** Pełna klatka (FF) / APS-C (na korpusie APS-C Canon EOS R7 daje ekwiwalent ok. **144mm**).
+
+
 
 ## Specyfikacja Techniczna
 - **Ogniskowa:** 90mm
