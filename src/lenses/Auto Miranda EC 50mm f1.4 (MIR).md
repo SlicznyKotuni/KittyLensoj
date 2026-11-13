@@ -14,6 +14,7 @@ tags:
   - mir-mount
   - miranda-mount
   - standard
+  - miranda-mir
 rodzina: Auto Miranda EC Standard Series
 kluczowe-słowa:
   - auto-miranda-50mm

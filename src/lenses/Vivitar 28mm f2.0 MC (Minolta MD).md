@@ -31,7 +31,7 @@ kluczowe-słowa:
 
 ## **ℹ️ Podstawowe Informacje Historyczne i Kontekst**
 * **Producent:** Wyprodukowany w Japonii dla marki **Vivitar**. Sprawdź numer seryjny: **28...** to Komine, **22...** to Kiron. Oba są wybitne.
-* **Produkcja: Kiron, Numer: 22819) 
+* **Produkcja: Kiron,** Numer: 22819) 
 * **Status:** **LEGENDARNY KIRON**. Obiektywy te słyną z "pancernej" budowy i wybitnej ostrości, często uważane za lepsze od wersji Komine (28...).
 * **Kontekst rynkowy:** W latach 70. i 80. obiektyw 28mm ze światłem f/2.0 był szczytem technologii. Był wybierany przez fotoreporterów potrzebujących szerokiego kąta do pracy w ekstremalnie słabym świetle.
 * **Status:** **LEGENDA LOW-LIGHT**. Znacznie rzadszy i bardziej ceniony niż popularna wersja f/2.8. Często nazywany "Hollywood Vivitar" (choć ta nazwa częściej przylega do wersji 28mm f/1.9).

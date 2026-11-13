@@ -15,6 +15,7 @@ tags:
   - mir
   - portret
   - tele
+  - miranda-mir
 rodzina: Auto Miranda E Series
 kluczowe-słowa:
   - 135mm

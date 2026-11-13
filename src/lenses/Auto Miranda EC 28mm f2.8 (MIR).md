@@ -14,6 +14,7 @@ tags:
   - szeroki-kąt
   - szerokokątny
   - street
+  - mir
 rodzina: Auto Miranda EC Series
 kluczowe-słowa:
   - auto-miranda-ec
