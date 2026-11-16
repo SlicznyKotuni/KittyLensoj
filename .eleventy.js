@@ -23,7 +23,128 @@ const MAX_NEW_THUMBS = parseInt(process.env.MAX_NEW_THUMBS || "0", 10);
 const MAX_THUMB_MINUTES = parseFloat(process.env.MAX_THUMB_MINUTES || "0");
 console.log(`[KittyLensoj] config załadowany, MAX_NEW_THUMBS=${MAX_NEW_THUMBS || "brak"}, MAX_THUMB_MINUTES=${MAX_THUMB_MINUTES || "brak"}, node ${process.version}`);
 
+// ============================================================
+// MAGAZYNY ZDJĘĆ (opcjonalne)
+// Adresy magazynów w zmiennej środowiskowej GALLERY_STORES (po przecinku),
+// np. GALLERY_STORES=https://kittylensoj-gallery2.pages.dev
+// Brak zmiennej = strona działa dokładnie jak dotąd (tylko lokalne ./images).
+// Każdy magazyn wystawia /index.json (generowany przez jego workflow).
+// ============================================================
+const https = require('https');
+const http = require('http');
+
+const STORE_URLS = (process.env.GALLERY_STORES || "")
+  .split(",")
+  .map(s => s.trim().replace(/\/+$/, ""))
+  .filter(Boolean);
+
+function getJson(url, redirects = 3) {
+  return new Promise((resolve, reject) => {
+    const lib = url.startsWith("https:") ? https : http;
+    const req = lib.get(url, { headers: { "Accept": "application/json", "Cache-Control": "no-cache" } }, (res) => {
+      if ([301, 302, 307, 308].includes(res.statusCode) && res.headers.location && redirects > 0) {
+        res.resume();
+        return resolve(getJson(new URL(res.headers.location, url).toString(), redirects - 1));
+      }
+      if (res.statusCode !== 200) {
+        res.resume();
+        return reject(new Error(`HTTP ${res.statusCode}`));
+      }
+      const chunks = [];
+      res.on("data", c => chunks.push(c));
+      res.on("end", () => {
+        try { resolve(JSON.parse(Buffer.concat(chunks).toString("utf8"))); }
+        catch (e) { reject(e); }
+      });
+    });
+    req.setTimeout(30000, () => req.destroy(new Error("timeout")));
+    req.on("error", reject);
+  });
+}
+
+async function getJsonRetry(url, tries = 3) {
+  let lastErr;
+  for (let i = 1; i <= tries; i++) {
+    try { return await getJson(url); }
+    catch (e) {
+      lastErr = e;
+      if (i < tries) await new Promise(r => setTimeout(r, 2000 * i));
+    }
+  }
+  throw lastErr;
+}
+
+const encSeg = (s) => encodeURIComponent(s);
+const encPath = (p) => p.split("/").map(encSeg).join("/");
+
+// Numer z nazwy pliku (taka sama zasada jak dla zdjęć lokalnych)
+function nameNumericOf(file) {
+  const m = file.match(/\d+/g);
+  if (!m || m.length === 0) return null;
+  const n = parseInt(m[m.length - 1], 10);
+  return Number.isNaN(n) ? null : n;
+}
+
+async function fetchStore(base) {
+  const url = `${base}/index.json?t=${Date.now()}`;
+  let data;
+  try {
+    data = await getJsonRetry(url);
+  } catch (e) {
+    // Celowo przerywamy build: lepiej zostawić poprzednią wersję strony
+    // niż opublikować galerię bez zdjęć z magazynu.
+    throw new Error(`[Magazyn] Nie udało się pobrać ${base}/index.json (${e.message}). Build przerwany.`);
+  }
+  if (!data || !Array.isArray(data.images)) {
+    throw new Error(`[Magazyn] ${base}/index.json ma zły format (brak tablicy "images"). Build przerwany.`);
+  }
+
+  const images = [];
+  const lenses = new Set();
+  for (const e of data.images) {
+    if (!e || !e.lens || !e.filename) continue;
+    const urlPath = `${base}/images/${encSeg(e.lens)}/${encSeg(e.filename)}`;
+    let thumb;
+    if (e.t && e.w > 0 && e.h > 0) {
+      const src = `${base}/${encPath(e.t)}`;
+      thumb = {
+        src,
+        srcset: `${src} ${e.w}w`,
+        sizes: "(max-width: 600px) 100vw, 25vw",
+        width: e.w,
+        height: e.h
+      };
+    } else {
+      thumb = { src: urlPath, srcset: `${urlPath} 800w`, sizes: "100vw", width: null, height: null };
+    }
+    lenses.add(e.lens);
+    images.push({
+      lens: e.lens,
+      filename: e.filename,
+      path: urlPath,
+      mtime: e.mtime || 0,
+      nameNumeric: nameNumericOf(e.filename),
+      thumb
+    });
+  }
+  console.log(`[Magazyn] ${base}: ${images.length} zdjęć, ${lenses.size} obiektywów`);
+  return { base, images, lenses: Array.from(lenses) };
+}
+
+let storesPromise = null;
+
+// Miniatury faktycznie używane w tym buildzie (żeby nie kopiować do _site starych z cache)
+const usedThumbs = new Set();
+function loadStores() {
+  if (STORE_URLS.length === 0) return Promise.resolve([]);
+  if (!storesPromise) storesPromise = Promise.all(STORE_URLS.map(fetchStore));
+  return storesPromise;
+}
+
 module.exports = function(eleventyConfig) {
+  // Magazyny: pobieraj index.json od nowa przy każdym buildzie (tryb --serve)
+  eleventyConfig.on("eleventy.before", () => { storesPromise = null; usedThumbs.clear(); });
+
   // 1. Watch
   eleventyConfig.addWatchTarget("./lenses/");
 
@@ -137,6 +258,7 @@ module.exports = function(eleventyConfig) {
               const metadata = await Image(fullPath, imgOpts);
               const webp = metadata.webp || [];
               if (webp.length > 0) {
+                usedThumbs.add(path.basename(webp[0].outputPath));
                 thumb = {
                   src: webp[0].url,
                   srcset: webp.map(i => `${i.url} ${i.width}w`).join(", "),
@@ -180,6 +302,23 @@ module.exports = function(eleventyConfig) {
       console.log(`[Galeria] ⚠️ Zostało ${pending} zdjęć bez miniatur – uruchom kolejny deployment.`);
     }
 
+    // Zdjęcia z magazynów (jeśli ustawiono GALLERY_STORES)
+    if (STORE_URLS.length > 0) {
+      const seen = new Set(images.map(i => `${i.lens}/${i.filename}`));
+      let fromStores = 0;
+      let dupes = 0;
+      for (const store of await loadStores()) {
+        for (const img of store.images) {
+          const key = `${img.lens}/${img.filename}`;
+          if (seen.has(key)) { dupes++; continue; } // lokalne ma pierwszeństwo
+          seen.add(key);
+          images.push(img);
+          fromStores++;
+        }
+      }
+      console.log(`[Galeria] Z magazynów: ${fromStores}, pominięte duplikaty: ${dupes}`);
+    }
+
     // Sortowanie
     images.sort((a, b) => {
       const aNum = typeof a.nameNumeric === "number" ? a.nameNumeric : -1;
@@ -199,13 +338,23 @@ module.exports = function(eleventyConfig) {
     return images;
   });
 
-  // 5. Kolekcja katalogów
-  eleventyConfig.addCollection("imageFolders", function(collectionApi) {
+  // 5. Kolekcja katalogów (lokalne + obiektywy z magazynów)
+  eleventyConfig.addCollection("imageFolders", async function(collectionApi) {
     const imagesDir = './images';
-    if (!fs.existsSync(imagesDir)) return [];
-    return fs.readdirSync(imagesDir, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name);
+    const folders = fs.existsSync(imagesDir)
+      ? fs.readdirSync(imagesDir, { withFileTypes: true })
+          .filter(dirent => dirent.isDirectory())
+          .map(dirent => dirent.name)
+      : [];
+
+    let added = false;
+    for (const store of await loadStores()) {
+      for (const lens of store.lenses) {
+        if (!folders.includes(lens)) { folders.push(lens); added = true; }
+      }
+    }
+    if (added) folders.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+    return folders;
   });
 
   eleventyConfig.addFilter("json", (value) => JSON.stringify(value));
@@ -261,8 +410,22 @@ module.exports = function(eleventyConfig) {
     const outputThumbDir = path.join(outputDir, "images/thumbnails");
     if (fs.existsSync(cacheThumbDir)) {
       try {
-        fs.cpSync(cacheThumbDir, outputThumbDir, { recursive: true });
-        console.log(`[eleventy-img] Skopiowano miniatury do _site.`);
+        if (usedThumbs.size > 0) {
+          // Tylko miniatury zdjęć, które są teraz w ./images (stare z cache zostają poza wdrożeniem)
+          fs.mkdirSync(outputThumbDir, { recursive: true });
+          let copied = 0;
+          for (const f of usedThumbs) {
+            const from = path.join(cacheThumbDir, f);
+            if (fs.existsSync(from)) {
+              fs.copyFileSync(from, path.join(outputThumbDir, f));
+              copied++;
+            }
+          }
+          console.log(`[eleventy-img] Skopiowano ${copied} miniatur do _site.`);
+        } else {
+          fs.cpSync(cacheThumbDir, outputThumbDir, { recursive: true });
+          console.log(`[eleventy-img] Skopiowano miniatury do _site.`);
+        }
       } catch (e) {
         console.warn("[eleventy-img] Błąd kopiowania miniatur:", e.message);
       }
