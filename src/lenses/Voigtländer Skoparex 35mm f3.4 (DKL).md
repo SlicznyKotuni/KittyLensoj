@@ -14,6 +14,7 @@ tags:
   - street
   - szeroki-kąt
   - szerokokątny
+  - MEOW
 rodzina: Voigtländer Skoparex DKL Series
 kluczowe-słowa:
   - voigtlander-skoparex-35mm
